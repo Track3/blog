@@ -1,0 +1,24 @@
+---
+hide_body: false
+is_partial: false
+fields:
+- name: title
+  label: Title
+  type: text
+  hidden: false
+  default: ''
+- name: date
+  label: Date
+  type: text
+  hidden: false
+  default: 
+- name: draft
+  label: Draft
+  type: boolean
+  hidden: false
+  default: true
+- name: comments
+  label: Comments
+  type: boolean
+  hidden: false
+  default: false
