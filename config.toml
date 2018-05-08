@@ -3,7 +3,7 @@ languageCode = "zh-cn"
 DefaultContentLanguage = "zh"
 title = "Track3's Blog"
 
-# enableGitInfo = true
+enableGitInfo = true
 
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
