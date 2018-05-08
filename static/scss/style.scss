@@ -1,0 +1,455 @@
+@import "predefined.scss";
+@import "normalize.scss";
+@import "syntax.scss";
+@import "animate.scss";
+
+/* Webkit Scrollbar Customize */
+::-webkit-scrollbar {
+  width: .5em;
+}
+::-webkit-scrollbar-track {
+  background: $midnightblue;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  &:hover{
+    background: $text;
+  }
+}
+
+html {
+  background: $light-grey;
+  line-height: 1.6;
+  letter-spacing: .1em;
+
+}
+
+body, button, input, select, textarea {
+  color: $text;
+  font-family: $fonts;
+}
+
+pre, code, pre tt {
+  font-family: $code-fonts;
+}
+
+pre {
+  color: #eee;
+  background: $midnightblue;
+  padding: 1em 1.5em;
+  border-radius: 5px;
+  display: block;
+  overflow: auto;
+  // -webkit-overflow-scrolling: touch;
+
+  code {
+    background: $midnightblue;
+  }
+}
+
+code {
+  color: #eee;
+  background: $highlight-grey;
+  border-radius: 3px;
+  padding: 0 2px;
+  margin: auto 4px;
+  display: inline-block;
+}
+
+a {
+  color: $text;
+  text-decoration: none;
+  border-bottom: 1px solid $text;
+  transition-property: color, border-color;
+  transition-duration: .5s;
+  transition-timing-function: ease-out;
+
+  &:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+}
+
+hr {
+  opacity: .2;
+  border-width: 0 0 5px 0;
+  border-style: dashed;
+  background: transparent;
+  width: 80%;
+  margin: auto;
+}
+
+.section-inner {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 93%;
+}
+
+.thin {
+  max-width: 720px;
+  margin: auto;
+}
+
+.social-icons a {
+  border: none;
+}
+
+.feather {
+  display: inline-block;
+  vertical-align: -.125em;
+  width: 1em;
+  height: 1em;
+}
+
+// Header & Footer
+//
+#site-header {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: -1px -2px 3px rgba(0,0,0,0.45);
+  background-color: $dark-grey;
+}
+
+.hdr-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: .5em 0;
+  font-size: 1.2rem;
+
+  a {
+    border: none;
+  }
+
+  .site-branding {
+    display: inline-block;
+    font-size: 1.2em;
+  }
+  .site-nav {
+    display: inline-block;
+    font-size: 1.1em;
+    opacity: .8;
+    a {
+      margin-left: .8em;
+    }
+  }
+}
+
+.hdr-icons {
+  display: inline-block;
+  font-size: 1.2em;
+}
+
+.hdr-btn {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+#menu-btn, #search-btn {
+  display: none;
+}
+
+#mobile-menu {
+  position: fixed;
+  bottom: 4.5em;
+  right: 1.5em;
+  padding: .6em 1.8em;
+  z-index: 1;
+  box-sizing: border-box;
+  box-shadow: -1px -2px 3px 0px rgba(0,0,0,0.45);
+  background-color: $dark-grey;
+
+  a {
+    border: none;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+    font-size: 1.2em;
+  }
+}
+
+#site-footer {
+  text-align: center;
+  margin-bottom: 96px;
+  margin-top: 64px;
+  
+  p {
+    margin: 0;
+  }
+}
+
+// Spotlight
+//
+#spotlight {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+
+  &.error-404 {
+    flex-direction: row;
+  }
+}
+
+.catguard img {
+  max-width: 250px;
+  height: auto;
+}
+
+.banner-404 {
+  margin-left: 2em;
+
+  h1 {
+    font-size: 3em;
+    margin: 0;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: .5em;
+  }
+
+  .btn-404 {
+    font-size: 1em;
+
+    a {
+      display: inline-block;
+      border-bottom: 2px solid $theme;
+      padding: 1px 2px;
+      transition-property: background-color;
+      word-break: break-all;
+
+      &:first-child {
+        margin-right: 1em;
+      }
+  
+      &:hover {
+        background-color: $theme;
+      }
+    }
+  }
+}
+
+#me {
+  font-size: 2em;
+}
+
+#home-social {
+  margin-top: .2em;
+  font-size: 1.4em;
+}
+
+#home-nav {
+  margin-top: .5em;
+
+  a {
+    display: block;
+    border: none;
+    text-align: center;
+    margin-top: .5em;
+  }
+}
+
+// list.html
+//
+.posts-group {
+  display: flex;
+
+  .post-year{
+    font-size: 1.6em;
+    margin: 0.4em 2em 1em 0;
+    @include dimmed;
+  }
+
+  .posts-list {
+    flex-grow: 1;
+    margin: 16px 0;
+    padding: 0;
+    list-style: none;
+
+  }
+
+  .post-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition-property: background-color;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+
+    a {
+      border: none;
+    }
+
+    &:hover {
+      background-color: $highlight-grey;
+    }
+  }
+
+  .post-day {
+    flex-shrink: 0;
+    margin-left: 1em;
+    @include dimmed;
+  }
+}
+
+// single.html
+//
+.post-header {
+  border-bottom: 2px solid;
+  margin-bottom: 1.5em;
+  
+  .post-meta {
+  margin-top: -1em;
+  margin-bottom: .6em;
+  @include dimmed;
+  }
+}
+
+hr.post-end {
+  width: 50%;
+  margin-top: 1.6em;
+  margin-bottom: .8em;
+  margin-left: 0;
+  border-style: dotted;
+  border-bottom-width: 4px;
+}
+
+.content {
+  text-align: justify;
+  text-justify: inter-ideograph; //For IE/Edge
+
+  @include aTag;
+
+  figure {
+    max-width: 100;
+    height: auto;
+    margin: 0;
+    text-align: center;
+
+    p {
+      margin-top: 0;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+}
+
+figure.left {
+  float: left;
+  margin-right: 1em;
+}   
+
+figure.right {
+  float: right;
+  margin-left: 1em;
+}
+
+.post-info {
+  font-size: .8rem;
+  @include dimmed;
+  
+  .tag {
+    margin-right: .1em;
+
+    &::before {
+      content: "#"
+    }
+  }
+}
+
+// Comments
+//
+#comments-loader {
+  text-align: center;
+  font-size: 2.5em;
+  margin-top: 2.5em;
+  svg {
+    animation-duration: 1.2s;
+  }
+}
+
+#comments {
+  margin-top: 3em;
+
+  * {
+    color: $text; 
+  }
+
+  @include aTag;
+
+  .vbtn {
+    background-color: #7d828a;
+  }
+
+  .vsys {
+    background-color: $highlight-grey;
+  }
+
+  .vat {
+    color: $theme;
+  }
+}
+
+@media (min-width: 860px) {
+  .site-main {
+    margin-top: 4em;
+  }
+}
+
+@media (min-width: 1300px) {
+  .site-main {
+    margin-top: 6em;
+  }
+}
+
+@media (max-width: 760px) {
+  .mobile, .site-nav.mobile {
+    display: none;
+  }
+  #menu-btn, #search-btn {
+    display: inline-block;
+  }
+
+  .posts-group {
+    display: block;
+    margin-bottom: 2.5em;
+
+    .post-year {
+      margin-right: 0;
+      margin-bottom: 8px;
+      border-bottom: 1px dashed;
+    }
+  }
+  #spotlight.error-404 {
+    flex-direction: column;
+    text-align: center;
+    
+    .banner-404 {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  figure.left, figure.right {
+    float: unset;
+    margin: 0;
+  }   
+}

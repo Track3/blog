@@ -1,0 +1,22 @@
+{{ define "header" }}{{ partial "header.html" . }}{{ end }}
+
+{{ define "main" }}
+	<main class="site-main section-inner thin">
+		<h1>{{ .Title }}</h1>
+		<div class="content">
+			{{ .Content }}
+		</div>
+		{{- range .Data.Pages.GroupByDate "2006" }}
+		<div class="posts-group">
+			<p class="post-year">{{ .Key }}</p>
+			<ul class="posts-list">
+				{{- range .Pages }}
+				<li class="post-item"><a href="{{.Permalink}}" class="post-title">{{.Title}}</a><span class="post-day">{{ .Date.Format .Site.Params.dateformList }}</span></li>
+				{{- end }}
+			</ul>
+		</div>
+		{{- end }}
+	</main>
+{{ end }}
+
+{{ define "footer" }}{{ partial "footer.html" . }}{{ end }}

@@ -1,0 +1,32 @@
+// Colors
+//
+$theme: rgba(26, 188, 156, .5);
+$text: #c6cddb;
+$light-grey: #494f5c;
+$dark-grey: #3B3E48;
+$highlight-grey: #7d828a;
+$midnightblue: #2c3e50;
+
+// Fonts
+//
+$fonts: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$code-fonts: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
+
+// Mixins
+//
+@mixin dimmed {
+  opacity: .6;
+}
+
+@mixin aTag {
+  a {
+    border-bottom: 2px solid $theme;
+    padding: 1px 2px;
+    transition-property: background-color;
+    word-break: break-all;
+
+    &:hover {
+      background-color: $theme;
+    }
+  }
+}
