@@ -18,13 +18,13 @@ tags:
 
 不是说WP不好，是它功能太全面了，我用不上。WordPress曾今很适合我，现在却不是了。
 
-在刚开始做这个网站的时候，我也不清楚我要做什么样的站，可以说这一年半我都是在摸索。我为什么隔三差五地换主题？除了喜新厌旧之外，更重要的原因就是我也不清楚我想要什么样的主题。折腾了这么多次，我明白了很多道理，更加明确了写博客的意义。
+在刚开始做这个网站的时候，我也不清楚我要做什么样的站，可以说这一年半都是在摸索。我为什么隔三差五地换主题？除了喜新厌旧之外，更重要的原因就是我也不清楚我想要什么样的主题。折腾了这么多次，我明白了很多道理，更加明确了写博客的意义。
 
 这一年半的时间，我怎么变了这么多？现在看以前的文章，都觉得low得不行，忍不住把它们设成私密。曾经沉迷于折腾各种主题插件，如今都不再热衷；曾经到处留言换友链在各大论坛发帖，现在也渐渐少了；曾经有事没事各种大杂烩都往上发，如今发文章最起码都能带一点自己的思考；曾经对代码什么的不识一丁，如今也会一点Web开发和基本的服务器运维；曾经看到别人网站好酷炫，我都会问，woc，这什么主题啊，我也想换！如今，我会问，这怎么实现的？F12一下……
 
 这一年半的时间，我从刚上大学的Freshman萌新，变成了一只老油条。这期间我一直坚持写博客，虽然文章不多，质量也不高，但仍感觉自己文笔提高了不少，思想也成熟了不少。我越来越感觉到这个记录了我成长的网站该有一些新的动作了（说白了就是逼格不够了）。
 
-过年的时候第一次尝试了Markdown，真是有种相见恨晚的感觉。MD语法简单好学，码字时可以减少手在键盘与鼠标之间切换的频率，让人更加专注于内容本身。这是我想换博客系统的一个重要原因。早就听说过各种静态博客系统，也看见不少友站纷纷跳坑Hexo，我还是耐不住寂寞，自己尝试了一下。其实我一直都对静态博客持保守态度，感觉内容管理应该挺麻烦的，自己用过了以后虽感觉还不错，但是这远远不足以说服我换博客系统。随着对静态博客程序的了解加深，我认识了[Hugo](https://gohugo.io)这个静态页面生成器。
+过年的时候第一次尝试了Markdown，真是有种相见恨晚的感觉。MD语法简单好学，码字时可以减少手在键盘与鼠标之间切换的频率，让人更加专注于内容本身。这是我想换博客系统的一个重要原因。早就听说过各种静态博客系统，也看见不少友站纷纷跳坑Hexo，我还是耐不住寂寞，自己尝试了一下。其实我一直都对静态博客持保守态度，感觉内容管理应该挺麻烦的，自己用过了以后感觉也是可以接受的。虽然感觉还行，但这还远远不足以说服我换博客系统。随着对静态博客程序的了解加深，我认识了[Hugo](https://gohugo.io)这个静态页面生成器。
 
 目前最火的静态页面生成器无非就是Jekyll、Hugo以及Hexo。看看[StaticGen](https://www.staticgen.com/)这个网站，上面列出了常见的静态页面生成程序。Jekyll历史最悠久，算是鼻祖，是GitHub Pages的默认引擎，主题什么的也是挺多的。然而问题是Jekyll真的有点老了，页面生成速度较慢。在本地使用时还要装ruby，略麻烦。Hexo的页面生成速度快多了，但是安装还是麻烦，npm安装几千个文件，想想就很烦。其实说Jekyll和Hexo安装麻烦，都是跟Hugo对比才这么说的。Hugo是用GO写的，可以编译成一个二进制文件，在Windows上，下载一个hugo.exe就可以用了，完全不用装GO环境。而且，Hugo的页面生成速度可以说是所有静态页面生成器里最快的，几十篇文章一般也就几百毫秒。真如官网上所说：“Install in seconds, build in milliseconds.”
 
@@ -36,15 +36,15 @@ tags:
 
 从JAMstack身上，我仿佛看见了Web的未来。Web是以操作资源（获取、增删）为目的的，是面向数据的。访问一个网页，就是获取数据，或者说资源，不管用什么方式，只要能达到数据传送到目的就行了啊，为什么一定要用动态程序从数据库里拉数据，然后实时生成HTML文件再传送过来呢？做个REST API，浏览器端就可以直接获取数据、处理并插入到页面中。你一定听说过前后端分离、微服务架构这些概念，将各个模块分开部署，独立维护，前端和后端通过REST API来交互，安全高效，而且跨平台。
 
-随后我又认识了[Netlify](https://www.netlify.com)这个公司，事实上JAMstack的概念就是Netlify的CEO，Matt Biilmann提出的。Netlify专注于为JAMstack网站提供提供托管服务，算是一个GitHub Pages的替代品。把你的源码放到Git托管（GitHub、GitLab、Bitbucket等）上，Netlify检测到Commit之后会自动构建并部署，完全不需要手动操作。
+随后我又认识了[Netlify](https://www.netlify.com)这家公司，事实上JAMstack的概念就是Netlify的CEO，Matt Biilmann提出的。Netlify专注于为JAMstack网站提供提供托管服务，算是一个GitHub Pages的替代品。把你的源码放到Git托管（GitHub、GitLab、Bitbucket等）上，Netlify检测到Commit之后会自动构建并部署，完全不需要手动操作。
 
-听了Matt的很多演讲，发现它经常提到[Smashing Magzine](https://www.smashingmagazine.com/)这个案例，Smashing Magzine是一个关于Web设计与开发的媒体，他们的网站最近就完成了JAMstack的改造。以前用是WordPress做CMS、Shopify做商城、Rails做Job Board、Kirby做活动安排，在各种平台维护一套设计风格差不多的网页。换了全新架构之后，文章用Hugo生成，各种类型的页面可以共用一套API，由于是静态页面，全站CDN就很爽了。可以说Smashing Magzine的案例充分证明了JAM架构做复杂的网站是可行的。Netlify在协助Smashing Magzine完成改造的过程中写了很多开源API，都是做JAMstack网站很好的解决方案。
+听了Matt的很多演讲，发现它经常提到[Smashing Magazine](https://www.smashingmagazine.com/)这个案例，Smashing Magazine是一个关于Web设计与开发的媒体，他们的网站最近就完成了JAMstack的改造。以前用是WordPress做CMS、Shopify做商城、Rails做Job Board、Kirby做活动安排，在各种平台维护一套设计风格差不多的网页。换了全新架构之后，文章用Hugo生成，各种类型的页面可以共用一套API，由于是静态页面，全站CDN就很爽了。可以说Smashing Magazine的案例充分证明了JAM架构做复杂的网站是可行的。Netlify在协助Smashing Magazine完成改造的过程中写了很多开源API，都是做JAMstack网站很好的解决方案。
 
 回到前面的内容管理问题以及评论问题，到这里，我心里已经有数了。
 
 慢慢了解到“Headless CMS”这个东西。不知道大家还是否记得我以前写的那个《[Foxhound主题轻度体验](https://www.xxxlbox.com/posts/2017/try-wp-theme-foxhound/)》，那个主题就是利用了WordPress提供的REST API，页面并不是完全是由PHP生成，如果我没有记错的话应该是用了React。其实这样就是把WordPress当一个Headless CMS来用了。Headless CMS字面上理解就是“无头”的内容管理系统，CMS不再仅仅是对网页内容进行管理，更多的是提供一个通用的接口使各种平台可以获取数据。Headless CMS一般有两种：API Driven和Git-based，大家可以看看[headlesscms.org](https://headlesscms.org)，上面有很详细的介绍。Git-based这种不是以提供API为目的，它能做的是让你可以在浏览器里编辑文章，然后把更改提交到你的Git托管中。Git-based Headless CMS目前我试用过的有开源的[Netlify CMS](https://www.netlifycms.org/)和商业（但是免费）的[Forestry.io](https://forestry.io/)。效果都很好，手机上写博客也不是问题了。
 
-{{< figure src="https://ojirvqiyr.qnssl.com/images/2018/img21.png" alt="Headless CMS" caption="Headless CMS" width="1281" height="718">}}
+{{< figure src="https://ojirvqiyr.qnssl.com/images/2018/img021.png" alt="Headless CMS" caption="Headless CMS" width="1281" height="718">}}
 
 评论系统目前考虑过这些方案：
 
@@ -57,11 +57,11 @@ tags:
 
 我的Hugo站还在准备中。目前有一个测试站，hugo.xxxlbox.com，托管于Netlify，源码托管在GitLab上。用的这个主题并不是自己写的，很多地方我都不喜欢，怎么改都改不好，遂决定重新撸一个。Hugo是一个我从来都没有接触过的博客系统，它跟WordPress真的很不同，我踩了不少坑。写一个Hugo主题并不容易，Go Template那一套跟PHP很不一样，还得从零开始学。真的很喜欢那个主题，所以新主题会“借鉴”很多，估计最终差不多就是测试站这种效果了……
 
-原先打算等毕业再换Hugo，因为那时腾讯云学生机就要到期了，换静态博客可以以较低的成本来运营，可是，现在我就忍不住了。前面提到的升级MySQL 8.0，性能翻一番的代价是内存占用也翻了一番。可以说，跑上一个WordPress站，Minecraft服务器都开不起了……是时候换了，真的该换了。
+原先打算等毕业了再换Hugo，因为那时腾讯云学生机就要到期了，换静态博客可以以较低的成本来运营，然而，我现在就忍不住了。前面提到的升级MySQL 8.0，性能翻一番的代价是内存占用也翻了一番。可以说，跑上一个WordPress站，Minecraft服务器都开不起了……是时候换了，真的该换了。
 
-![ssh top命令显示mysql内存占用](https://ojirvqiyr.qnssl.com/images/2018/img22.png)
+![ssh top命令显示mysql内存占用](https://ojirvqiyr.qnssl.com/images/2018/img022.png)
 
-细心的同学们应该发现本站的固定连接格式改了，从数字变成了文章名，就是为了提前适应博客系统的更换。新博客应该要不了多长时间了，敬请期待。
+细心的同学们应该发现本站的固定链接格式改了，从数字变成了文章名，就是为了提前适应博客系统的更换。新博客应该要不了多长时间了，敬请期待。
 
 等等，[Alchemist](https://github.com/Track3/alchemist)主题怎么办？这可是你人生中第一个GitHub项目啊！事实上，我把它放到GitHub上，原因主要有二：其一，我要遵循GPL开源协议，其二，我想学习Git以及GitHub的基本操作。原本是想好好打磨，搞个大事情的，可是计划永远都赶不上变化。主题并没有任何宣传，比较偏个人喜好，算是自用主题了，可是不管怎么说，一旦有人表示喜欢并且想用这个主题，我肯定尽力完善它，做到善始善终——喜欢请Star。
 
