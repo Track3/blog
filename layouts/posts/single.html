@@ -1,4 +1,6 @@
-{{ define "header" }}{{ partial "header.html" . }}{{ end }}
+{{ define "header" }}
+{{ partial "header.html" . }}
+{{ end }}
 
 {{ define "main" }}
 	<main class="site-main section-inner">
@@ -28,4 +30,10 @@
 	</main>
 {{ end }}
 
-{{ define "footer" }}{{ partial "footer.html" . }}{{ end }}
+{{ define "footer" }}
+{{ partial "footer.html" . }}
+	<script>
+		let haveHeader = true;
+		let haveComments = true;
+	</script>
+{{ end }}

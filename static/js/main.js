@@ -20,24 +20,26 @@ const autoHideHeader = () => {
 //
 let mobileMenu = document.getElementById('mobile-menu');
 
-document.getElementById('menu-btn').addEventListener('click', () => {
-  if (mobileMenu.style.display == 'none') {
-    mobileMenu.style.display = 'block';
-  } else {
-    mobileMenu.classList.remove('bounceInRight');
-    mobileMenu.classList.add('bounceOutRight');
-    setTimeout(() => {
-      mobileMenu.style.display = 'none';
-      mobileMenu.classList.remove('bounceOutRight');
-      mobileMenu.classList.add('bounceInRight');
-    }, 750);
-  }
-});
+if (haveHeader == true) {
+  document.getElementById('menu-btn').addEventListener('click', () => {
+    if (mobileMenu.style.display == 'none') {
+      mobileMenu.style.display = 'block';
+    } else {
+      mobileMenu.classList.remove('bounceInRight');
+      mobileMenu.classList.add('bounceOutRight');
+      setTimeout(() => {
+        mobileMenu.style.display = 'none';
+        mobileMenu.classList.remove('bounceOutRight');
+        mobileMenu.classList.add('bounceInRight');
+      }, 750);
+    }
+  });
+}
 
 //Load Comments
 //
 let commentsLoaded = false;
-let commentsOffsetTop = document.getElementById('comments').offsetTop;
+let comments = document.getElementById('comments');
 let commentsLoader = document.getElementById('comments-loader');
 
 const avJsUrl = '//cdn1.lncld.net/static/js/3.0.4/av-min.js';
@@ -89,7 +91,7 @@ const loadComments = () => {
 }
 
 // Load comments if the window is not scrollable
-if (commentsOffsetTop < window.innerHeight) {
+if ((haveComments == true) && (comments.offsetTop < window.innerHeight)) {
   console.log('Ready to Load Comments');
   commentsLoader.style.display = 'block';
   loadComments();
@@ -97,11 +99,13 @@ if (commentsOffsetTop < window.innerHeight) {
 }
 
 window.addEventListener('scroll', () => {
-  autoHideHeader();
-  mobileMenu.style.display = 'none'; //Hide Mobile Menu When Scroll
+  if (haveHeader == true) {
+    autoHideHeader();
+    mobileMenu.style.display = 'none'; //Hide Mobile Menu When Scroll
+  }
 
-  if (commentsLoaded == false) {
-    if (window.pageYOffset + window.innerHeight > commentsOffsetTop) {
+  if ((haveComments == true) && (commentsLoaded == false)) {
+    if (window.pageYOffset + window.innerHeight > comments.offsetTop) {
       console.log('Ready to Load Comments');
       commentsLoader.style.display = 'block';
       loadComments();
