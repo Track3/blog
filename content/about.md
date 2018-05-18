@@ -13,8 +13,8 @@ comments: false
 
 * Telegram: [@mytrack3](http://t.me/mytrack3)
 * Twitter: [@mytrack03](https://twitter.com/mytrack03)
+* Weibo: [@Track3](http://weibo.com/u/2350674815)
 * QQ: 5-7-2-3-0-3-7-1-2 [^1]
-* Weibo: [@Track3](http://weibo.com/u/2350674815 )
 * Email: pengliabc(at)live.cn[^2]
 
 也欢迎去这些地方和博主一起玩耍：

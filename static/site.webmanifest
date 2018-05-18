@@ -1,19 +1,20 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "Track3's Blog",
+    "short_name": "Track3's Blog",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/android-chrome-192x192.png?v=rMlxvXj4PL",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
+            "src": "/android-chrome-512x512.png?v=rMlxvXj4PL",
             "sizes": "512x512",
             "type": "image/png"
         }
     ],
-    "theme_color": "#00b2ff",
-    "background_color": "#00b2ff",
+    "theme_color": "#494f5c",
+    "background_color": "#494f5c",
+    "start_url": "https://www.xxxlbox.com",
     "display": "standalone"
 }
