@@ -2,15 +2,18 @@ baseURL = "https://www.xxxlbox.com"
 languageCode = "zh-cn"
 DefaultContentLanguage = "zh"
 title = "Track3's Blog"
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
 
 enableGitInfo = true
-
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
 hasCJKLanguage = true
 
 [blackfriday]
 hrefTargetBlank = true
+
+[author]
+  name = "Track3"
 
 [taxonomies]
   tag = "tags"
