@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /control
+Sitemap: https://www.xxxlbox.com/sitemap.xml
