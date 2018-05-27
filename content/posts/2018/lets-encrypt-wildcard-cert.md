@@ -52,6 +52,6 @@ export DP_Key="your_key"
 
 然后你需要手动修改Nginx的配置文件来安装证书以及key。
 
-值得一提的是，acme.sh支持自动更新证书。在你执行`./acme.sh --install`的时候就已经自动建立了cron job,，每天0:00点会自动检测所有证书。获取并安装证书的命令会被记录下来，证书在60天以后会自动更新，Nginx配置文件目录下的证书也会同步更新，Nginx会重启——你无需任何操作。
+值得一提的是，acme.sh支持自动更新证书。在你执行`./acme.sh --install`的时候就已经自动建立了cron job，每天0:00点会自动检测所有证书。获取并安装证书的命令会被记录下来，证书在60天以后会自动更新，Nginx配置文件目录下的证书也会同步更新，Nginx会重启——你无需任何操作。
 
 可以看到acme.sh获取Wildcard证书还是比较方便的。当然，acme.sh功能远不止如此，很多高级操作请看[acme.sh wiki](https://github.com/Neilpang/acme.sh/wiki/)。
