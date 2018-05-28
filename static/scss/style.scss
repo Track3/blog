@@ -43,17 +43,19 @@ pre {
   // -webkit-overflow-scrolling: touch;
 
   code {
+    display: inline-block;
     background: $midnightblue;
   }
 }
 
 code {
+  display: inline;
   color: #eee;
   background: $highlight-grey;
   border-radius: 3px;
   padding: 0 2px;
   margin: auto 4px;
-  display: inline-block;
+  word-break: break-all;
 }
 
 a {
@@ -408,6 +410,12 @@ figure.right {
 
   .vat {
     color: $theme;
+  }
+
+  .vcontent code {
+    margin: auto 4px;
+    color: #eee;
+    background: $highlight-grey;
   }
 }
 
