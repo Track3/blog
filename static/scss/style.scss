@@ -58,6 +58,20 @@ code {
   word-break: break-all;
 }
 
+blockquote {
+  border-left: .25em solid;
+  margin: 1em;
+  padding: 0 1em;
+  font-style: italic;
+  cite {
+    font-weight: bold;
+    font-style: normal;
+    &::before {
+      content: "—— ";
+    }
+  }
+}
+
 a {
   color: $text;
   text-decoration: none;
@@ -152,6 +166,7 @@ hr {
 
 #menu-btn, #search-btn {
   display: none;
+  cursor: pointer;
 }
 
 #mobile-menu {
@@ -412,10 +427,22 @@ figure.right {
     color: $theme;
   }
 
-  .vcontent code {
-    margin: auto 4px;
-    color: #eee;
-    background: $highlight-grey;
+  .vcontent {
+    code {
+      margin: auto 4px;
+      color: #eee;
+      background: $highlight-grey;
+    }
+    pre {
+      color: #eee;
+      background: $midnightblue;
+      padding: 1em 1.5em;
+      border-radius: 5px;
+      display: block;
+      code {
+        background: $midnightblue;
+      }
+    }
   }
 }
 

@@ -143,7 +143,7 @@ Nginx官方文档上是这么写的，强烈建议大家去看看这一页：
 
 > This is a wrong, cumbersome, and ineffective way. The right way is to define a separate server for `example.org`
 >
-> <cite>-《[Converting rewrite rules](http://nginx.org/en/docs/http/converting_rewrite_rules.html)》</cite>
+> <cite>《[Converting rewrite rules](http://nginx.org/en/docs/http/converting_rewrite_rules.html)》</cite>
 
 这里使用的是`return 301`，也是新版Nginx推荐的用法。
 

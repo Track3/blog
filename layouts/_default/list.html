@@ -5,9 +5,11 @@
 {{ define "main" }}
 	<main class="site-main section-inner thin">
 		<h1>{{ .Title }}</h1>
+		{{- with .Content }}
 		<div class="content">
 			{{ .Content }}
 		</div>
+		{{- end }}
 		{{- range .Data.Pages.GroupByDate "2006" }}
 		<div class="posts-group">
 			<p class="post-year">{{ .Key }}</p>
