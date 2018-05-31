@@ -16,8 +16,5 @@
 
 {{ define "footer" }}
 {{ partial "footer.html" . }}
-	<script>
-		let haveHeader = true;
-		let haveComments ={{.Params.comments}};
-	</script>
+	<script>let haveHeader = true, haveComments ={{.Params.comments}};</script>
 {{ end }}
