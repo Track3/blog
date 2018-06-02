@@ -1,7 +1,7 @@
 ---
 title: "Hugo利用Webhook实现自动部署"
 date: 2018-06-02T14:19:05+08:00
-draft: true
+draft: false
 tags: 
   - Hugo
   - GitLab
