@@ -40,6 +40,8 @@ pre {
   border-radius: 5px;
   display: block;
   overflow: auto;
+  letter-spacing: normal;
+  line-height: 1.5em;
   // -webkit-overflow-scrolling: touch;
 
   code {
@@ -56,6 +58,7 @@ code {
   padding: 0 2px;
   margin: auto 4px;
   word-break: break-all;
+  letter-spacing: normal;
 }
 
 blockquote {
@@ -93,6 +96,24 @@ hr {
   background: transparent;
   width: 80%;
   margin: auto;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  empty-cells: show;
+  width: 100%;
+  max-width: 100%;
+
+  th, td {
+    padding: 1.5%;
+    border: 1px solid;
+  }
+
+  th {
+    font-weight: 700;
+    vertical-align: bottom;
+  }
 }
 
 .section-inner {
@@ -333,7 +354,7 @@ hr {
   margin-bottom: 1.5em;
   
   .post-meta {
-  margin-top: -1em;
+  margin-top: -1.6em;
   margin-bottom: .6em;
   @include dimmed;
   }
@@ -370,6 +391,11 @@ hr.post-end {
     height: auto;
     border-radius: 4px;
   }
+
+  ul, ol {
+    padding: 0;
+    margin-left: 1.8em;
+  }
 }
 
 figure.left {
@@ -380,6 +406,13 @@ figure.left {
 figure.right {
   float: right;
   margin-left: 1em;
+}
+
+.footnote-ref a, a.footnote-return {
+  border: none;
+  &:hover {
+    background: transparent;
+  }
 }
 
 .post-info {

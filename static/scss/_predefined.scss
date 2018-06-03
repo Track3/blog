@@ -22,7 +22,7 @@ $code-fonts: consolas, Menlo, "PingFang SC", "Microsoft YaHei", monospace;
   a {
     border-bottom: 2px solid $theme;
     padding: 1px 2px;
-    transition-property: background-color;
+    transition-property: background-color, color;
     word-break: break-all;
 
     &:hover {
