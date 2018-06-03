@@ -22,7 +22,7 @@ tags:
 
 这一部分配置应该写在`http {}`块中。
 
-```shell
+```nginx
 # Upstream to abstract backend connection(s) for php
 upstream php {
     server unix:/run/php/php7.0-fpm.socket;  #使用unix socket
@@ -84,7 +84,7 @@ server {
 
 其中，`location / {}`块的`try_files`非常机智。网上很多教程都是在这里用了if判断加rewrite，就像这样：
 
-```shell
+```nginx
 if (-f $request_filename/index.html) {
     rewrite (.*) $1/index.html break;
 }
@@ -102,7 +102,7 @@ if (!-f $request_filename){
 
 ## 301跳转，强制https访问
 
-```shell
+```nginx
 # Redirect non-www to www
 #
 server {
@@ -130,7 +130,7 @@ server {
 
 在网上搜索“Nginx 301跳转”，很多地方都是这么做的：
 
-```shell
+```nginx
 server {
     listen       80;
     server_name  www.example.org  example.org;
@@ -151,7 +151,7 @@ Nginx官方文档上是这么写的，强烈建议大家去看看这一页：
 
 Apache下，WP Super Cache可以自己生成rewrite规则并写入.htaccess文件中，而Nginx没有.htaccess这样的机制，因此rewrite规则需要自己配置。这个规则可以直接放入`server {}`块中。
 
-```shell
+```nginx
 # WP Super Cache rules.
 #
 set $cache_uri $request_uri;
@@ -174,31 +174,11 @@ if ($request_uri ~* "(/wp-admin/|/xmlrpc.php|/wp-(app|cron|login|register|mail).
 if ($http_cookie ~* "comment_author|wordpress_[a-f0-9]+|wp-postpass|wordpress_logged_in") {
     set $cache_uri 'null cache';
 }
-
-# 这一部分用于支持WP Super Cache的“移动设备支持”功能。由于现在一般主题都是响应式的，这个功能很少会用到，所以这一块默认被注释。
-# START MOBILE
-# Mobile browsers section to server them non-cached version. COMMENTED by default as most modern wordpress themes including twenty-eleven are responsive. Uncomment config lines in this section if you want to use a plugin like WP-Touch
-#if ($http_x_wap_profile) {
-#    set $cache_uri 'null cache';
-#}
-
-#if ($http_profile) {
-#    set $cache_uri 'null cache';
-#}
-
-#if ($http_user_agent ~* (2.0\ MMP|240x320|400X240|AvantGo|BlackBerry|Blazer|Cellphone|Danger|DoCoMo|Elaine/3.0|EudoraWeb|Googlebot-Mobile|hiptop|IEMobile|KYOCERA/WX310K|LG/U990|MIDP-2.|MMEF20|MOT-V|NetFront|Newt|Nintendo\ Wii|Nitro|Nokia|Opera\ Mini|Palm|PlayStation\ Portable|portalmmm|Proxinet|ProxiNet|SHARP-TQ-GX10|SHG-i900|Small|SonyEricsson|Symbian\ OS|SymbianOS|TS21i-10|UP.Browser|UP.Link|webOS|Windows\ CE|WinWAP|YahooSeeker/M1A1-R2D2|iPhone|iPod|Android|BlackBerry9530|LG-TU915\ Obigo|LGE\ VX|webOS|Nokia5800)) {
-#    set $cache_uri 'null cache';
-#}
-
-#if ($http_user_agent ~* (w3c\ |w3c-|acs-|alav|alca|amoi|audi|avan|benq|bird|blac|blaz|brew|cell|cldc|cmd-|dang|doco|eric|hipt|htc_|inno|ipaq|ipod|jigs|kddi|keji|leno|lg-c|lg-d|lg-g|lge-|lg/u|maui|maxo|midp|mits|mmef|mobi|mot-|moto|mwbp|nec-|newt|noki|palm|pana|pant|phil|play|port|prox|qwap|sage|sams|sany|sch-|sec-|send|seri|sgh-|shar|sie-|siem|smal|smar|sony|sph-|symb|t-mo|teli|tim-|tosh|tsm-|upg1|upsi|vk-v|voda|wap-|wapa|wapi|wapp|wapr|webc|winw|winw|xda\ |xda-)) {
-#    set $cache_uri 'null cache';
-#}
-# END MOBILE
 ```
 
 此时你的`location / {}`块中`try_files $uri $uri/ /index.php?$args?`应加上WP Super Cache的路径，即：
 
-```shell
+```nginx
 location / {
     try_files /wp-content/cache/supercache/$http_host/$cache_uri/index-https.html $uri $uri/ /index.php?$args?;
 }
@@ -206,7 +186,7 @@ location / {
 
 当然如果你的不是https站点，应稍作修改：
 
-```shell
+```nginx
 location / {
     try_files /wp-content/cache/supercache/$http_host/$cache_uri/index-http.html $uri $uri/ /index.php?$args?;
 }

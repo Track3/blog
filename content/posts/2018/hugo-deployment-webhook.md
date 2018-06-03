@@ -7,15 +7,15 @@ tags:
   - GitLab
 ---
 
-既然是静态博客，部署可不就很简单嘛，完全可以在本地电脑上用`hugo`命令生成静态文件，然后FTP上传到服务器就行了。这种方法是最直观的，但实在是有点麻烦，更重要的是，这一点也不geek。都8102年了，谁还用FTP啊，大家都在用Git好不好！这里我就简单记录一下利用GitLab提供的Webhook来实现Hugo在VPS上自动部署的方法。
+既然是静态博客，部署可不就很简单嘛，本地电脑上用`hugo`命令生成静态文件，然后FTP上传到服务器不就行了？这是最直接的方法，但实在是有点麻烦，更重要的是，这一点也不geek。都8102年了，谁还用FTP啊，大家都在用Git好不好！这里我就简单记录一下利用GitLab提供的Webhook来实现Hugo在VPS上自动部署的方法。
 
 ## 前提
 
-此方法仅适用于在VPS上部署，对于使用GitHub Pages部署或用Netlify部署的同学并不适用。用各类Pages服务的直接本地生成然后Push到Git仓库就行，或者搞个CI自动构建；Netlify就不用多说，绑定账号，选定好Git Repo和分支就不用操心了，一切都是全自动的。
+此方法仅适用于在VPS上的部署，对于使用GitHub Pages或用Netlify部署的同学们并不适用。用各类Pages服务的直接本地生成然后Push到Git仓库就行，或者搞个CI自动构建；Netlify就不用多说，绑定账号，选定好Git Repo和分支就不用操心了，一切都是全自动的。
 
-关于怎么搭建配置Hugo这里就不做讨论，所以这篇文章前提是认为你已经在本地安装好了环境，搭好了Hugo站点，并且，你已经把源放到远程Git仓库了，我本人用的是GitLab，后面说的也是GitLab上的方法，当然，跟GitHub大同小异。
+关于怎么搭建并配置Hugo站点这里就不做讨论，这篇文章默认你已经在本地安装好了环境，搭好了Hugo站点，并且，你已经把源放到远程Git代码托管了了，我本人用的是GitLab，后面也是以GitLab为例，当然，跟GitHub大同小异。
 
-另外，我的服务器是Debian 9，其他Linux发行版的应该也是大同小异的，并且以下操作我都是以root身份，如果你是非root账户，出现权限问题记得加`sudo`哦。
+另外，我服务器的系统是Debian 9，其他Linux发行版应该也是大同小异的。并且，以下操作我都是以root身份，如果你用的是非root账户，出现权限问题记得加`sudo`哦。
 
 ## 原理
 
@@ -25,7 +25,7 @@ tags:
 
 ###  配置环境
 
-我指的是VPS的环境配置。
+指VPS的环境配置。
 
 #### Git
 
@@ -41,12 +41,12 @@ apt install git
 在Linux上安装Hugo大概有三种方法：
 
 1. 从系统源安装，这种方法安装更新方便，缺点是版本很低，低到生成页面时都会报错，所以不推荐。
-2. 使用snap。安装snap，然后`snap install hugo`，优点是安装更新方便、版本新，然而如果你是国内的服务器，下载速度可能会慢到你怀疑人生。是否用该方法取决于你的服务器的下载速度和你的忍耐程度。
-3. 直接去[Hugo Releases](https://github.com/gohugoio/hugo/releases)上找最新的release，官方提供了各个平台的二进制文件，还提供了deb格式的封装，Debian类系统可以直接用dpkg来安装，其他Linux发行版下载二进制拷到`/usr/bin`文件夹中即可使用。
+2. 使用snap。安装snap，然后`snap install hugo`，优点是安装更新方便、版本新，然而，如果你是国内的服务器，下载速度可能会慢到你怀疑人生。是否用该方法完全取决于你的服务器的下载速度和你的忍耐度。
+3. 直接去[Hugo Releases](https://github.com/gohugoio/hugo/releases)上找最新的release，官方提供了各个平台的二进制文件，还提供了deb格式的封装，Debian类系统可以直接用`dpkg`来安装，其他Linux发行版下载二进制拷到`/usr/bin`文件夹中即可使用。
 
-我用的就是第三种方法，以安装最新的0.41为例（64位）：
+我用的就是第三种方法，以安装最新的0.41（64位）为例：
 
-```shell
+```bash
 wget https://github.com/gohugoio/hugo/releases/download/v0.41/hugo_0.41_Linux-64bit.tar.gz
 tar -zxvf hugo_0.41_Linux-64bit.tar.gz
 cp hugo /usr/bin/hugo
@@ -64,9 +64,9 @@ Hugo Static Site Generator v0.41 linux/amd64 BuildDate: 2018-05-25T16:57:20Z
 
 ### 配置服务器上的Git仓库
 
-源码放在GitLab上，为了能在服务器构建，我们需要把仓库克隆一份。git clone提供ssh和https两种方式，我这里还是推荐用ssh来连接，因为https说不定什么时候就要你重新输入账号密码了，这样一来自动部署就卡住了。用ssh要先添加ssh key。GitLab添加ssh key的详细方法请看这里：[GitLab and SSH keys](https://gitlab.com/help/ssh/README)，这里不做过多介绍。配置好ssh key以后，以我的GitLab仓库为例：
+源码放在GitLab上，为了能在服务器构建，我们需要在服务器上克隆一份。`git clone`提供ssh和https两种方式，我这里还是推荐用ssh来连接，因为https说不定什么时候就要你重新输入账号密码了，这样一来自动部署就卡住了。用ssh要先添加ssh key，GitLab添加ssh key的详细方法请看这里：[GitLab and SSH keys](https://gitlab.com/help/ssh/README)，这里不做过多介绍。配置好ssh key以后，以我的GitLab仓库为例：
 
-```shell
+```bash
 git clone git@gitlab.com:Track3/my-hugo-blog.git
 cd my-hugo-blog
 hugo -d /usr/share/nginx/html/blog/
@@ -78,7 +78,7 @@ hugo -d /usr/share/nginx/html/blog/
 
 新建一个文件夹，先把hugo的自动构建脚本写好。
 
-```shell
+```bash
 mkdir webhook
 cd webhook
 nano hugo-deploy.sh
@@ -95,9 +95,15 @@ hugo -d /usr/share/nginx/html/blog/
 exit 0
 ```
 
-很简单的bash脚本，其中`~/my-hugo-blog`是你的Git仓库也就是网站源码的路径。然后，我们就要用到Node.js来监听GitLab那边发送过来的请求了。用了[gitlab-webhook-handler](https://github.com/SixQuant/gitlab-webhook-handler)这个中间件：
+很简单的bash脚本，其中`~/my-hugo-blog`是你的Git仓库也就是网站源码的路径。别忘了添加执行权限：
 
-```shell
+```bash
+chmod +x hugo-deploy.sh
+```
+
+然后，我们就要用到Node.js来监听GitLab那边发送过来的请求了。用了[gitlab-webhook-handler](https://github.com/SixQuant/gitlab-webhook-handler)这个中间件：
+
+```bash
 npm install gitlab-webhook-handler --save
 ```
 
@@ -128,7 +134,7 @@ handler.on('push', function (event) {
     console.log('Received a push event for %s to %s', event.payload.repository.name, event.payload.ref);
     exec('sh ./hugo-deploy.sh', function (error, stdout, stderr) {
         if(error) {
-            console.error('error: ' + error);
+            console.error('error:\n' + error);
             return;
         }
         console.log('stdout:\n' + stdout);
@@ -137,11 +143,11 @@ handler.on('push', function (event) {
 })
 ```
 
-这个脚本主要是来自[gitlab-webhook-handler](https://github.com/SixQuant/gitlab-webhook-handler)的README，我自己改了一点，加了日期记录。上面的`path: '/webhook-123456'`你可以任意设置，由于没有设置secret_key验证，所以这里的`webhook-123456`就相当于是密码了，让该路径不至于那么明显。端口用的是`7777`，你可以随意设置，不要过于明显。这样下来最终的监听地址就是`http://0.0.0.0:7777/webhook-123456`了，`0.0.0.0`表示该http服务监听本机的所有ip上收到的请求，说白了就是`0.0.0.0`可以换成服务器的ip或者指向服务器的所有域名。拿我自己的服务器做例子就是`http://xxxlbox.com:7777/webhook-123456`。
+这个脚本主要是来自[gitlab-webhook-handler](https://github.com/SixQuant/gitlab-webhook-handler)的README，我自己改了一下，加了日期输出。利用的是Node.js的`child_process`模块来执行shell脚本。上面的`path: '/webhook-123456'`你可以任意设置，由于没有设置secret_key验证，所以这里的`webhook-123456`就相当于是密码了，以让该路径不至于那么明显。端口用的是`7777`，你可以随意设置，总之不要过于明显。这样下来最终的监听地址就是`http://0.0.0.0:7777/webhook-123456`了，`0.0.0.0`表示该http服务监听本机的所有ip上收到的请求，说白了就是`0.0.0.0`可以换成服务器的ip或者指向服务器的所有域名。拿我自己的服务器作例子就是`http://xxxlbox.com:7777/webhook-123456`。
 
 然后，我们要运行这个脚本：
 
-```shell
+```bash
 node gitlab-webhook.js
 ```
 
@@ -153,9 +159,9 @@ node gitlab-webhook.js
 
 ### 使用pm2管理Node.js进程
 
-pm2是一个很好用的Node应用的进程管理器，具有守护进程，监控，日志的一整套完整的功能，用它可以非常方便地启动、重启Node应用，并且可以实现Node应用的开机启动。安装pm2：
+pm2是一个很好用的Node应用的进程管理器，具有守护进程，监控，日志等一整套完整的功能，用它可以非常方便地启动、重启Node应用，并且可以实现Node应用的开机启动。用npm安装pm2：
 
-```shell
+```bash
 npm install pm2@latest -g
 ```
 

@@ -14,7 +14,7 @@ tags:
 
 我的腾讯云机器用curl下载不下来，因此我直接`git clone`整个库：
 
-```sh
+```bash
 git clone https://github.com/Neilpang/acme.sh.git
 cd ./acme.sh
 ./acme.sh --install
@@ -26,14 +26,14 @@ ACME v2只支持DNS模式颁发证书，即通过在域名上添加一条txt解�
 
 如果你的DNS服务商在支持之列，就不用手动添加txt记录了。这里以dnspod为例, 首先先登录到[dnspod](https://www.dnspod.cn/)（dnspod已被腾讯收购，账号体系也并入了腾讯云），生成你的api id和api key。然后用`export`命令导入：
 
-```shell
+```bash
 export DP_Id="your_id"
 export DP_Key="your_key"
 ```
 
 然后就可以愉快地获取证书了：
 
-```shell
+```bash
 ./acme.sh  --issue  -d example.com  -d *.example.com  --dns dns_dp
 ```
 
@@ -43,7 +43,7 @@ export DP_Key="your_key"
 
 证书放在`~/.acme.sh/`目录下了，最好不要直接让Nginx/Apache读取这些证书文件，正确的方法是使用`--install-cert`命令将证书文件复制到Web Server对应目录下，一般是配置文件目录。我这里用的是Nginx：
 
-```shell
+```bash
 ./acme.sh --install-cert -d example.com \
 --key-file       /etc/nginx/key.pem  \
 --fullchain-file /etc/nginx/cert.pem \
