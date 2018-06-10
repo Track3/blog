@@ -35,12 +35,12 @@ pre, code, pre tt {
 pre {
   color: #eee;
   background: $midnightblue;
-  padding: 1em 1.5em;
+  padding: .8em;
   border-radius: 5px;
   display: block;
   overflow: auto;
   letter-spacing: normal;
-  line-height: 1.5em;
+  line-height: 1.5;
   // -webkit-overflow-scrolling: touch;
 
   code {
@@ -214,9 +214,10 @@ table {
 
 #site-footer {
   text-align: center;
+  font-size: .9em;
   margin-bottom: 96px;
   margin-top: 64px;
-  
+
   p {
     margin: 0;
   }
@@ -350,7 +351,7 @@ table {
 //
 .post-header {
   margin-top: 1.2em;
-  margin-bottom: 2em;
+  margin-bottom: 1.5em;
   border-bottom: 2px solid;
   line-height: normal;
 
@@ -407,7 +408,7 @@ hr.post-end {
 figure.left {
   float: left;
   margin-right: 1em;
-}   
+}
 
 figure.right {
   float: right;
@@ -423,8 +424,9 @@ figure.right {
 
 .post-info {
   font-size: .8rem;
+  line-height: normal;
   @include dimmed;
-  
+
   .tag {
     margin-right: .1em;
 
@@ -449,7 +451,7 @@ figure.right {
   margin-top: 3em;
 
   * {
-    color: $text; 
+    color: $text;
   }
 
   @include aTag;
@@ -538,7 +540,7 @@ figure.right {
   #spotlight.error-404 {
     flex-direction: column;
     text-align: center;
-    
+
     .banner-404 {
       margin: 0;
     }
