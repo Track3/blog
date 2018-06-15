@@ -21,6 +21,7 @@
 		{{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
 	<link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+	{{ block "head" . -}}{{- end }}
 </head>
 
 <body id="page">

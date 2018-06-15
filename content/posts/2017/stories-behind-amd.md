@@ -3,6 +3,7 @@ title: 写在“锐龙”上市之际——AMD那段励志的故事
 date: 2017-02-24T20:27:13+08:00
 draft: false
 excerpt: 十年磨一剑，AMD Ryzen终于来了。可是AMD背后的故事，又有多少人了解？
+featuredImg: "https://ojirvqiyr.qnssl.com/images/2017/amd-ryzen.jpg"
 tags:
   - AMD
   - Intel

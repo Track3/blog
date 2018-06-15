@@ -2,6 +2,7 @@
 title: 变身智能路由器，树莓派配置LEDE
 date: 2017-05-29T17:25:44+08:00
 draft: false
+featuredImg: "https://ojirvqiyr.qnssl.com/images/2017/Buy_Pi_Cover-01.png"
 tags:
   - 折腾
   - 树莓派
