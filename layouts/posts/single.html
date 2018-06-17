@@ -4,7 +4,7 @@
 
 {{ define "main" }}
 	{{- with .Params.featuredImg }}
-		<div class="bg-img" style="width: 100%;height: 100%;opacity: .03;z-index: -1;position: fixed;top: 0;background-image: url({{.}});background-attachment: fixed;background-repeat: no-repeat;background-size: cover;"></div>
+		<div id="bg-img" class="bg-img" style="background-image: url({{.}});" onclick="showContent()"></div>
 	{{- end }}
 	<main class="site-main section-inner animated bounceInUp">
 		<article class="thin">

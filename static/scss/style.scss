@@ -182,6 +182,7 @@ table {
   border: none;
   background: none;
   padding: 0;
+  cursor: pointer;
 }
 
 #menu-btn, #search-btn {
@@ -349,6 +350,29 @@ table {
 
 // single.html
 //
+.bg-img {
+  width: 100%;
+  height: 100%;
+  opacity: .03;
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: opacity .5s;
+}
+
+.show-bg-img {
+  z-index: 100;
+  opacity: 1;
+}
+
+#show-img-btn {
+  margin-right: .5em;
+}
+
 .post-header {
   margin-top: 1.2em;
   margin-bottom: 1.5em;
@@ -456,6 +480,10 @@ figure.right {
 
   @include aTag;
 
+  .vcontrol {
+    letter-spacing: normal;
+  }
+
   .vbtn {
     background-color: #7d828a;
   }
@@ -520,7 +548,7 @@ figure.right {
 }
 
 @media (max-width: 760px) {
-  .mobile, .site-nav.mobile {
+  .hide-in-mobile, .site-nav.hide-in-mobile {
     display: none;
   }
   #menu-btn, #search-btn {

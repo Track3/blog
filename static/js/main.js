@@ -36,6 +36,18 @@ if (haveHeader == true) {
   });
 }
 
+// Show Featured Image
+//
+const showFeaturedImg = () => {
+  console.log('show Img')
+  document.getElementById('bg-img').classList.add('show-bg-img');
+}
+
+const showContent = () => {
+  console.log('show Content')
+  document.getElementById('bg-img').classList.remove('show-bg-img');
+}
+
 //Load Comments
 //
 let commentsLoaded = false;
