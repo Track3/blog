@@ -476,6 +476,7 @@ figure.right {
 
   * {
     color: $text;
+    line-height: 1.5;
   }
 
   @include aTag;
@@ -490,10 +491,15 @@ figure.right {
 
   .vsys {
     background-color: $highlight-grey;
+    opacity: .5;
   }
 
   .vat {
     color: $theme;
+  }
+
+  .vh {
+    border-bottom: 1px dashed #c6cddb;
   }
 
   .vcontent {

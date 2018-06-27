@@ -39,12 +39,10 @@ if (haveHeader == true) {
 // Show Featured Image
 //
 const showFeaturedImg = () => {
-  console.log('show Img')
   document.getElementById('bg-img').classList.add('show-bg-img');
 }
 
 const showContent = () => {
-  console.log('show Content')
   document.getElementById('bg-img').classList.remove('show-bg-img');
 }
 
@@ -55,7 +53,7 @@ let comments = document.getElementById('comments');
 let commentsLoader = document.getElementById('comments-loader');
 
 const avJsUrl = '//cdn1.lncld.net/static/js/3.0.4/av-min.js';
-const valineJsUrl = '//unpkg.com/valine/dist/Valine.min.js';
+const valineJsUrl = '//unpkg.com/valine@1.1.9/dist/Valine.min.js';
 
 const loadScript = (source, beforeEl, async = true, defer = true) => {
   return new Promise((resolve, reject) => {
@@ -84,27 +82,23 @@ const loadScript = (source, beforeEl, async = true, defer = true) => {
 }
 const loadComments = () => {
   loadScript(avJsUrl).then(() => {
-    console.log('av-min.js Loaded');
     loadScript(valineJsUrl).then(() => {
-      console.log('Valine.min.js Loaded');
       new Valine({
         el: '#comments',
         appId: 'QfBLso0johYg7AXtV9ODU6FC-gzGzoHsz',
-        appKey: 'J1tpEEsENa48aLVsPdvwMP14'
+        appKey: 'J1tpEEsENa48aLVsPdvwMP14',
+        placeholder: '说点什么吧',
+        verify: true
       });
-      console.log('Comments Loaded');
       commentsLoader.style.display = 'none';
     }, () => {
-      console.log('Fail to Load Valine.min.js');
     });
   }, () => {
-    console.log('Fail to Load av-min.js');
   });
 }
 
 // Load comments if the window is not scrollable
 if ((haveComments == true) && (comments.offsetTop < window.innerHeight)) {
-  console.log('Ready to Load Comments');
   commentsLoader.style.display = 'block';
   loadComments();
   commentsLoaded = true;
@@ -118,7 +112,6 @@ window.addEventListener('scroll', () => {
 
   if ((haveComments == true) && (commentsLoaded == false)) {
     if (window.pageYOffset + window.innerHeight > comments.offsetTop) {
-      console.log('Ready to Load Comments');
       commentsLoader.style.display = 'block';
       loadComments();
       commentsLoaded = true;
