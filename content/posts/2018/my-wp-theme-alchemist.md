@@ -4,8 +4,8 @@ date: 2018-02-27T19:56:25+08:00
 draft: false
 excerpt: 用WordPress有一年多了，我一直都用的是别人的主题。考虑了很长时间，终于下定决心要写一款主题。
 tags:
-  - WordPress
   - 折腾
+  - WordPress
 ---
 
 刚接触圈子时，我是个不折不扣的小白，能把一台服务器装上LAMP环境、跑起WordPress，我都觉得很满足。当时连HTML都不会，自己写一个主题真的是想都不敢想。士别三日，当刮目相看，这一年多的时间，说起来真的很神奇，我对HTML、CSS、JavaScript以及PHP竟然都已略懂一二。

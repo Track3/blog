@@ -5,6 +5,7 @@ draft: false
 excerpt: 十年磨一剑，AMD Ryzen终于来了。可是AMD背后的故事，又有多少人了解？
 featuredImg: "https://ojirvqiyr.qnssl.com/images/2017/amd-ryzen.jpg"
 tags:
+  - 杂谈
   - AMD
   - Intel
 ---

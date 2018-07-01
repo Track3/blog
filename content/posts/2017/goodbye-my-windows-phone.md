@@ -4,6 +4,7 @@ date: 2017-08-14T21:47:52+08:00
 draft: false
 featuredImg: "https://ojirvqiyr.qnssl.com/images/2017/lumia-830.jpg"
 tags:
+  - 杂谈
   - Windows
 ---
 

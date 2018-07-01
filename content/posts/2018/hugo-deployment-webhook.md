@@ -42,14 +42,14 @@ apt install git
 
 1. 从系统源安装，这种方法安装更新方便，缺点是版本很低，低到生成页面时都会报错，所以不推荐。
 2. 使用snap。安装snap，然后`snap install hugo`，优点是安装更新方便、版本新，然而，如果你是国内的服务器，下载速度可能会慢到你怀疑人生。是否用该方法完全取决于你的服务器的下载速度和你的忍耐度。
-3. 直接去[Hugo Releases](https://github.com/gohugoio/hugo/releases)上找最新的release，官方提供了各个平台的二进制文件，还提供了deb格式的封装，Debian类系统可以直接用`dpkg`来安装，其他Linux发行版下载二进制拷到`/usr/bin`文件夹中即可使用。
+3. 直接去[Hugo Releases](https://github.com/gohugoio/hugo/releases)上找最新的release，官方提供了各个平台的二进制文件，还提供了deb格式的封装，Debian类系统可以直接用`dpkg`来安装，其他Linux发行版下载二进制拷到`/usr/local/bin`文件夹中即可使用。
 
 我用的就是第三种方法，以安装最新的0.41（64位）为例：
 
 ```bash
 wget https://github.com/gohugoio/hugo/releases/download/v0.41/hugo_0.41_Linux-64bit.tar.gz
 tar -zxvf hugo_0.41_Linux-64bit.tar.gz
-cp hugo /usr/bin/hugo
+cp hugo /usr/local/bin/hugo
 ```
 
 然后运行一下`hugo version`，出现类似信息就表示安装成功了：
