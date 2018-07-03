@@ -92,8 +92,10 @@ const loadComments = () => {
       });
       commentsLoader.style.display = 'none';
     }, () => {
+      console.log('Failed to Load Valine.min.js');
     });
   }, () => {
+    console.log('Failed to Load av-min.js');
   });
 }
 
