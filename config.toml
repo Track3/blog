@@ -10,7 +10,7 @@ pygmentsUseClasses  = true
 hasCJKLanguage = true
 
 [blackfriday]
-hrefTargetBlank = true
+  hrefTargetBlank = true
 
 [author]
   name = "Track3"
@@ -20,21 +20,25 @@ hrefTargetBlank = true
   category = ""
 
 [params]
-  author = "Track3"
-
+  author         = "Track3"
   dateform       = "Jan 02, 2006"
   dateformFull   = "2006-01-02 15:04"
   dateformList   = "Jan 2"
   dateformSingle = "Mon, Jan 2"
 
-[[params.mainMenu]]
-  link = "/posts/"
-  text = "Posts"
+[menu]
 
-[[params.mainMenu]]
-  link = "/friends/"
-  text = "Friends"
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 10
 
-[[params.mainMenu]]
-  link = "/about/"
-  text = "About"
+  [[menu.main]]
+    name = "Friends"
+    url = "/friends/"
+    weight = 20
+
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 30

@@ -5,8 +5,9 @@
 					<a href="{{.Site.BaseURL}}">{{ .Site.Title }}</a>
 				</div>
 				<nav class="site-nav hide-in-mobile">
-					{{- range .Site.Params.mainMenu }}
-					<a href="{{ .link }}">{{ .text }}</a>
+					{{- $currentPage := . }}
+					{{- range .Site.Menus.main }}
+					<a href="{{ .URL }}">{{ .Name }}</a>
 					{{- end }}
 				</nav>
 			</div>
@@ -27,8 +28,8 @@
 	</header>
 	<div id="mobile-menu" class="animated bounceInRight" style="display: none;">
 		<ul >
-			{{- range .Site.Params.mainMenu }}
-			<li><a href="{{ .link }}">{{ .text }}</a></li>
+			{{- range .Site.Menus.main }}
+			<li><a href="{{ .URL }}">{{ .Name }}</a></li>
 			{{- end }}
 		</ul>
 	</div>
