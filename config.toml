@@ -8,6 +8,7 @@ enableGitInfo = true
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
 hasCJKLanguage = true
+rssLimit = 10
 
 [blackfriday]
   hrefTargetBlank = true
