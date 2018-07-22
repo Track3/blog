@@ -479,14 +479,19 @@ figure.right {
     line-height: 1.5;
   }
 
-  @include aTag;
-
   .vcontrol {
     letter-spacing: normal;
   }
 
   .vbtn {
     background-color: #7d828a;
+  }
+
+  .vwrap {
+    border: 2px solid $text;
+    input {
+      border-bottom: 1.5px dashed $text;
+    }
   }
 
   .vsys {
@@ -499,10 +504,16 @@ figure.right {
   }
 
   .vh {
-    border-bottom: 1px dashed #c6cddb;
+
+    border-bottom: 4px solid #5c6372;
+
+    .vquote {
+      border-left: 3px dotted #979ca5;
+    }
   }
 
   .vcontent {
+    padding: 0;
     code {
       margin: auto 4px;
       color: #eee;
