@@ -9,7 +9,7 @@
 	<main class="site-main section-inner animated bounceInUp">
 		<article class="thin">
 			<header class="post-header">
-				<p class="post-meta">{{ .Date.Format .Site.Params.dateformSingle }} &#183; {{ .ReadingTime }} min read</p>
+				<div class="post-meta"><span>{{ .Date.Format .Site.Params.dateform }}</span></div>
 				<h1>{{ .Title }}</h1>
 			</header>
 			<div class="content">

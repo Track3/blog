@@ -22,10 +22,9 @@ rssLimit = 10
 
 [params]
   author         = "Track3"
-  dateform       = "Jan 02, 2006"
+  dateform       = "Jan 2, 2006"
   dateformFull   = "2006-01-02 15:04"
-  dateformList   = "Jan 2"
-  dateformSingle = "Mon, Jan 2"
+  dateformShort   = "Jan 2"
 
 [menu]
 
