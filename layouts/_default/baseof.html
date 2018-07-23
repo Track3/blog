@@ -20,7 +20,8 @@
 	{{ range .AlternativeOutputFormats -}}
 		{{ printf `<link rel="%s" type="%s+%s" href="%s" title="%s" />` .Rel .MediaType.Type .MediaType.Suffix .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
-	<link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+	{{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint -}}
+	<link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
 	{{ block "head" . -}}{{- end }}
 </head>
 
@@ -28,7 +29,8 @@
 	{{ block "header" . -}}{{ end -}}
 	{{ block "main" . -}}{{ end -}}
 	{{ block "footer" . -}}{{ end }}
-	<script src="{{ "js/main.min.js" | absURL }}"></script>
+	{{ $script := resources.Get "js/main.js" | minify | fingerprint -}}
+	<script src="{{ $script.Permalink }}" integrity="{{ $script.Data.Integrity }}"></script>
 	<script>
 		var _hmt = _hmt || [];
 		(function() {
