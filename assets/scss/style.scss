@@ -388,7 +388,7 @@ hr.post-end {
   margin-top: 1.6em;
   margin-bottom: .8em;
   margin-left: 0;
-  border-style: dotted;
+  border-style: solid;
   border-bottom-width: 4px;
 }
 
@@ -486,7 +486,7 @@ figure.right {
   .vwrap {
     border: 2px solid $text;
     input {
-      border-bottom: 1.5px dashed $text;
+      border-bottom-width: 2px;
     }
   }
 
@@ -533,6 +533,10 @@ figure.right {
   .site-main {
     margin-top: 3em;
   }
+
+  hr.post-end {
+    width: 40%;
+  }
 }
 
 @media (min-width: 960px) {
@@ -545,6 +549,10 @@ figure.right {
   .site-main {
     margin-top: 8em;
   }
+
+  hr.post-end {
+    width: 30%;
+  }
 }
 
 @media (min-width: 1800px) {
@@ -555,8 +563,13 @@ figure.right {
   .section-inner {
     max-width: 1600px;
   }
+
   .thin {
     max-width: 960px;
+  }
+
+  hr.post-end {
+    width: 30%;
   }
 }
 
@@ -564,6 +577,7 @@ figure.right {
   .hide-in-mobile, .site-nav.hide-in-mobile {
     display: none;
   }
+
   #menu-btn, #search-btn {
     display: inline-block;
   }
@@ -592,5 +606,9 @@ figure.right {
   figure.left, figure.right {
     float: unset;
     margin: 0;
+  }
+
+  hr.post-end {
+    width: 60%;
   }
 }
