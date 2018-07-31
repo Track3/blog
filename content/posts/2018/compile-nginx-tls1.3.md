@@ -20,7 +20,7 @@ TLS 1.3从2014年开始准备到现在，终于快要发布了。要说新版的
 
 ## TLS 1.3的现状
 
-虽然已经有很多网站用上了TLS 1.3，但是TLS 1.3标准并没有正式发布。目前最新草案是Draft 28。从https://github.com/tlswg/tls13-spec/releases上可以看到，Draft 28发布后好几个月都没有再发新版本了，所以我猜应该是差不多了。Nginx从1.13开始支持`TLSv1.3`的选项，然而是否能成功开启TLS 1.3还取决于编译Nginx时所用OpenSSL的版本。OpenSSL 1.1.1才能支持TLS 1.3，现在还是预览版，而且[OpenSSL的官方Wiki](https://wiki.openssl.org/index.php/TLS1.3)上写得很清楚：
+虽然已经有很多网站用上了TLS 1.3，但是TLS 1.3标准并没有正式发布。目前最新草案是Draft 28。从[https://github.com/tlswg/tls13-spec/releases](https://github.com/tlswg/tls13-spec/releases)上可以看到，Draft 28发布后好几个月都没有再发新版本了，所以我猜应该是差不多了。Nginx从1.13开始支持`TLSv1.3`的选项，然而是否能成功开启TLS 1.3还取决于编译Nginx时所用OpenSSL的版本。OpenSSL 1.1.1才能支持TLS 1.3，现在还是预览版，而且[OpenSSL的官方Wiki](https://wiki.openssl.org/index.php/TLS1.3)上写得很清楚：
 
 > OpenSSL 1.1.1 will not be released until (at least) TLSv1.3 is finalised. 
 
@@ -190,7 +190,7 @@ ssl_ciphers TLS13-AES-256-GCM-SHA384:TLS13-CHACHA20-POLY1305-SHA256:TLS13-AES-12
 ssl_prefer_server_ciphers on;
 ```
 
-要注意从1.15.0开始，`ssl on|off`这个选项已经废弃，现只需在`listen`选项中带上即可，即`listen 443 ssl http2`。
+要注意从1.15.0开始，`ssl on|off`这个选项已经废弃，现只需在`listen`选项中带上`ssl`即可，即`listen 443 ssl http2`。
 
 #### ngx_brotli相关
 
@@ -214,3 +214,5 @@ brotli_types text/plain text/css application/json application/x-javascript text/
 贴一下[SSL Labs](https://www.ssllabs.com/ssltest/analyze.html?d=www.xxxlbox.com)的检测结果，“Protocol Support”一项终于是满分了：
 
 ![SSL Labs测试结果](https://ojirvqiyr.qnssl.com/images/2018/img025.png)
+
+突然发现，即将发布的TLSv1.3加上2015年定稿的HTTP/2，这两个组合起来简直就是加强版的https啊！那些说https慢的人也该醒醒了吧。
