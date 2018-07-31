@@ -4,7 +4,6 @@ date: {{ .Date }}
 draft: true
 featuredImg: ""
 tags: 
-  - blog
-  - story
+  - tag
 ---
 
