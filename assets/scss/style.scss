@@ -411,8 +411,10 @@ hr.post-end {
   }
 
   img {
+    display: block;
     max-width: 100%;
     height: auto;
+    margin: auto;
     border-radius: 4px;
   }
 

@@ -14,6 +14,7 @@ comments: true
 * [Ozem's Blog](https://ozem.xyz/)
 * [远方的行者](https://webnotes.me/)
 * [果壳Sir](http://gksir.top/)
+* [柠檬不萌](http://hmian.online/)
 
 欢迎友链，友链原则：
 
