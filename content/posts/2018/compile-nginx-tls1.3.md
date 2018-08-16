@@ -28,6 +28,8 @@ TLS 1.3从2014年开始准备到现在，终于快要发布了。要说新版的
 
 再说说客户端这边。从Chrome 65开始，Chrome会默认开启并使用TLS 1.3 Draft 23，最新的Chrome 68则添加了Draft 28支持，在Chrome的试验性功能下可手动开启。Mozilla提供了一个TLS 1.3 Draft 28的测试服务器：[https://tls13.crypto.mozilla.org/](https://tls13.crypto.mozilla.org/)，如果你的浏览器能打开就说明支持最新的Draft 28。很重要的一点是，服务端与客户端支持的Draft版本必须一致，不然就会握手失败。最新的[OpenSSL_1_1_1-pre8](https://github.com/openssl/openssl/releases/tag/OpenSSL_1_1_1-pre8)支持26、27以及28版本，并不支持现在浏览器支持更普遍的Draft 23等版本，关于这个问题已经有补丁出来了，可以让OpenSSL支持旧的Draft版本。不过我只是想简单体验一下TLS 1.3，而且浏览器总会更新的，所以就不打这个补丁了……
 
+**更新**：TLSv1.3已于8月10日正式发布。Welcome, [RFC 8446](https://tools.ietf.org/html/rfc8446).
+
 ## 编译安装Nginx的过程
 
 我编译安装Nginx的过程基本就是按着[屈屈大佬的这篇文章](https://imququ.com/post/enable-tls-1-3.html)来的。屈哥这篇文章最后更新时间还是去年，那时OpenSSL还没有出1.1.1的预览版，只是在GitHub仓库中有一个draft-18分支，有些细节还是不一样的，所以我还是这里简单记录一下我的编译安装过程。
