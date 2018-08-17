@@ -129,6 +129,7 @@ table {
 
 .social-icons a {
   border: none;
+  margin: 0 .2em;
 }
 
 .feather {
@@ -162,6 +163,7 @@ table {
 
   .site-branding {
     display: inline-block;
+    margin-right: .8em;
     font-size: 1.2em;
   }
   .site-nav {
@@ -177,6 +179,10 @@ table {
 .hdr-icons {
   display: inline-block;
   font-size: 1.2em;
+
+  a {
+    margin-left: .3em;
+  }
 }
 
 .hdr-btn {
@@ -446,8 +452,12 @@ figure.right {
   line-height: normal;
   @include dimmed;
 
+  svg {
+    margin-right: .8em;
+  }
+
   .tag {
-    margin-right: .1em;
+    margin-right: .5em;
 
     &::before {
       content: "#"
