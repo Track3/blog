@@ -199,7 +199,7 @@ table {
 
 #mobile-menu {
   position: fixed;
-  bottom: 4.5em;
+  bottom: 4.8em;
   right: 1.5em;
   padding: .6em 1.8em;
   z-index: 1;
@@ -247,12 +247,17 @@ table {
 
   &.error-404 {
     flex-direction: row;
+    line-height: normal;
   }
 }
 
-.catguard img {
-  max-width: 250px;
-  height: auto;
+p.catguard {
+  margin: 0;
+
+  img {
+    max-width: 250px;
+    height: auto;
+  }
 }
 
 .banner-404 {
@@ -260,22 +265,23 @@ table {
 
   h1 {
     font-size: 3em;
-    margin: 0;
+    margin: .5rem 0 1rem;
   }
 
   p {
     margin-top: 0;
-    margin-bottom: .5em;
+    margin-bottom: .8em;
   }
 
   .btn-404 {
-    font-size: 1em;
+    font-size: .8em;
 
     a {
       display: inline-block;
-      border-bottom: 2px solid $theme;
-      padding: 1px 2px;
-      transition-property: background-color;
+      border: 2px solid $text;
+      border-radius: 5px;
+      padding: 5px;
+      transition-property: color, border-color;
       word-break: break-all;
 
       &:first-child {
@@ -283,7 +289,11 @@ table {
       }
 
       &:hover {
-        background-color: $theme;
+        border-color: #fff;
+      }
+
+      svg {
+        margin-right: .5em;
       }
     }
   }
@@ -514,7 +524,7 @@ figure.right {
 
   .vh {
 
-    border-bottom: 4px solid #5c6372;
+    border-bottom: transparent;
 
     .vquote {
       border-left: 3px dotted #979ca5;
@@ -623,5 +633,9 @@ figure.right {
 
   hr.post-end {
     width: 60%;
+  }
+
+  #mobile-menu {
+    right: 1.2em;
   }
 }

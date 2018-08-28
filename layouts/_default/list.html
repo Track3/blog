@@ -5,7 +5,7 @@
 {{ define "main" }}
 	<main class="site-main section-inner thin  animated fadeIn">
 		<h1>{{ .Title }}</h1>
-		{{- with .Content }}
+		{{- if .Content }}
 		<div class="content">
 			{{ .Content }}
 		</div>
