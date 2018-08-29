@@ -479,6 +479,27 @@ figure.right {
   }
 }
 
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5em;
+  font-size: 1.2em;
+
+  a {
+    flex-basis: 50%;
+    flex-grow: 1;
+    border-bottom: transparent;
+  }
+
+  .prev-post {text-align: left; padding-right: 5px;}
+  .next-post {text-align: right; padding-left: 5px;}
+
+  .post-nav-label {
+    font-size: .8em;
+    opacity: .8;
+  }
+}
+
 // Comments
 //
 #comments-loader {
