@@ -21,10 +21,11 @@ rssLimit = 10
   category = ""
 
 [params]
-  author         = "Track3"
-  dateform       = "Jan 2, 2006"
-  dateformFull   = "2006-01-02 15:04"
-  dateformShort  = "Jan 2"
+  author          = "Track3"
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04"
 
 [menu]
 

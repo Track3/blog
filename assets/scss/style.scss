@@ -466,15 +466,15 @@ figure.right {
     margin-right: .8em;
   }
 
+  a {
+    border: transparent;
+  }
+
   .tag {
     margin-right: .5em;
 
     &::before {
       content: "#"
-    }
-
-    a {
-      border: none;
     }
   }
 }
