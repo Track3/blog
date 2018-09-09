@@ -5,12 +5,11 @@
 
 /* Webkit Scrollbar Customize */
 ::-webkit-scrollbar {
-  width: .5em;
-  height: .5em;
-}
-::-webkit-scrollbar-track {
+  width: 8px;
+  height: 8px;
   background: $midnightblue;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #888;
   &:hover{
@@ -34,29 +33,32 @@ pre, code, pre tt {
 }
 
 pre {
+  max-height: 40em;
+  padding: .7em 1.1em;
+  overflow: auto;
+  font-size: .9em;
+  line-height: 1.5;
+  letter-spacing: normal;
+  white-space: pre-wrap;
+  word-wrap: break-word;
   color: #eee;
   background: $midnightblue;
-  padding: .8em;
-  border-radius: 5px;
-  display: block;
-  overflow: auto;
-  letter-spacing: normal;
-  line-height: 1.5;
+  border-radius: 4px;
   // -webkit-overflow-scrolling: touch;
 
   code {
-    display: inline-block;
+    padding: 0;
+    margin: 0;
     background: $midnightblue;
   }
 }
 
 code {
-  display: inline;
   color: #eee;
   background: $highlight-grey;
   border-radius: 3px;
-  padding: 0 2px;
-  margin: auto 4px;
+  padding: 0 3px;
+  margin: 0 4px;
   word-break: break-all;
   letter-spacing: normal;
 }
@@ -556,7 +558,7 @@ figure.right {
   .vcontent {
     padding: 0;
     code {
-      margin: auto 4px;
+      margin: 0 4px;
       color: #eee;
       background: $highlight-grey;
     }
@@ -565,7 +567,6 @@ figure.right {
       background: $midnightblue;
       padding: 1em 1.5em;
       border-radius: 5px;
-      display: block;
       code {
         background: $midnightblue;
       }
