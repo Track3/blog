@@ -25,8 +25,8 @@
 			</div>
 		</div>
 	</header>
-	<div id="mobile-menu" class="animated bounceInRight" style="display: none;">
-		<ul >
+	<div id="mobile-menu" class="animated" style="display: none;">
+		<ul>
 			{{- range .Site.Menus.main }}
 			<li><a href="{{ .URL }}">{{ .Name }}</a></li>
 			{{- end }}

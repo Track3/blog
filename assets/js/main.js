@@ -1,60 +1,9 @@
-// Auto Hide Header
+/**
+ * Utils
+ */
+
+// Load and run script via AJAX
 //
-let lastScrollPosition = window.pageYOffset;
-let header = document.getElementById('site-header');
-
-const autoHideHeader = () => {
-  let currentScrollPosition = window.pageYOffset;
-  if (currentScrollPosition > lastScrollPosition) {
-    header.classList.remove('slideInUp');
-    header.classList.add('slideOutDown');
-  }
-  else {
-    header.classList.remove('slideOutDown');
-    header.classList.add('slideInUp');
-  }
-  lastScrollPosition = currentScrollPosition;
-}
-
-// Mobile Menu Toggle
-//
-let mobileMenu = document.getElementById('mobile-menu');
-
-if (haveHeader == true) {
-  document.getElementById('menu-btn').addEventListener('click', () => {
-    if (mobileMenu.style.display == 'none') {
-      mobileMenu.style.display = 'block';
-    } else {
-      mobileMenu.classList.remove('bounceInRight');
-      mobileMenu.classList.add('bounceOutRight');
-      setTimeout(() => {
-        mobileMenu.style.display = 'none';
-        mobileMenu.classList.remove('bounceOutRight');
-        mobileMenu.classList.add('bounceInRight');
-      }, 750);
-    }
-  });
-}
-
-// Show Featured Image
-//
-const showFeaturedImg = () => {
-  document.getElementById('bg-img').classList.add('show-bg-img');
-}
-
-const showContent = () => {
-  document.getElementById('bg-img').classList.remove('show-bg-img');
-}
-
-//Load Comments
-//
-let commentsLoaded = false;
-let comments = document.getElementById('comments');
-let commentsLoader = document.getElementById('comments-loader');
-
-const avJsUrl = '//cdn1.lncld.net/static/js/3.0.4/av-min.js';
-const valineJsUrl = '//unpkg.com/valine@1.3.0/dist/Valine.min.js';
-
 const loadScript = (source, beforeEl, async = true, defer = true) => {
   return new Promise((resolve, reject) => {
     let script = document.createElement('script');
@@ -80,6 +29,84 @@ const loadScript = (source, beforeEl, async = true, defer = true) => {
     prior.parentNode.insertBefore(script, prior);
   });
 }
+
+// Throttle
+//
+const throttle = (callback, limit) => {
+  let timeoutHandler = null;
+  return () => {
+    if (timeoutHandler == null) {
+      timeoutHandler = setTimeout(() => {
+        callback();
+        timeoutHandler = null;
+      }, limit);
+    }
+  };
+};
+
+/**
+ * Functions
+ */
+
+// Auto Hide Header
+//
+let lastScrollPosition = window.pageYOffset;
+let header = document.getElementById('site-header');
+
+const autoHideHeader = () => {
+  let currentScrollPosition = window.pageYOffset;
+  if (currentScrollPosition > lastScrollPosition) {
+    header.classList.remove('slideInUp');
+    header.classList.add('slideOutDown');
+  }
+  else {
+    header.classList.remove('slideOutDown');
+    header.classList.add('slideInUp');
+  }
+  lastScrollPosition = currentScrollPosition;
+}
+
+// Mobile Menu Toggle
+//
+let mobileMenu = document.getElementById('mobile-menu');
+let mobileMenuVisible = false;
+
+const mobileMenuToggle = () => {
+  if (mobileMenuVisible == false) {
+    mobileMenu.style.animationName = 'bounceInRight';
+    mobileMenu.style.webkitAnimationName = 'bounceInRight';
+    mobileMenu.style.display = 'block';
+    mobileMenuVisible = true;
+  } else {
+    mobileMenu.style.animationName = 'bounceOutRight';
+    mobileMenu.style.webkitAnimationName = 'bounceOutRight'
+    mobileMenuVisible = false;
+  }
+}
+
+if (haveHeader == true) {
+  document.getElementById('menu-btn').addEventListener('click', mobileMenuToggle);
+}
+
+// Show Featured Image
+//
+const showFeaturedImg = () => {
+  document.getElementById('bg-img').classList.add('show-bg-img');
+}
+
+const showContent = () => {
+  document.getElementById('bg-img').classList.remove('show-bg-img');
+}
+
+//Load Comments
+//
+let commentsLoaded = false;
+let comments = document.getElementById('comments');
+let commentsLoader = document.getElementById('comments-loader');
+
+const avJsUrl = '//cdn1.lncld.net/static/js/3.0.4/av-min.js';
+const valineJsUrl = '//unpkg.com/valine@1.3.1/dist/Valine.min.js';
+
 const loadComments = () => {
   loadScript(avJsUrl).then(() => {
     loadScript(valineJsUrl).then(() => {
@@ -106,10 +133,12 @@ if ((haveComments == true) && (comments.offsetTop < window.innerHeight)) {
   commentsLoaded = true;
 }
 
-window.addEventListener('scroll', () => {
+window.addEventListener('scroll', throttle(() => {
   if (haveHeader == true) {
     autoHideHeader();
-    mobileMenu.style.display = 'none'; //Hide Mobile Menu When Scroll
+    if (mobileMenuVisible == true) {
+      mobileMenuToggle();
+    }
   }
 
   if ((haveComments == true) && (commentsLoaded == false)) {
@@ -119,4 +148,4 @@ window.addEventListener('scroll', () => {
       commentsLoaded = true;
     }
   }
-});
+}, 250));
