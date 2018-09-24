@@ -27,6 +27,18 @@ rssLimit = 10
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
 
+  [[params.social]]
+    name = "twitter"
+    url = "https://twitter.com/ThatTrack3"
+
+  [[params.social]]
+    name = "telegram"
+    url = "http://t.me/mytrack3"
+
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/Track3"
+
 [menu]
 
   [[menu.main]]

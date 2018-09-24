@@ -1,5 +1,5 @@
 {{ define "header" }}
-{{ partial "header.html" . }}
+{{ partialCached "header.html" . }}
 {{ end }}
 
 {{ define "main" }}
@@ -9,12 +9,12 @@
 			{{ .Content }}
 		</div>
 		{{- with .Params.comments }}
-		{{ partial "comments.html" . }}
+		{{ partialCached "comments.html" . }}
 		{{- end }}
 	</main>
 {{ end }}
 
 {{ define "footer" }}
-{{ partial "footer.html" . }}
+{{ partialCached "footer.html" . }}
 	<script>let haveHeader = true, haveComments ={{.Params.comments}};</script>
 {{ end }}

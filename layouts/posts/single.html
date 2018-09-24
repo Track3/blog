@@ -44,11 +44,11 @@
 			</a>
 			{{- end }}
 		</div>
-		{{ partial "comments.html" . }}
+		{{ partialCached "comments.html" . }}
 	</main>
 {{ end }}
 
 {{ define "footer" }}
-{{ partial "footer.html" . }}
+{{ partialCached "footer.html" . }}
 	<script>let haveHeader = true, haveComments = true;</script>
 {{ end }}

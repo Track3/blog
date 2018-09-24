@@ -1,5 +1,5 @@
 {{ define "header" }}
-{{ partial "header.html" . }}
+{{ partialCached "header.html" . }}
 {{ end }}
 
 {{ define "main" }}
@@ -29,6 +29,6 @@
 {{ end }}
 
 {{ define "footer" }}
-{{ partial "footer.html" . }}
+{{ partialCached "footer.html" . }}
 	<script>let haveHeader = true, haveComments = false;</script>
 {{ end }}
