@@ -12,7 +12,8 @@
 
 ::-webkit-scrollbar-thumb {
   background: #888;
-  &:hover{
+
+  &:hover {
     background: $text;
   }
 }
@@ -23,12 +24,18 @@ html {
   letter-spacing: .06em;
 }
 
-body, button, input, select, textarea {
+body,
+button,
+input,
+select,
+textarea {
   color: $text;
   font-family: $fonts;
 }
 
-pre, code, pre tt {
+pre,
+code,
+pre tt {
   font-family: $code-fonts;
 }
 
@@ -68,9 +75,11 @@ blockquote {
   margin: 1em;
   padding: 0 1em;
   font-style: italic;
+
   cite {
     font-weight: bold;
     font-style: normal;
+
     &::before {
       content: "—— ";
     }
@@ -107,7 +116,8 @@ table {
   width: 100%;
   max-width: 100%;
 
-  th, td {
+  th,
+  td {
     padding: 1.5%;
     border: 1px solid;
   }
@@ -185,7 +195,7 @@ table {
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
-  box-shadow: -1px -2px 3px rgba(0,0,0,0.45);
+  box-shadow: -1px -2px 3px rgba(0, 0, 0, 0.45);
   background-color: $dark-grey;
 }
 
@@ -204,10 +214,12 @@ table {
     margin-right: .8em;
     font-size: 1.2em;
   }
+
   .site-nav {
     display: inline-block;
     font-size: 1.1em;
     opacity: .8;
+
     a {
       margin-left: .8em;
     }
@@ -230,7 +242,8 @@ table {
   cursor: pointer;
 }
 
-#menu-btn, #search-btn {
+#menu-btn,
+#search-btn {
   display: none;
   cursor: pointer;
 }
@@ -242,7 +255,7 @@ table {
   padding: .6em 1.8em;
   z-index: 1;
   box-sizing: border-box;
-  box-shadow: -1px -2px 3px 0px rgba(0,0,0,0.45);
+  box-shadow: -1px -2px 3px 0px rgba(0, 0, 0, 0.45);
   background-color: $dark-grey;
 
   a {
@@ -345,7 +358,7 @@ p.catguard {
   font-size: 1.4em;
 }
 
-#home-nav a{
+#home-nav a {
     display: block;
     border: none;
     text-align: center;
@@ -357,7 +370,7 @@ p.catguard {
 .posts-group {
   display: flex;
 
-  .post-year{
+  .post-year {
     font-size: 1.6em;
     margin: 0.4em 2em 1em 0;
     @include dimmed;
@@ -472,7 +485,8 @@ hr.post-end {
     border-radius: 4px;
   }
 
-  ul, ol {
+  ul,
+  ol {
     padding: 0;
     margin-left: 1.8em;
   }
@@ -488,8 +502,10 @@ figure.right {
   margin-left: 1em;
 }
 
-.footnote-ref a, a.footnote-return {
+.footnote-ref a,
+a.footnote-return {
   border: none;
+
   &:hover {
     background: transparent;
   }
@@ -545,6 +561,7 @@ figure.right {
   text-align: center;
   font-size: 2.5em;
   margin-top: 2.5em;
+
   svg {
     animation-duration: 1.2s;
   }
@@ -568,6 +585,7 @@ figure.right {
 
   .vwrap {
     border: 2px solid $text;
+
     input {
       border-bottom-width: 2px;
     }
@@ -593,16 +611,19 @@ figure.right {
 
   .vcontent {
     padding: 0;
+
     code {
       margin: 0 4px;
       color: #eee;
       background: $highlight-grey;
     }
+
     pre {
       color: #eee;
       background: $midnightblue;
       padding: 1em 1.5em;
       border-radius: 5px;
+
       code {
         background: $midnightblue;
       }
@@ -656,11 +677,14 @@ figure.right {
 }
 
 @media (max-width: 760px) {
-  .hide-in-mobile, .site-nav.hide-in-mobile {
+
+  .hide-in-mobile,
+  .site-nav.hide-in-mobile {
     display: none;
   }
 
-  #menu-btn, #search-btn {
+  #menu-btn,
+  #search-btn {
     display: inline-block;
   }
 
@@ -674,6 +698,7 @@ figure.right {
       border-bottom: 2px dashed;
     }
   }
+
   #spotlight.error-404 {
     flex-direction: column;
     text-align: center;
@@ -685,7 +710,9 @@ figure.right {
 }
 
 @media (max-width: 520px) {
-  figure.left, figure.right {
+
+  figure.left,
+  figure.right {
     float: unset;
     margin: 0;
   }

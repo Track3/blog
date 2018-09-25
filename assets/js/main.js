@@ -18,7 +18,11 @@ const loadScript = (source, beforeEl, async = true, defer = true) => {
         script.onreadystatechange = null;
         script = undefined;
 
-        if (isAbort) { reject(); } else { resolve(); }
+        if (isAbort) {
+          reject();
+        } else {
+          resolve();
+        }
       }
     }
 
@@ -58,8 +62,7 @@ const autoHideHeader = () => {
   if (currentScrollPosition > lastScrollPosition) {
     header.classList.remove('slideInUp');
     header.classList.add('slideOutDown');
-  }
-  else {
+  } else {
     header.classList.remove('slideOutDown');
     header.classList.add('slideInUp');
   }
