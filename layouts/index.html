@@ -3,10 +3,8 @@
 		<div id="home-center">
 			<h1 id="home-title">Track3's Blog</h1>
 			{{- with .Site.Params.social }}
-			<div id="home-social" class="social-icons">
-				{{ range . -}}
-				<a href="{{ .url }}" target="_blank" rel="noopener"><span class="screen-reader-text">{{ .name }}</span>{{ partial "social-svg.html" . }}</a>
-				{{- end }}
+			<div id="home-social">
+				{{ partialCached "social-icons.html" . }}
 			</div>
 			{{- end }}
 			<nav id="home-nav" class="site-nav">

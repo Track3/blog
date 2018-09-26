@@ -89,14 +89,13 @@ blockquote {
 a {
   color: $text;
   text-decoration: none;
-  border-bottom: 1px solid $text;
-  transition-property: color, border-color;
-  transition-duration: .5s;
+  border: none;
+  transition-property: color;
+  transition-duration: .4s;
   transition-timing-function: ease-out;
 
   &:hover {
     color: #fff;
-    border-bottom: 1px solid #fff;
   }
 }
 
@@ -137,11 +136,6 @@ table {
 .thin {
   max-width: 720px;
   margin: auto;
-}
-
-.social-icons a {
-  border: none;
-  margin: 0 .2em;
 }
 
 .feather {
@@ -205,10 +199,6 @@ table {
   padding: .5em 0;
   font-size: 1.2rem;
 
-  a {
-    border: none;
-  }
-
   .site-branding {
     display: inline-block;
     margin-right: .8em;
@@ -231,7 +221,7 @@ table {
   font-size: 1.2em;
 
   a {
-    margin-left: .3em;
+    margin-left: .4em;
   }
 }
 
@@ -258,10 +248,6 @@ table {
   box-shadow: -1px -2px 3px 0px rgba(0, 0, 0, 0.45);
   background-color: $dark-grey;
 
-  a {
-    border: none;
-  }
-
   ul {
     list-style: none;
     margin: 0;
@@ -279,10 +265,6 @@ table {
 
   p {
     margin: 0;
-  }
-
-  a {
-    border: none;
   }
 }
 
@@ -365,11 +347,14 @@ p.catguard {
 #home-social {
   font-size: 1.4em;
   text-align: center;
+
+  a {
+    margin: 0 .2em;
+  }
 }
 
 #home-nav a {
   display: block;
-  border: none;
   text-align: center;
   margin-top: .5em;
 }
@@ -381,10 +366,6 @@ p.catguard {
 
   p {
     margin-top: 0;
-  }
-
-  a {
-    border: none;
   }
 }
 
@@ -411,6 +392,7 @@ p.catguard {
     margin-bottom: 10px;
     padding: 2px 4px;
     border-radius: 3px;
+    border-bottom: 1px $highlight-grey dashed;
     transition-property: background-color;
     transition-duration: .5s;
     transition-timing-function: ease-out;
@@ -419,7 +401,6 @@ p.catguard {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      border: none;
     }
 
     &:hover {
@@ -456,7 +437,7 @@ p.catguard {
 }
 
 #show-img-btn {
-  margin-right: .5em;
+  margin-right: .3em;
 }
 
 .post-header {
@@ -527,7 +508,8 @@ figure.right {
 
 .footnote-ref a,
 a.footnote-return {
-  border: none;
+  box-shadow: none;
+  text-decoration: underline;
 
   &:hover {
     background: transparent;
@@ -539,12 +521,16 @@ a.footnote-return {
   line-height: normal;
   @include dimmed;
 
-  svg {
-    margin-right: .8em;
+  p {
+    margin: .8em 0;
   }
 
   a {
-    border: transparent;
+    text-decoration: underline;
+  }
+
+  svg {
+    margin-right: .8em;
   }
 
   .tag {
@@ -565,7 +551,6 @@ a.footnote-return {
   a {
     flex-basis: 50%;
     flex-grow: 1;
-    border-bottom: transparent;
   }
 
   .next-post {text-align: left; padding-right: 5px;}
@@ -619,12 +604,11 @@ a.footnote-return {
     opacity: .5;
   }
 
-  .vat {
+  .vat:hover {
     color: $theme;
   }
 
   .vh {
-
     border-bottom: transparent;
 
     .vquote {
