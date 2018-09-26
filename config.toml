@@ -33,7 +33,7 @@ rssLimit = 10
 
   [[params.social]]
     name = "telegram"
-    url = "http://t.me/mytrack3"
+    url = "http://t.me/ThatTrack3"
 
   [[params.social]]
     name = "github"

@@ -280,10 +280,10 @@ table {
   p {
     margin: 0;
   }
-}
 
-#copyright a {
-  border: none;
+  a {
+    border: none;
+  }
 }
 
 // Spotlight
@@ -350,19 +350,42 @@ p.catguard {
   }
 }
 
+#home-center {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: center;
+}
+
 #home-title {
   margin: 0;
+  text-align: center;
 }
 
 #home-social {
   font-size: 1.4em;
+  text-align: center;
 }
 
 #home-nav a {
-    display: block;
+  display: block;
+  border: none;
+  text-align: center;
+  margin-top: .5em;
+}
+
+#home-footer {
+  text-align: center;
+  font-size: .6em;
+  line-height: normal;
+
+  p {
+    margin-top: 0;
+  }
+
+  a {
     border: none;
-    text-align: center;
-    margin-top: .5em;
+  }
 }
 
 // list.html

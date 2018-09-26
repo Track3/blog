@@ -1,18 +1,23 @@
 {{ define "main" }}
 	<div id="spotlight" class="animated fadeIn">
-		<h1 id="home-title">Track3's Blog</h1>
-		{{- with .Site.Params.social }}
-		<div id="home-social" class="social-icons">
-			{{ range . -}}
-			<a href="{{ .url }}" target="_blank" rel="noopener"><span class="screen-reader-text">{{ .name }}</span>{{ partial "social-svg.html" . }}</a>
+		<div id="home-center">
+			<h1 id="home-title">Track3's Blog</h1>
+			{{- with .Site.Params.social }}
+			<div id="home-social" class="social-icons">
+				{{ range . -}}
+				<a href="{{ .url }}" target="_blank" rel="noopener"><span class="screen-reader-text">{{ .name }}</span>{{ partial "social-svg.html" . }}</a>
+				{{- end }}
+			</div>
 			{{- end }}
+			<nav id="home-nav" class="site-nav">
+				{{- range .Site.Menus.main }}
+				<a href="{{ .URL }}">{{ .Name }}</a>
+				{{- end }}
+			</nav>
 		</div>
-		{{- end }}
-		<nav id="home-nav" class="site-nav">
-			{{- range .Site.Menus.main }}
-			<a href="{{ .URL }}">{{ .Name }}</a>
-			{{- end }}
-		</nav>
+		<div id="home-footer">
+			<p>&copy; 2018 <a href="https://www.xxxlbox.com">{{ .Site.Author.name }}</a>. Some Rights Reserved.</p>
+		</div>
 	</div>
 {{ end }}
 
