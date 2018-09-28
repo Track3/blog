@@ -1,27 +1,25 @@
 baseURL = "https://www.xxxlbox.com"
 languageCode = "zh-cn"
-DefaultContentLanguage = "zh"
 title = "Track3's Blog"
-copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
 
 enableGitInfo = true
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
 hasCJKLanguage = true
 rssLimit = 10
-
-[blackfriday]
-  hrefTargetBlank = true
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
 
 [author]
   name = "Track3"
+
+[blackfriday]
+  hrefTargetBlank = true
 
 [taxonomies]
   tag = "tags"
   category = ""
 
 [params]
-  author          = "Track3"
   dateform        = "Jan 2, 2006"
   dateformShort   = "Jan 2"
   dateformNum     = "2006-01-02"
