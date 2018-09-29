@@ -349,22 +349,28 @@ p.img-404 {
 #home-social {
   font-size: 1.4em;
   text-align: center;
+  opacity: .8;
 
   a {
     margin: 0 .2em;
   }
 }
 
-#home-nav a {
-  display: block;
-  text-align: center;
-  margin-top: .5em;
+#home-nav {
+  opacity: .8;
+
+  a {
+    display: block;
+    text-align: center;
+    margin-top: .5em;
+  }
 }
 
 #home-footer {
   text-align: center;
   font-size: .6em;
   line-height: normal;
+  @include dimmed;
 
   p {
     margin-top: 0;
@@ -375,38 +381,32 @@ p.img-404 {
 //
 .posts-group {
   display: flex;
+  margin-bottom: 1.9em;
+  line-height: normal;
 
   .post-year {
+    padding-top: 6px;
+    margin-right: 1.8em;
     font-size: 1.6em;
-    margin: 0.4em 2em 1em 0;
     @include dimmed;
   }
 
   .posts-list {
     flex-grow: 1;
-    margin: 16px 0;
+    margin: 0;
     padding: 0;
     list-style: none;
 
   }
 
   .post-item {
-    margin-bottom: 10px;
-    padding: 2px 4px;
-    border-radius: 3px;
     border-bottom: 1px $highlight-grey dashed;
-    transition-property: background-color;
-    transition-duration: .5s;
-    transition-timing-function: ease-out;
 
     a {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-    }
-
-    &:hover {
-      background-color: $highlight-grey;
+      padding: 12px 0;
     }
   }
 
@@ -699,12 +699,9 @@ a.footnote-return {
 
   .posts-group {
     display: block;
-    margin-bottom: 2.5em;
 
     .post-year {
-      margin-right: 0;
-      margin-bottom: 8px;
-      border-bottom: 2px dashed;
+      margin: -6px 0 4px;
     }
   }
 

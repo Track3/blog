@@ -25,6 +25,8 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
 
+  gitUrl = "https://github.com/Track3/blog/commit/"
+
   [[params.social]]
     name = "twitter"
     url = "https://twitter.com/ThatTrack3"
