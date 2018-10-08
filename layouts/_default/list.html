@@ -30,5 +30,8 @@
 
 {{ define "footer" }}
 {{ partialCached "footer.html" . }}
-	<script>let haveHeader = true, haveComments = false;</script>
+	<script>
+		let haveComments=false;
+		{{- with resources.Get "js/main.js" | minify }}{{ .Content | safeJS }}{{ end }}
+	</script>
 {{ end }}

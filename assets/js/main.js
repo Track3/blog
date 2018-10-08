@@ -87,9 +87,7 @@ const mobileMenuToggle = () => {
   }
 }
 
-if (haveHeader == true) {
-  document.getElementById('menu-btn').addEventListener('click', mobileMenuToggle);
-}
+document.getElementById('menu-btn').addEventListener('click', mobileMenuToggle);
 
 // Show Featured Image
 //
@@ -137,11 +135,9 @@ if ((haveComments == true) && (comments.offsetTop < window.innerHeight)) {
 }
 
 window.addEventListener('scroll', throttle(() => {
-  if (haveHeader == true) {
-    autoHideHeader();
-    if (mobileMenuVisible == true) {
-      mobileMenuToggle();
-    }
+  autoHideHeader();
+  if (mobileMenuVisible == true) {
+    mobileMenuToggle();
   }
 
   if ((haveComments == true) && (commentsLoaded == false)) {

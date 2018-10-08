@@ -16,5 +16,8 @@
 
 {{ define "footer" }}
 {{ partialCached "footer.html" . }}
-	<script>let haveHeader = true, haveComments ={{.Params.comments}};</script>
+	<script>
+		let haveComments={{.Params.comments}};
+		{{- with resources.Get "js/main.js" | minify }}{{ .Content | safeJS }}{{ end }}
+	</script>
 {{ end }}
