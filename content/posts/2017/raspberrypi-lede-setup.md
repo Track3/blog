@@ -2,7 +2,7 @@
 title: 变身智能路由器，树莓派配置LEDE
 date: 2017-05-29T17:25:44+08:00
 draft: false
-featuredImg: "https://ojirvqiyr.qnssl.com/images/2017/Buy_Pi_Cover-01.png"
+featuredImg: "https://assets.xxxlbox.com/images/2017/Buy_Pi_Cover-01.png"
 tags:
   - 折腾
   - 树莓派
@@ -12,7 +12,7 @@ tags:
 
 早就听说树莓派可以做路由器，可是网上总找不到详细的教程，[OpenWrt](https://openwrt.org/)官方也没有适配树莓派3B，我一直都没成功。直到有一天，我惊喜地发现OpenWrt的一个分支[LEDE](https://lede-project.org/)支持3B了，体验了一番，发现稳定性还有些问题，无法正常使用。最近发现LEDE有更新，试了一下，发现终于能用了。
 
-{{< figure src="https://ojirvqiyr.qnssl.com/images/2017/img005.gif" alt="techdata" caption="最先支持3B的一版是17.01.0，最近更新的版本是17.01." width="1232" height="171" >}}
+{{< figure src="https://assets.xxxlbox.com/images/2017/img005.gif" alt="techdata" caption="最先支持3B的一版是17.01.0，最近更新的版本是17.01." width="1232" height="171" >}}
 
 去[这里](https://lede-project.org/toh/views/toh_fwdownload?dataflt%5BBrand*~%5D=Raspberry+Pi+Foundation)下载树莓派LEDE固件。
 
@@ -22,25 +22,25 @@ tags:
 
 由于树莓派刷LEDE系统后默认IP地址是192.168.1.1，这会与一般路由器的网关地址冲突，所以如果我们要把树莓派直接连到现有路由器上，以实现同一个网段对树莓派的访问，首先就要更改路由器的LAN IP为192.168.1.0或其他你开心的数字（ 确保是同一个网段）。要是不想碰现有路由器，或者你现在并没有路由器（正准备用树莓派做一个），可以直接把树莓派用网线连接至电脑（LEDE的WLAN默认是关闭的，只能用有线；此时最好关闭电脑的WLAN）。我这里就是直接有线连接的。浏览器输入192.168.1.1进入LEDE的Luci web界面。
 
-![Luci web](https://ojirvqiyr.qnssl.com/images/2017/img006.gif)
+![Luci web](https://assets.xxxlbox.com/images/2017/img006.gif)
 
 设定好密码以后进入Network>Wireless，点击"Edit"。在下面的"Interface Configuration"中的"Wireless Security"选项卡中设定WIFI密码（加密方式选WPA2-PSK），然后启动WLAN网络。
 
-![Luci interfaces conf](https://ojirvqiyr.qnssl.com/images/2017/img007.gif)
+![Luci interfaces conf](https://assets.xxxlbox.com/images/2017/img007.gif)
 
 此时就可以拔下网线，用WIFI连接，腾出来的那个网口就是WAN口了，我们把宽带接上。再次打开LEDE的后台配置界面，进入Network>Interfaces，编辑"lan"的配置。在"Physical Settings"里面去掉"eth0"即物理有线网卡的勾。保存并应用。这样，就可以确保树莓派上的有线网口是WAN专用了。
 
-{{< figure src="https://ojirvqiyr.qnssl.com/images/2017/img008.gif" alt="Luci interface conf" caption="取消'eth0'的勾选" width="1454" height="589" >}}
+{{< figure src="https://assets.xxxlbox.com/images/2017/img008.gif" alt="Luci interface conf" caption="取消'eth0'的勾选" width="1454" height="589" >}}
 
 然后，我们回到"Interfaces"界面下，点击新建一个"wan"的配置，协议请根据自己的实际上网方式选择，我这里是PPPoE。下面的"Cover the following interface"选"eth0"。然后输入宽带账号密码就可以连接上网了。
 
-![Luci interfaces conf](https://ojirvqiyr.qnssl.com/images/2017/img009.gif)
+![Luci interfaces conf](https://assets.xxxlbox.com/images/2017/img009.gif)
 
-![Luci interfaces conf](https://ojirvqiyr.qnssl.com/images/2017/img010.gif)
+![Luci interfaces conf](https://assets.xxxlbox.com/images/2017/img010.gif)
 
 有了网络，首先我们可以安装Luci的中文语言包。进入System>Software，点击"Update lists"更新一下源。直接搜素"zh-cn"，安装"luci-i18n-base-zh-cn"。装完后进System设置，"Language and Style"里面选择中文就行了。
 
-![Luci software conf](https://ojirvqiyr.qnssl.com/images/2017/img011.gif)
+![Luci software conf](https://assets.xxxlbox.com/images/2017/img011.gif)
 
 此时还有一个问题。我用的16G的SD卡，在LEDE下大概只有200多MB可用，我们还需要手动为文件系统扩容。我是参照网上的教程，用的fdisk和resize2fs，然而失败了。最后resize2fs的时候时报错，目前还没解决。不过听说还有个工具叫GParted，但是没有Linux的环境，Windows下需要U盘启动，就没有试……
 

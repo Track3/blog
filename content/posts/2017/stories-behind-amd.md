@@ -3,7 +3,7 @@ title: 写在“锐龙”上市之际——AMD那段励志的故事
 date: 2017-02-24T20:27:13+08:00
 draft: false
 excerpt: 十年磨一剑，AMD Ryzen终于来了。可是AMD背后的故事，又有多少人了解？
-featuredImg: "https://ojirvqiyr.qnssl.com/images/2017/amd-ryzen.jpg"
+featuredImg: "https://assets.xxxlbox.com/images/2017/amd-ryzen.jpg"
 tags:
   - 杂谈
   - AMD
@@ -14,7 +14,7 @@ tags:
 
 作为A饭，怎按捺得住内心的激动！要知道在这以前的很长一段时间里，PC半导体行业都被牙膏厂Intel支配，想买到高性能的U，穷鬼也只好捡破烂了。真不敢相信，自己竟能在有生之年见证“农奴翻身把歌唱”之日！实测AMD Ryzen 7 1800X完全可以匹敌Intel Core i7-6900K，而且价格还是后者的一半（黑心牙膏厂一直都在利用垄断攫取暴利）。桌面CPU市场终于可以从Intel挤牙膏的节奏中走出来，风暴终于来临了！
 
-{{< figure src="https://ojirvqiyr.qnssl.com/images/2017/img001.jpg" alt="Ryzen发布" caption="Ryzen来了！" width="1022" height="611" >}}
+{{< figure src="https://assets.xxxlbox.com/images/2017/img001.jpg" alt="Ryzen发布" caption="Ryzen来了！" width="1022" height="611" >}}
 
 也许直到今天，我们谈起AMD时，一些人仍会感到陌生，就算知道这家企业，印象也往往是什么CPU性能不如Intel、GPU市场份额没NVIDIA高之类的。必须承认的是AMD曾一度一蹶不振，持续低迷了很长一段时间，曾经的辉煌已鲜有人知。下面我们就来谈谈AMD的发展历程吧，一段艰苦奋斗的励志故事。
 
@@ -24,7 +24,7 @@ tags:
 
 AMD成立于1969年，只比Intel晚一年，但它的基础却比Intel公司薄弱得多。公司的启动资金只有10万美元，刚成立时只能在创办人之一的约翰·凯利（John Carey）家中的客厅办公。除资金问题外，人才的缺乏也是AMD公司成立之初的一大棘手问题。Intel的两位创业者，诺伊斯（Robert Noyce）是集成电路的发明者之一，戈登·摩尔（Gordon Moore）则是著名的摩尔定律（Moore's Law）的提出者，他们在创办Intel前就在业界享有很高声望。而AMD就是一家普普通通的创业公司，不被大家看好，也很难吸引到人才。因此，AMD的创业初期可谓是困难重重。
 
-{{< figure src="https://ojirvqiyr.qnssl.com/images/2017/jerry-sanders.jpg" alt="AMD创始人桑德斯（Jerry Sanders）" caption="AMD重要的创始人桑德斯（Jerry Sanders）" width="1000" height="594" >}}
+{{< figure src="https://assets.xxxlbox.com/images/2017/jerry-sanders.jpg" alt="AMD创始人桑德斯（Jerry Sanders）" caption="AMD重要的创始人桑德斯（Jerry Sanders）" width="1000" height="594" >}}
 
 通过团队的不懈努力，几个月后，AMD推出了第一个产品——一个4位的寄存器Am9300。次年AMD推出出了自己的专利产品 Am2501逻辑计数器（Am2501 logic counter）, 取得了成功。之后AMD又相继开始生产晶圆，发行股票，在马来西亚建立生产基地，进入RAM市场……一直稳步发展。
 
@@ -36,7 +36,7 @@ Intel的先天优势使它在微处理器的研制上一开始就处于领先地
 
 Intel在1978年推出了世界上第一颗x86微型处理器。1981年，IBM设计出了自己的PC产品并希望使用Intel的x86处理器，同时要求将AMD作为第二供应商。Intel不想丢失像IBM这样大的订单，只好又一次与AMD谈判，签署了一个十年技术交换协定（10-year technology exchange agreement）。1984年AMD的销售额达到了创纪录的11亿美元，同年Intel的销售额是16亿美元，作为第二供应商，能取得这样的成绩是很不容易的。此时，Intel已经有点坐不住了，准备采取些行动，防患于未然。
 
-{{< figure src="https://ojirvqiyr.qnssl.com/images/2017/img002.jpg" alt="Intel i386 & AMD Am386" caption="Intel的i386和AMD的Am386" class="right" width="359" height="558" >}}
+{{< figure src="https://assets.xxxlbox.com/images/2017/img002.jpg" alt="Intel i386 & AMD Am386" caption="Intel的i386和AMD的Am386" class="right" width="359" height="558" >}}
 
 1985年Intel推出了32位处理器80386，但是当386芯片正式上市后，Intel却宣布将由自己独家制造。AMD公司和桑德斯本人都被Intel的出尔反尔激怒了,根据双方1981年签订的协议获得授权是理所当然的事情。在双方谈判无效的情况下，AMD在1987年一纸诉状将Intel告上了法庭。
 

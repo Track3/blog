@@ -44,7 +44,7 @@ tags:
 
 慢慢了解到“Headless CMS”这个东西。不知道大家还是否记得我以前写的那个《[Foxhound主题轻度体验](https://www.xxxlbox.com/posts/2017/try-wp-theme-foxhound/)》，那个主题就是利用了WordPress提供的REST API，页面并不是完全是由PHP生成，如果我没有记错的话应该是用了React。其实这样就是把WordPress当一个Headless CMS来用了。Headless CMS字面上理解就是“无头”的内容管理系统，CMS不再仅仅是对网页内容进行管理，更多的是提供一个通用的接口使各种平台可以获取数据。Headless CMS一般有两种：API Driven和Git-based，大家可以看看[headlesscms.org](https://headlesscms.org)，上面有很详细的介绍。Git-based这种不是以提供API为目的，它能做的是让你可以在浏览器里编辑文章，然后把更改提交到你的Git托管中。Git-based Headless CMS目前我试用过的有开源的[Netlify CMS](https://www.netlifycms.org/)和商业（但是免费）的[Forestry.io](https://forestry.io/)。效果都很好，手机上写博客也不是问题了。
 
-{{< figure src="https://ojirvqiyr.qnssl.com/images/2018/img021.png" alt="Headless CMS" caption="Headless CMS" width="1281" height="718">}}
+{{< figure src="https://assets.xxxlbox.com/images/2018/img021.png" alt="Headless CMS" caption="Headless CMS" width="1281" height="718">}}
 
 评论系统目前考虑过这些方案：
 
@@ -59,7 +59,7 @@ tags:
 
 原先打算等毕业了再换Hugo，因为那时腾讯云学生机就要到期了，换静态博客可以以较低的成本来运营，然而，我现在就忍不住了。前面提到的升级MySQL 8.0，性能翻一番的代价是内存占用也翻了一番。可以说，跑上一个WordPress站，Minecraft服务器都开不起了……是时候换了，真的该换了。
 
-![ssh top命令显示mysql内存占用](https://ojirvqiyr.qnssl.com/images/2018/img022.png)
+![ssh top命令显示mysql内存占用](https://assets.xxxlbox.com/images/2018/img022.png)
 
 细心的同学们应该发现本站的固定链接格式改了，从数字变成了文章名，就是为了提前适应博客系统的更换。新博客应该要不了多长时间了，敬请期待。
 

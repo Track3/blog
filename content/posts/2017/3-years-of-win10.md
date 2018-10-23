@@ -2,7 +2,7 @@
 title: 三年Win10，回首
 date: 2017-10-02T20:40:21+08:00
 draft: false
-featuredImg: "https://ojirvqiyr.qnssl.com/images/2017/win10.jpg"
+featuredImg: "https://assets.xxxlbox.com/images/2017/win10.jpg"
 tags:
   - 杂谈
   - Windows 
@@ -16,7 +16,7 @@ tags:
 
 很早就听到下一代Windows的传言，当时已经有了代号为Windows Threshold的系统运行截图泄露出来。于是大家就在猜测下一代Windows的正式命名，可以说大部分网友都认为是Windows 9，然而有意思的是，北京时间10月1日凌晨的那场面向媒体的小规模发布会上，Terry宣布下一代Windows将是Window 10。记得那时正是我高三的国庆节假期，早上起很早打开IT之家，Windows 10这几个字疯狂轰炸我的眼睛，然后评论都是什么“Windows9吧吧主哭晕在厕所”“软媒Win9之家哭晕在厕所”什么的，真的挺搞笑的，好吧，微软你赢了。
 
-![Windows10 name](https://ojirvqiyr.qnssl.com/images/2017/img017.jpg)
+![Windows10 name](https://assets.xxxlbox.com/images/2017/img017.jpg)
 
 我第一时间加入了Windows Insider Program，装双系统尝鲜了Win10的第一个对外公开的版本Build 9841。对这个版本第一感觉就是，真的太像Win8.1了。把开始屏幕移到了开始菜单里，Charms栏并未移除，用Win+C组合键依然可以呼出，桌面图标，任务栏也是Win8的风格。窗口边框变成了只有一像素宽，过渡动画也被移除，让人很不习惯。现在看来真的很难想象，Win10能变化成今天这个样子，是要动多少刀子啊……
 
@@ -28,7 +28,7 @@ tags:
 
 2015年1月22日北京时间凌晨1点（1月21日太平洋时间早上9点），微软将在总部雷德蒙德举行发布会，主题为“Windows 10: The Next Chapter”。这次发布会可以说干货满满：宣布Win10一年免费升级、发布Win10面向消费者的预览版、宣布手机版Windows 10、宣布全新浏览器斯巴达（Project Spartan）、Continuum概念的提出、Cortana来到PC，另外还有重磅硬件Hololens……发布会后推送的Build 9926开始菜单获得重新设计，任务栏也用上今天Win10上默认的黑色配色。可以说终于有个版本看上去比较像今天的Win10了。
 
-![Windows10 9926](https://ojirvqiyr.qnssl.com/images/2017/img018.jpg)
+![Windows10 9926](https://assets.xxxlbox.com/images/2017/img018.jpg)
 
 四月底的Build 2015大会上，斯巴达浏览器被正式命名为Microsoft Edge，同时，技术预览版也被改名为Insider Preview。我们已越来越能够感觉到，Win10离正式版越来越近了。
 
@@ -73,4 +73,4 @@ Win10的时代，我们不仅仅是见证人，从“Win9”突然变Win10，经
 
 > Windows 10 is not for all of us, but for each of us.
 
-![Ninja Cat](https://ojirvqiyr.qnssl.com/images/2017/img019.jpg)
+![Ninja Cat](https://assets.xxxlbox.com/images/2017/img019.jpg)

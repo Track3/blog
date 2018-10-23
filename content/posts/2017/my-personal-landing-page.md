@@ -9,7 +9,7 @@ tags:
 
 苦学Web前端，终于弄了个像样的网页出来。不废话，链接：[i.xxxlbox.com](https://i.xxxlbox.com)。
 
-![Landing页](https://ojirvqiyr.qnssl.com/images/2017/img020.jpg)
+![Landing页](https://assets.xxxlbox.com/images/2017/img020.jpg)
 
 我给这个页面起了个名字叫“The One”。为什么叫这个名字呢？说来真的巧，正想起名字的时候，听到了这首《[The One](http://music.163.com/#/song?id=469272617)》。虽然歌曲表达的意思跟页面内容完全无关，不过借用一下做个标题也无妨嘛……
 

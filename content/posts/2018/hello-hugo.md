@@ -56,7 +56,7 @@ https://stackoverflow.com/questions/16839698/jquery-getscript-alternative-in-nat
 
 这样写博客，体验已经很好了，我很满足。但是为了应急，我还是搞了一个可以在线编辑文章的管理“后台”。由于Netlify CMS暂时还不支持GitLab，于是我就用了Forestry.io。
 
-![Forestry.io CMS](https://ojirvqiyr.qnssl.com/images/2018/img023.png)
+![Forestry.io CMS](https://assets.xxxlbox.com/images/2018/img023.png)
 
 这个“后台”本质上是一个单页应用（SPA），它能与Forestry.io的后端API进行通信，在这里编辑好文章后，点击发布，Forestry.io会自动Commit并Push到GitLab，然后自动部署过程就开始了，美滋滋。事实上Forestry.io也带有自动构建并部署的功能，除了支持GitHub Pages、Amazon S3等静态文件托管之外，还支持FTP/SFTP。
 

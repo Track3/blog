@@ -211,10 +211,10 @@ brotli_types text/plain text/css application/json application/x-javascript text/
 
 由于现在几乎没有默认支持TLS 1.3 Draft 28的浏览器，所以现阶段用户访问本站基本上还是会用TLS 1.2。如果你用的是Chrome 68，现在就可以在地址栏中输入`chrome://flags/#tls13-variant`开启Draft 28体验一番。目前手机版Chrome还没更新，暂不支持Draft 28，而我又不想装金丝雀版，所以还在坐等中。我自己在PC版Chrome中的感觉是几乎没什么区别，可能是请求数少，本来就很快了吧……F12 Security选项卡下效果：
 
-![Chrome 68测试结果](https://ojirvqiyr.qnssl.com/images/2018/img024.png)
+![Chrome 68测试结果](https://assets.xxxlbox.com/images/2018/img024.png)
 
 贴一下[SSL Labs的检测结果](https://www.ssllabs.com/ssltest/analyze.html?d=www.xxxlbox.com)，“Protocol Support”一项终于是满分了：
 
-![SSL Labs测试结果](https://ojirvqiyr.qnssl.com/images/2018/img025.png)
+![SSL Labs测试结果](https://assets.xxxlbox.com/images/2018/img025.png)
 
 突然发现，即将发布的TLSv1.3加上2015年定稿的HTTP/2，这两个组合起来简直就是加强版的https啊！那些说https慢的人也该醒醒了吧。

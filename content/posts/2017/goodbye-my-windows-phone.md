@@ -2,7 +2,7 @@
 title: 别了，我的Windows Phone
 date: 2017-08-14T21:47:52+08:00
 draft: false
-featuredImg: "https://ojirvqiyr.qnssl.com/images/2017/lumia-830.jpg"
+featuredImg: "https://assets.xxxlbox.com/images/2017/lumia-830.jpg"
 tags:
   - 杂谈
   - Windows
@@ -18,19 +18,19 @@ Windows Phone死了。一年之前我是不信的，现在，我不得不信。
 
 故事还要从老妈的直板按键机说起。老妈使用多年的爱机因充电口松动导致充电易中断，严重影响正常使用，因此换机就提上了议事日程。正如很多的2G用户那样，老妈对手机的要求就是打电话发短信，所以她还是更倾向于用功能机。作为家里最懂手机的人，老妈换机就必然要参考我的意见，我当然是劝他换智能手机啦。用过几年Android的我深深感到此系统不适合她，又对WP系统“觊觎已久”，因此我最终还是说服了老妈，下单了Lumia 525。
 
-{{< figure src="https://ojirvqiyr.qnssl.com/images/2017/img012.jpg" alt="Lumia 525" caption="依然健在的Lumia 525" class="left" width="403" height="302" >}}
+{{< figure src="https://assets.xxxlbox.com/images/2017/img012.jpg" alt="Lumia 525" caption="依然健在的Lumia 525" class="left" width="403" height="302" >}}
 
 525使用Lumia Black固件，搭载WP8 GDR3系统。这个在今天看来边框能跑航母的手机，打开了我进入WP世界的大门。说实话，第一次打开这个系统的时候真被惊艳到了，系统丝滑流畅，相当跟手，磁贴界面在Android、iOS那种桌面图标面前显得是如此别致，过渡动画也是逼格满满。深入体验下来，微软服务用起来也是爽爽的，OneDrive与系统深度集成，跟电脑同步照片文件真心方便。WP系统比Android省心不少，老妈也能轻松上手了，还学会了玩微信……
 
 要说WP系统功能缺失其实我并没有明显的感觉，不过得知WP8.1有预览版的时候我还是忍不住就升级了。WP8.1的改进可以说是巨大的，一些一直遭受诟病的问题在WP8.1上得到了比较好的解决。WP8.1用起来很是舒服，我深深感到已经无法离开这个系统，因此我觉得，我的下一部手机将会是Windows Phone。
 
-{{< figure src="https://ojirvqiyr.qnssl.com/images/2017/img013.jpg" alt="Lumia 830 box" caption="只留下了盒子和一段美好的回忆" class="right" width="403" height="302" >}}
+{{< figure src="https://assets.xxxlbox.com/images/2017/img013.jpg" alt="Lumia 830 box" caption="只留下了盒子和一段美好的回忆" class="right" width="403" height="302" >}}
 
 真的不会再有哪个手机能像Lumia 830这样打动我了，从发布会看到手机的第一眼，我就被Lumia 830的工业设计深深吸引。高考过后，要入新机了，当然，我入了骚绿色的830。拿到手机后简直爱不释手，细细端详，这手机真的是不管从哪个角度看都好看啊，我不得不佩服老诺的设计功底（此时微软已经完成对诺基亚手机业务的收购，不过还是原班人马）。830使用Lumia Denim固件，系统为WP8.1 GDR1。之后的大学时光里，830一直都是我的主力机。应用生态方面，我也没什么好抱怨的，常用的应用都有了，就是有时一些应用的功能缺失会导致小尴尬，不过还在可以接受的范围内。
 
 本来想着WP我会一直用下去，没想到那天……暑假收假，火车凌晨四点半到榆次站，没公交，跟别人拼车，没想到手机竟落在车上。可能是我习惯调成震动的缘故，手机打了没人接，而且手机电量也不足了。回到宿舍定位，之后便杳无音讯——我的Lumia 830就这样丢了。
 
-{{< figure src="https://ojirvqiyr.qnssl.com/images/2017/img014.jpg" alt="一切信号停留于此" caption="一切信号停留于此" width="745" height="310" >}}
+{{< figure src="https://assets.xxxlbox.com/images/2017/img014.jpg" alt="一切信号停留于此" caption="一切信号停留于此" width="745" height="310" >}}
 
 没想到，我就此离开了WP。由于实在是找不到适合心仪的WP新机，就想先买个安卓用用。考虑到以后可能还是要用回WP，于是我就买了台便宜的魅蓝 note3。它陪伴了我接近一年的时间，万万没想到这一年的时间，微软一台新手机也没出。我对WP死心了，这个暑假，我在闲鱼上淘了个二手Nexus 6p，那么这也就意味着我短期不会再用回WP了。
 
@@ -46,7 +46,7 @@ WP系统真是个扶不起的阿斗，即使诺基亚倾其所有，光荣献身
 
 微软真的太能折腾了，战略决策失败。微软似乎一直没有为WP系统的发展规划好清晰的路线图。WM6到WP7，基本上就是推倒重来，这个我们暂且不提。WP8改用NT内核，一举废掉WP7的CE内核。系统的内核不同，这意味着什么？这意味着WP8与WP7几乎就是两个系统，虽然它们有着相似的系统界面。这一更改直接导致WP7设备与WP8系统无缘。可以说这是广大WPer最受伤的一次经历了吧。之后又发生了什么呢？普通用户这可能感觉不明显了，WP8.1推出了一个叫UAP(Universal Apps)的概念，就是通用应用，应用的格式从xpa改为appx，与桌面Windows实现了一定的意义上的共通。Windows 10年代，微软又提出UWP(Universal Windows Platform)的概念，即通用平台。UWP支持跨设备跨体系结构，一次编写，全平台运行。我承认，微软的这些理念都非常先进，都非常面向未来。然而，这每一次应用架构的更改，可都是需要开发者或多或少地重写代码啊，看看你的用户数量市场份额吧，有多少开发者愿意陪着你玩！每次，都是大折腾，一次两次也就算了，数数看这有几次了？
 
-{{< figure src="https://ojirvqiyr.qnssl.com/images/2017/img015.jpg" alt="Win的统一之路" caption="艰难的统一之路：从统一内核到统一应用再到统一平台" width="600" height="331" >}}
+{{< figure src="https://assets.xxxlbox.com/images/2017/img015.jpg" alt="Win的统一之路" caption="艰难的统一之路：从统一内核到统一应用再到统一平台" width="600" height="331" >}}
 
 ### “龟软”
 
