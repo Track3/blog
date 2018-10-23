@@ -11,11 +11,11 @@ tags:
 
 ## 前提
 
-此方法仅适用于在VPS上的部署，对于使用GitHub Pages或用Netlify部署的同学们并不适用。用各类Pages服务的直接本地生成然后Push到Git仓库就行，或者搞个CI自动构建；Netlify就不用多说，绑定账号，选定好Git Repo和分支就不用操心了，一切都是全自动的。
+本文记录的方法适用于有shell访问的云服务器或VPS上的部署，对于使用GitHub Pages或用Netlify部署的同学们，你们根本就不用这么折腾。用各类Pages服务的直接本地生成然后Push到Git仓库就行，或者搞个CI自动构建；Netlify就不用多说，绑定账号，选定好Git Repo和分支就不用操心了，一切都是全自动的。
 
-关于怎么搭建并配置Hugo站点这里就不做讨论，这篇文章默认你已经在本地安装好了环境，搭好了Hugo站点，并且，你已经把源放到远程Git代码托管了了，我本人用的是GitLab，后面也是以GitLab为例，当然，跟GitHub大同小异。
+关于怎么搭建并配置Hugo站点这里就不做讨论，这篇文章默认你已经在本地安装好了环境，搭好了Hugo站点，并且，你已经把源放到远程Git代码托管了，我本人用的是GitLab，后面也是以GitLab为例，当然，跟GitHub大同小异。
 
-另外，我服务器的系统是Debian 9，其他Linux发行版应该也是大同小异的。并且，以下操作我都是以root身份，如果你用的是非root账户，出现权限问题记得加`sudo`哦。
+另外，我服务器的系统是Debian 9，其他Linux发行版应该也是大同小异的。并且，以下操作我都是以root身份，如果你用非root账户，出现权限问题记得加`sudo`哦。
 
 ## 原理
 
@@ -24,8 +24,6 @@ tags:
 ## 操作
 
 ###  配置环境
-
-指VPS的环境配置。
 
 #### Git
 
@@ -130,7 +128,7 @@ handler.on('error', function (err) {
 
 handler.on('push', function (event) {
     let currentTime = new Date();
-    console.log('\n|--------------------> ' + currentTime.toLocaleString());
+    console.log('\n--> ' + currentTime.toLocaleString());
     console.log('Received a push event for %s to %s', event.payload.repository.name, event.payload.ref);
     exec('sh ./hugo-deploy.sh', function (error, stdout, stderr) {
         if(error) {
