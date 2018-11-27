@@ -14,13 +14,10 @@ comments: false
 * Telegram: [@ThatTrack3](http://t.me/ThatTrack3)
 * Twitter: [@ThatTrack3](https://twitter.com/ThatTrack3)
 * Weibo: [@Track-3](http://weibo.com/u/2350674815)
-* QQ: 5-7-2-3-0-3-7-1-2[^1]
-* Email: pengliabc(at)live.cn[^2]
+* QQ: 5-7-2-3-0-3-7-1-2
+* Email: pengliabc<at>live.cn
 
 也欢迎去这些地方和博主一起愉快地玩耍：
 
 * Steam: [@Track3](http://steamcommunity.com/profiles/76561198244211610)
 * 网易云: [@Track3](http://music.163.com/#/user/home?id=34583669)
-
-[^1]: 去掉“-”，原因你懂的。
-[^2]: 你懂的。
