@@ -15,7 +15,7 @@ comments: false
 * Twitter: [@ThatTrack3](https://twitter.com/ThatTrack3)
 * Weibo: [@Track-3](http://weibo.com/u/2350674815)
 * QQ: 5-7-2-3-0-3-7-1-2
-* Email: pengliabc<at>live.cn
+* Email: pengliabc{at}live.cn
 
 也欢迎去这些地方和博主一起愉快地玩耍：
 
