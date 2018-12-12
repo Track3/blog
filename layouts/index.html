@@ -14,7 +14,7 @@
 			</nav>
 		</div>
 		<div id="home-footer">
-			<p>&copy; 2018 <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>. Some Rights Reserved.</p>
+			<p>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>. Some Rights Reserved.</p>
 		</div>
 	</div>
 {{ end }}
