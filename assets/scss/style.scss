@@ -196,6 +196,7 @@ table {
 .hdr-wrapper {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: .5em 0;
   font-size: 1.2rem;
 
@@ -217,10 +218,14 @@ table {
 }
 
 .hdr-icons {
-  display: inline-block;
   font-size: 1.2em;
+}
 
-  a {
+.hdr-social {
+  display: inline-block;
+  margin-left: .6em;
+
+  &>a {
     margin-left: .4em;
   }
 }
@@ -232,9 +237,9 @@ table {
   cursor: pointer;
 }
 
-#menu-btn,
-#search-btn {
+#menu-btn {
   display: none;
+  margin-left: .4em;
   cursor: pointer;
 }
 
@@ -438,10 +443,6 @@ p.img-404 {
   opacity: 1;
 }
 
-#show-img-btn {
-  margin-right: .3em;
-}
-
 .post-header {
   margin-top: 1.2em;
   line-height: normal;
@@ -548,6 +549,7 @@ a.footnote-return {
   display: flex;
   justify-content: space-between;
   margin-top: 1.5em;
+  margin-bottom: 2.5em;
   font-size: 1.2em;
 
   a {
@@ -611,7 +613,7 @@ a.footnote-return {
   }
 
   .vh {
-    border-bottom: transparent;
+    border-bottom: none;
 
     .vquote {
       border-left: 3px dotted #979ca5;
