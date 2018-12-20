@@ -106,7 +106,7 @@ let comments = document.getElementById('comments');
 let commentsLoader = document.getElementById('comments-loader');
 
 const avJsUrl = '//cdn1.lncld.net/static/js/3.0.4/av-min.js';
-const valineJsUrl = '//unpkg.com/valine@1.3.4/dist/Valine.min.js';
+const valineJsUrl = 'https://cdn.jsdelivr.net/npm/valine@1.3.4/dist/Valine.min.js';
 
 const loadComments = () => {
   loadScript(avJsUrl).then(() => {
