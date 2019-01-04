@@ -2,7 +2,6 @@
 title: "一个Hugo主题：Hermit"
 date: 2018-11-27T14:49:11+08:00
 draft: false
-featuredImg: ""
 tags:
   - Hugo
   - 折腾

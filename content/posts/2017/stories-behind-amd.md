@@ -3,7 +3,9 @@ title: 写在“锐龙”上市之际——AMD那段励志的故事
 date: 2017-02-24T20:27:13+08:00
 draft: false
 excerpt: 十年磨一剑，AMD Ryzen终于来了。可是AMD背后的故事，又有多少人了解？
-featuredImg: "https://assets.xxxlbox.com/images/2017/amd-ryzen.jpg"
+toc: true
+images:
+  - https://assets.xxxlbox.com/images/2017/amd-ryzen.jpg
 tags:
   - 杂谈
   - AMD
@@ -36,7 +38,7 @@ Intel的先天优势使它在微处理器的研制上一开始就处于领先地
 
 Intel在1978年推出了世界上第一颗x86微型处理器。1981年，IBM设计出了自己的PC产品并希望使用Intel的x86处理器，同时要求将AMD作为第二供应商。Intel不想丢失像IBM这样大的订单，只好又一次与AMD谈判，签署了一个十年技术交换协定（10-year technology exchange agreement）。1984年AMD的销售额达到了创纪录的11亿美元，同年Intel的销售额是16亿美元，作为第二供应商，能取得这样的成绩是很不容易的。此时，Intel已经有点坐不住了，准备采取些行动，防患于未然。
 
-{{< figure src="https://assets.xxxlbox.com/images/2017/img002.jpg" alt="Intel i386 & AMD Am386" caption="Intel的i386和AMD的Am386" class="right" width="359" height="558" >}}
+{{< figure src="https://assets.xxxlbox.com/images/2017/img002.jpg" alt="Intel i386 & AMD Am386" caption="Intel的i386和AMD的Am386" class="left" width="359" height="558" >}}
 
 1985年Intel推出了32位处理器80386，但是当386芯片正式上市后，Intel却宣布将由自己独家制造。AMD公司和桑德斯本人都被Intel的出尔反尔激怒了,根据双方1981年签订的协议获得授权是理所当然的事情。在双方谈判无效的情况下，AMD在1987年一纸诉状将Intel告上了法庭。
 
@@ -81,7 +83,7 @@ AMD和Intel的官司从1987年开始，一直拖到1995年才最终结束。最�
 
 英特尔：不知怎么的7nm工艺突然就成熟了，我们决定8代酷睿直接上7nm！
 
-## 鸣谢-Acknowledgements
+## 参考
 
 本文参考并引用了大量资料以及一些大神的帖子，现将主要的贴出：
 

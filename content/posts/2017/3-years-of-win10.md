@@ -2,7 +2,9 @@
 title: 三年Win10，回首
 date: 2017-10-02T20:40:21+08:00
 draft: false
-featuredImg: "https://assets.xxxlbox.com/images/2017/win10.jpg"
+toc: true
+images:
+  - https://assets.xxxlbox.com/images/2017/win10.jpg
 tags:
   - 杂谈
   - Windows 

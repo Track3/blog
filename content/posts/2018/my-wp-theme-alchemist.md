@@ -3,6 +3,7 @@ title: 本人首个原创主题——Alchemist
 date: 2018-02-27T19:56:25+08:00
 draft: false
 excerpt: 用WordPress有一年多了，我一直都用的是别人的主题。考虑了很长时间，终于下定决心要写一款主题。
+toc: true
 tags:
   - 折腾
   - WordPress

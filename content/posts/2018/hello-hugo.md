@@ -2,6 +2,7 @@
 title: "Hello Hugo"
 date: 2018-05-07T22:24:24+08:00
 draft: false
+toc: true
 tags: 
   - Hugo
   - 折腾

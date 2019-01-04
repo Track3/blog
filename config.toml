@@ -1,5 +1,5 @@
 baseURL = "https://www.xxxlbox.com"
-languageCode = "zh-cn"
+languageCode = "zh-hans"
 title = "Track3's Blog"
 
 enableGitInfo = true

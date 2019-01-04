@@ -527,8 +527,8 @@ hr.post-end {
     margin: .8em 0;
   }
 
-  a {
-    border-bottom: 1px solid;
+  a:hover {
+    border-bottom: 2px solid $theme;
   }
 
   svg {
@@ -556,6 +556,7 @@ hr.post-end {
   margin-bottom: .5em;
   font-size: .8em;
   font-weight: bold;
+  opacity: .8;
 }
 
 #TableOfContents {
@@ -576,7 +577,7 @@ hr.post-end {
   }
 
   a:hover {
-    border-bottom: $theme 1px solid;
+    border-bottom: $theme 2px solid;
   }
 }
 
