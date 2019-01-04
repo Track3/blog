@@ -1,10 +1,20 @@
+{{ define "head" }}
+	{{ if .Params.featuredImg -}}
+	<style>.bg-img {background-image: url('{{.Params.featuredImg | absURL}}');}</style>
+	{{- else if .Params.images -}}
+		{{- range first 1 .Params.images -}}
+		<style>.bg-img {background-image: url('{{. | absURL}}');}</style>
+		{{- end -}}
+	{{- end -}}
+{{ end }}
+
 {{ define "header" }}
 {{ partial "header.html" . }}
 {{ end }}
 
 {{ define "main" }}
-	{{- with .Params.featuredImg }}
-		<div id="bg-img" class="bg-img" style="background-image: url({{.}});" onclick="showContent()"></div>
+	{{- if (or .Params.images .Params.featuredImg) }}
+	<div class="bg-img"></div>
 	{{- end }}
 	<main class="site-main section-inner animated fadeIn faster">
 		<article class="thin">
@@ -32,6 +42,12 @@
 				{{- end }}
 			</footer>
 		</article>
+		{{- if .Params.toc }}
+		<aside id="toc">
+			<div class="toc-title">Table of Contents</div>
+			{{ .TableOfContents }}
+		</aside>
+		{{- end }}
 		<div class="post-nav thin">
 			{{- with .NextInSection }}
 			<a class="next-post" href="{{ .Permalink }}">
@@ -50,8 +66,4 @@
 
 {{ define "footer" }}
 {{ partialCached "footer.html" . }}
-	<script>
-		let haveComments=true;
-		{{- with resources.Get "js/main.js" | minify }}{{ .Content | safeJS }}{{ end }}
-	</script>
 {{ end }}

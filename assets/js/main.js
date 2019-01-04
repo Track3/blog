@@ -48,14 +48,22 @@ const throttle = (callback, limit) => {
   };
 };
 
+// addEventListener Helper
+//
+const listen = (ele, e, callback) => {
+  if (document.querySelector(ele) !== null) {
+    document.querySelector(ele).addEventListener(e, callback);
+  }
+}
+
 /**
  * Functions
  */
 
 // Auto Hide Header
 //
-let lastScrollPosition = window.pageYOffset;
 let header = document.getElementById('site-header');
+let lastScrollPosition = window.pageYOffset;
 
 const autoHideHeader = () => {
   let currentScrollPosition = window.pageYOffset;
@@ -71,10 +79,10 @@ const autoHideHeader = () => {
 
 // Mobile Menu Toggle
 //
-let mobileMenu = document.getElementById('mobile-menu');
 let mobileMenuVisible = false;
 
-const mobileMenuToggle = () => {
+const toggleMobileMenu = () => {
+  let mobileMenu = document.getElementById('mobile-menu');
   if (mobileMenuVisible == false) {
     mobileMenu.style.animationName = 'bounceInRight';
     mobileMenu.style.webkitAnimationName = 'bounceInRight';
@@ -87,16 +95,20 @@ const mobileMenuToggle = () => {
   }
 }
 
-document.getElementById('menu-btn').addEventListener('click', mobileMenuToggle);
-
-// Show Featured Image
+// Featured Image Toggle
 //
-const showFeaturedImg = () => {
-  document.getElementById('bg-img').classList.add('show-bg-img');
+const showImg = () => {
+  document.querySelector('.bg-img').classList.add('show-bg-img');
 }
 
-const showContent = () => {
-  document.getElementById('bg-img').classList.remove('show-bg-img');
+const hideImg = () => {
+  document.querySelector('.bg-img').classList.remove('show-bg-img');
+}
+
+// ToC Toggle
+//
+const toggleToc = () => {
+  document.getElementById('toc').classList.toggle('show-toc');
 }
 
 //Load Comments
@@ -115,8 +127,7 @@ const loadComments = () => {
         el: '#comments',
         appId: 'QfBLso0johYg7AXtV9ODU6FC-gzGzoHsz',
         appKey: 'J1tpEEsENa48aLVsPdvwMP14',
-        placeholder: '说点什么吧',
-        verify: true
+        placeholder: '说点什么吧'
       });
       commentsLoader.style.display = 'none';
     }, () => {
@@ -127,24 +138,34 @@ const loadComments = () => {
   });
 }
 
-// Load comments if the window is not scrollable
-if ((haveComments == true) && (comments.offsetTop < window.innerHeight)) {
-  commentsLoader.style.display = 'block';
-  loadComments();
-  commentsLoaded = true;
+
+if (header !== null) {
+  listen('#menu-btn', "click", toggleMobileMenu);
+  listen('#toc-btn', "click", toggleToc);
+  listen('#img-btn', "click", showImg);
+  listen('.bg-img', "click", hideImg);
+
+  // Load comments if the window is not scrollable
+  if ((comments !== null) && (comments.offsetTop < window.innerHeight)) {
+    commentsLoader.style.display = 'block';
+    loadComments();
+    commentsLoaded = true;
+  }
+
+  window.addEventListener('scroll', throttle(() => {
+    autoHideHeader();
+    if (mobileMenuVisible == true) {
+      mobileMenuToggle();
+    }
+
+    if ((comments !== null) && (commentsLoaded == false)) {
+      if (window.pageYOffset + window.innerHeight > comments.offsetTop) {
+        commentsLoader.style.display = 'block';
+        loadComments();
+        commentsLoaded = true;
+      }
+    }
+  }, 250));
 }
 
-window.addEventListener('scroll', throttle(() => {
-  autoHideHeader();
-  if (mobileMenuVisible == true) {
-    mobileMenuToggle();
-  }
 
-  if ((haveComments == true) && (commentsLoaded == false)) {
-    if (window.pageYOffset + window.innerHeight > comments.offsetTop) {
-      commentsLoader.style.display = 'block';
-      loadComments();
-      commentsLoaded = true;
-    }
-  }
-}, 250));
