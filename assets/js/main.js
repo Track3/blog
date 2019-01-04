@@ -155,7 +155,7 @@ if (header !== null) {
   window.addEventListener('scroll', throttle(() => {
     autoHideHeader();
     if (mobileMenuVisible == true) {
-      mobileMenuToggle();
+      toggleMobileMenu();
     }
 
     if ((comments !== null) && (commentsLoaded == false)) {
