@@ -8,6 +8,7 @@ pygmentsUseClasses  = true
 hasCJKLanguage = true
 rssLimit = 10
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
+googleAnalytics = "UA-125057333-1"
 
 [author]
   name = "Track3"
