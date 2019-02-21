@@ -18,7 +18,6 @@ googleAnalytics = "UA-125057333-1"
 
 [taxonomies]
   tag = "tags"
-  category = ""
 
 [params]
   dateform        = "Jan 2, 2006"
