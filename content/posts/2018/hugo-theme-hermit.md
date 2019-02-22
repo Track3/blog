@@ -13,6 +13,7 @@ tags:
 
 * Hugo官方主题站主页：https://themes.gohugo.io/hermit/
 * GitHub项目地址：https://github.com/Track3/hermit
+* 演示：https://hugo-theme-hermit.netlify.com
 
 在《[Hello Hugo](/posts/2018/hello-hugo)》这篇文章中我们已经聊了不少关于这个主题的话题，所以这里我就简单总结一下，列一下主要特点：
 
@@ -34,16 +35,16 @@ tags:
 
 值得注意的是本站目前正在使用的主题并不完全就是Hermit主题，Hermit主题是本站代码修改得到的。当然，页面设计什么的都一样，而且，本站的所有源代码都可以在GitHub上找到[^3]。精力所限，我在短时间内应该不会换主题了，所以这个项目会长期维护下去，以我自己的设想以及GitHub上Issue里的建议来看，这个主题接下来要做的大概有：
 
-* 点击底栏空白处返回顶部，或者加一个返回顶部按钮；
-* 文章目录TOC；
-* 底栏中加入搜索；
-* i18n支持，让主题中的字符串可翻译；
-* 标签页模板（即“tags”页面）；
+* [ ] 点击底栏空白处返回顶部，或者加一个返回顶部按钮；
+* [x] 文章目录TOC；
+* [ ] 底栏中加入搜索；
+* [x] i18n支持，让主题中的字符串可翻译；
+* [ ] 标签页模板（即“tags”页面）；
 
 这些只是设想，不保证都能实现，当然欢迎各种形式的Pull Request。
 
 截至本文章发布时，项目已经收到了11颗Star，作为一只萌新，还是很受鼓舞的，尤其是考虑到主题除了被Hugo官方Twitter推广过之外几乎没有任何宣传。说实话，我严重怀疑带有如此强烈个人喜好的主题会有人真正拿去使用，更多希望的是能够抛砖引玉，提供一种思路和参考吧。
 
 [^1]: https://gohugo.io/hugo-pipes/
-[^2]: 演示效果见 https://themes.gohugo.io//theme/hermit/posts/post-with-featured-image/
+[^2]: 演示效果见 https://hugo-theme-hermit.netlify.com/posts/post-with-featured-image/
 [^3]: https://github.com/Track3/blog
