@@ -1,9 +1,9 @@
 {{ define "head" }}
 	{{ if .Site.Params.bgImg -}}
-	<style>.bg-img {background-image: url('{{.Site.Params.bgImg | absURL}}');}</style>
+	<style>.bg-img {background-image: url('{{.Site.Params.bgImg | absURL}}');opacity: .03;}</style>
 	{{- else if .Site.Params.images -}}
 		{{- range first 1 .Site.Params.images -}}
-		<style>.bg-img {background-image: url('{{. | absURL}}');}</style>
+		<style>.bg-img {background-image: url('{{. | absURL}}');opacity: .03;}</style>
 		{{- end -}}
 	{{- end -}}
 {{ end }}
