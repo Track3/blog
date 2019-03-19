@@ -32,8 +32,11 @@
 	{{ block "header" . -}}{{ end -}}
 	{{ block "main" . -}}{{ end -}}
 	{{ block "footer" . -}}{{ end }}
-	{{ $script := resources.Get "js/main.js" | minify | fingerprint -}}
+	{{ $mainjs := resources.Get "js/main.js" -}}
+	{{ $quicklinkjs := resources.Get "js/quicklink.umd.js" -}}
+	{{ $script := slice $mainjs $quicklinkjs | resources.Concat "js/bundle.js" | minify | fingerprint -}}
 	<script src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }}></script>
+	<script>quicklink();</script>
 	{{ template "_internal/google_analytics_async.html" . }}
 </body>
 
