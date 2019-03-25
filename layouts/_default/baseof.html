@@ -36,7 +36,11 @@
 	{{ $quicklinkjs := resources.Get "js/quicklink.umd.js" -}}
 	{{ $script := slice $mainjs $quicklinkjs | resources.Concat "js/bundle.js" | minify | fingerprint -}}
 	<script src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }}></script>
-	<script>quicklink();</script>
+	<script>
+		quicklink({
+			ignores: [uri => uri.includes('index.xml')]
+		});
+	</script>
 	{{ template "_internal/google_analytics_async.html" . }}
 </body>
 
