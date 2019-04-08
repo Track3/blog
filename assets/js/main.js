@@ -118,7 +118,7 @@ let comments = document.getElementById('comments');
 let commentsLoader = document.getElementById('comments-loader');
 
 const avJsUrl = '//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js';
-const valineJsUrl = 'https://cdn.jsdelivr.net/npm/valine@1.3.4/dist/Valine.min.js';
+const valineJsUrl = 'https://cdn.jsdelivr.net/npm/valine@1.3.6/dist/Valine.min.js';
 
 const loadComments = () => {
   loadScript(avJsUrl).then(() => {
@@ -151,6 +151,12 @@ if (header !== null) {
     loadComments();
     commentsLoaded = true;
   }
+
+  document.querySelectorAll('.post-year').forEach((ele) => {
+    ele.addEventListener('click', () => {
+      window.location.hash = '#' + ele.id;
+    });
+  });
 
   window.addEventListener('scroll', throttle(() => {
     autoHideHeader();
