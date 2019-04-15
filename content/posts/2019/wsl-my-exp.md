@@ -72,7 +72,7 @@ alias start="cmd.exe /c start"
 
 字体我用的是[更纱黑体（Sarasa Gothic）](https://github.com/be5invis/Sarasa-Gothic)，是一套支持中文的等宽字体。值得注意的是conhost对字体极为挑剔，要是你选的字体兼容性不够，当你在WSL下运行`nano`等命令的时候字体会变成新宋体。配色的话，微软出了一个官方工具[ColorTool.exe](https://github.com/Microsoft/console)，支持直接读取iTerm2的`.itermcolors`格式配置文件，可以让你方便地改终端配色。配色直接去[Iterm2-color-schemes](https://iterm2colorschemes.com/)打包下载即可，我用的是`Neutron`。配置了90%的透明度，再加上从Win10 19H1开始支持的全局暗色主题，最终效果如下：
 
-![Win10 19H1系统默认终端](https://assets.xxxlbox.com/images/2019/img027.jpg)
+{{< figure src="https://assets.xxxlbox.com/images/2019/img027.jpg" alt="Win10 19H1系统自带终端" caption="Win10 19H1系统自带终端" class="big" width="1455" height="919" >}}
 
 说不上好看，但是最起码不像以前那样丑得刺痛双眼。如果说这个外观还有什么要亟待改进的，我认为就是内边距了，用CSS里的话说就是`padding`。Win10窗口没有像Win7、Win8那样较宽的边框，最终终端的文字是挨着边显示的，总让人觉得有点不舒服。但是总体上来说，新版Win10终端已经是能让我满意了（差强人意），毕竟性能真的无敌，启动贼快……
 
@@ -80,7 +80,7 @@ alias start="cmd.exe /c start"
 
 说完了自带终端，再来聊一下第三方终端模拟器。[Fluent Terminal](https://github.com/felixse/FluentTerminal)绝对是我心目中Windows上最漂亮的终端，它应用了微软流畅设计风格，亚克力半透明效果真的很赞，我个人认为这就是未来Win10上终端该有的样子。
 
-![Fluent Terminal](https://assets.xxxlbox.com/images/2019/img028.jpg)
+{{< figure src="https://assets.xxxlbox.com/images/2019/img028.jpg" alt="Fluent Terminal" caption="Fluent Terminal" class="big" width="1357" height="888" >}}
 
 但是目前Fluent Terminal并不是十分完善，有些小bug。它基于UWP构建，但是因闪退问题没能通过应用商店的测试而无法上架，所以安装起来相对要麻烦一点。你需要导入作者的证书，然后开启Win10旁加载模式，不过作者有提供一键安装脚本并且支持从[Chocolatey](https://chocolatey.org/)安装。除了Fluent Terminal之外，[Terminus](https://github.com/Eugeny/terminus)也非常好用，是我现在的主力终端模拟器，ssh模块用起来很方便。
 
@@ -123,7 +123,7 @@ Docker利用了Linux kernel的一些比较高端的特性，这些特性WSL还�
 
 ### 其他问题
 
-目前就想到一个，hosts文件的共享。Windows的hosts文件位于`C:\Windows\System32\drivers\etc\hosts`，Linux的位于`/etc/hosts`，默认情况下，WSL会自动用Windows的hosts文件生成Linux的hosts，所以如果你要改WSL中的hosts文件，可以直接改Win下的，让后注销重登即可。如果你想让Win与Linux的hosts不同，你可以编辑`/ect/wsl.conf`加上这些：
+关于hosts文件的共享的问题。Windows的hosts文件位于`C:\Windows\System32\drivers\etc\hosts`，Linux的位于`/etc/hosts`，默认情况下，WSL会自动用Windows的hosts文件生成Linux的hosts，所以如果你要改WSL中的hosts文件，可以直接改Win下的，让后注销重登即可。如果你想让Win与Linux的hosts不同，你可以编辑`/ect/wsl.conf`加上这些：
 
 ```ini
 [network]
@@ -140,9 +140,9 @@ generateHosts = false
 
 诚然，WSL还有许多不完善的地方，比如I/O性能不够理想，直观感受就是`npm install`的时候有点慢，更重要的是Windows上的第三方软件支持度还不够，有时候无法避免地要在Win与Linux两侧都装上某些软件。不过我真的很期待WSL的进一步完善，什么时候能直接跑docker那就真的nb了。我的期待总结起来就是：
 
-* 完善内核
-* 提高性能
-* 第三方应用支持
+* 完善内核；
+* 提高性能；
+* 第三方应用支持。
 
 ## 相关参考
 
@@ -153,6 +153,6 @@ generateHosts = false
 
 
 [^1]: 这篇文章起草于2019年1月5日。
-[^2]: 来源于https://stackoverflow.com/questions/44245721/launching-explorer-from-wsl。
-[^3]:以我自己的亲身体验来看，在19H1以前，改“默认值”没用，保存重开还是原样，只能改“属性”才行。也不清楚这是真的有bug还是我的打开方式不对。
-[^4]: https://florianbrinkmann.com/en/3436/ssh-key-and-the-windows-subsystem-for-linux/#comment-3109
+[^2]: 来源于<https://stackoverflow.com/questions/44245721/launching-explorer-from-wsl>。
+[^3]: 以我自己的亲身体验来看，在19H1以前，改“默认值”没用，保存重开还是原样，只能改“属性”才行。也不清楚这是真的有bug还是我的打开方式不对。
+[^4]: <https://florianbrinkmann.com/en/3436/ssh-key-and-the-windows-subsystem-for-linux/#comment-3109>。
