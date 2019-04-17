@@ -48,13 +48,13 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ### shell
 
-WSL的前身就叫Bash on Windows，可见其重要目标之一就是提供一个类似Linux bash的shell体验。当然，除了默认的bash，你完全可以安装zsh或者fish使用。oh-my-zsh是一个很棒的`zsh`配置管理工具，它可以为你提供一个开箱即用的zsh环境，而且有很多主题插件可以使用。在WSL上运行oh-my-zsh跟在Linux或者Mac上并无太大区别，值得注意的是oh-my-zsh本身就比较慢，而WSL的I/O性能对比原生Windows又要差一点，所以shell的启动速度就是你要注意的了。在我的电脑上配置了oh-my-zsh后shell启动速度大概为两秒，我个人还是可以接受的。安装oh-my-zsh只需运行：
+WSL的前身就叫Bash on Windows，可见其重要目标之一就是提供一个类似Linux bash的shell体验。当然，除了默认的bash，你完全可以安装zsh或者fish使用。oh-my-zsh是一个很棒的`zsh`配置管理工具，它可以为你提供一个开箱即用的zsh环境，而且有很多主题插件可用。在WSL上运行oh-my-zsh跟在Linux或者Mac上并无太大区别，值得注意的是oh-my-zsh本身就比较慢，而WSL的I/O性能对比原生Windows又要差一点，所以shell的启动速度就是你要注意的了。在我的电脑上配置了oh-my-zsh后shell启动速度大概为两秒，我个人还是可以接受的。安装oh-my-zsh只需运行：
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-主题我推荐`ys`，非常轻量，而且没有特殊字符，因此兼容小字符集的字体而不会出现讨厌的框框。更换主题只需编辑`~/.zshrc`，更改`ZSH_THEME`这一个值即可，例如`ZSH_THEME="ys"`。
+主题我推荐`ys`，非常轻量，而且没有特殊字符，因此兼容小字符集的字体而不会出现讨厌的框框。更换主题只需编辑`~/.zshrc`，更改`ZSH_THEME`这一变量的值即可，例如`ZSH_THEME="ys"`。
 
 另外，再分享一个alias配置：
 
@@ -66,9 +66,9 @@ alias start="cmd.exe /c start"
 
 ### 终端
 
-前面被疯狂吐槽的Windows默认终端模拟器（也就是conhost.exe）在最近的这几次Win10更新中已经得到了不少改进，虽然还是被Linux和Mac终端甩开好几条街，但是稍微配置下还是勉强能用的。以下我的配置均是在Win10 19H1（Build 18362）中测试使用的，改版本目前仍在仍处于insider通道，预计5月份推送正式更新。
+前面被疯狂吐槽的Windows默认终端模拟器（也就是conhost.exe）在最近的这几次Win10更新中已经得到了不少改进，虽然还是被Linux和Mac终端甩开好几条街，但是稍微配置下还是勉强能用的。以下我的配置均是在Win10 19H1（Build 18362）中测试使用的，该版本目前仍处于insider通道，预计5月份正式推送更新。
 
-在终端标题栏上右击，可以看见菜单中有个“默认值”，还有个“属性”，打开它们你会发现其实两个的配置项是一模一样的，这两个设置窗口下配置的保存位置是不一样的。建议是优先改“默认值”，改完后保存重开终端就好了[^3]。
+在终端标题栏上右击，可以看见菜单中有个“默认值”，还有个“属性”，打开它们你会发现其实两个的配置项是一模一样的，不过这两个设置窗口下配置的保存位置是不一样的。建议是优先改“默认值”，改完后保存重开终端就好了[^3]。
 
 字体我用的是[更纱黑体（Sarasa Gothic）](https://github.com/be5invis/Sarasa-Gothic)，是一套支持中文的等宽字体。值得注意的是conhost对字体极为挑剔，要是你选的字体兼容性不够，当你在WSL下运行`nano`等命令的时候字体会变成新宋体。配色的话，微软出了一个官方工具[ColorTool.exe](https://github.com/Microsoft/console)，支持直接读取iTerm2的`.itermcolors`格式配置文件，可以让你方便地改终端配色。配色直接去[Iterm2-color-schemes](https://iterm2colorschemes.com/)打包下载即可，我用的是`Neutron`。配置了90%的透明度，再加上从Win10 19H1开始支持的全局暗色主题，最终效果如下：
 
@@ -86,7 +86,7 @@ alias start="cmd.exe /c start"
 
 ### Git
 
-在WSL上安装使用git非常简单，但是麻烦的是如何让Windows桌面程序调用WSL里的git呢，难道还要再装一个Git for Windows？还好，早就有人意识到这个问题而且有个不错的解决方案——[wslgit](https://github.com/andy-5/wslgit)。它是一个能把Windows形式的文件路径（例如`C:\Foo\Bar`）与Linux的路径（对应的`/mnt/c/Foo/Bar`）进行互相转换的一个可执行程序，就像代理人一样。wslgit.exe的使用非常简单，下载它，将他重命名为`git.exe`，让后把他加到Path里就行了。像我的习惯的就是C盘根目录建一个`bin`文件夹，然后编辑系统环境变量，选中`Path`这一变量，编辑，添加一行`C:\bin`，这样一来，将任何exe可执行文件丢到`C:\bin`目录下，都可以实现全局的调用。最终效果就是你可以在PowerShell或CMD中直接运行`git`命令了。
+在WSL上安装使用git非常简单，但是麻烦的是,如何让Windows桌面程序调用WSL里的git呢，难道还要再装一个Git for Windows？还好，早就有人意识到这个问题而且有个不错的解决方案——[wslgit](https://github.com/andy-5/wslgit)。它是一个能把Windows形式的文件路径（例如`C:\Foo\Bar`）与Linux的路径（对应的`/mnt/c/Foo/Bar`）进行互相转换的一个可执行程序，就像代理人一样。wslgit.exe的使用非常简单，下载它，将他重命名为`git.exe`，让后把他加到Path里就行了。像我的习惯的就是C盘根目录建一个`bin`文件夹，然后编辑系统环境变量，选中`Path`这一变量，编辑，添加一行`C:\bin`，这样一来，将任何exe可执行文件丢到`C:\bin`目录下，都可以实现全局的调用。最终效果就是你可以在PowerShell或CMD中直接运行`git`命令了。
 
 ![](https://assets.xxxlbox.com/images/2019/img029.jpg)
 
@@ -100,7 +100,7 @@ alias start="cmd.exe /c start"
 
 ### SSH
 
-现如今Win10已经内置了OpenSSH，我们终于不用像以前那样连个ssh还要装一个putty。很显然，WSL里也有一个ssh客户端，那我们怎么让两边共享密钥以及各种配置呢？其实最容易想到办法就是用`ls -s`命令创建软连接了，将Windows下的`C:\Users\you_name\.ssh`（也就是`/mnt/c/Users/your_name/.ssh`）连接到`~/.ssh`即可。这样可以在Windows这一侧下统一管理ssh配置。首先确保PowerShell下能正常连接ssh，并且WSL中的~/.ssh是不存在的，然后在wsl中输入`ln -s /mnt/c/Users/your_name/.ssh/id_rsa ~/.ssh/id_rsa`即可。由于ssh对密钥文件的权限有严格要求，而默认情况下Win的文件系统挂载到Linux时会被设为777权限，显然这个权限对密钥文件来说实在是太大了，ssh会阻止密钥的使用。为了解决这个问题，好在Win10 Build 17093及以后的版本已经支持了WSL启动选项，就是你可以在`/etc/wsl.conf`里自定义wsl启动时的一些配置。我们可以在`wsl.conf`中加入这个：
+现如今Win10已经内置了OpenSSH，我们终于不用像以前那样连个ssh还要装一个putty。很显然，WSL里也有一个ssh客户端，那我们怎么让两边共享密钥以及各种配置呢？其实最容易想到办法就是用`ls -s`命令创建软连接了，将Windows下的`C:\Users\you_name\.ssh`（也就是`/mnt/c/Users/your_name/.ssh`）链接到`~/.ssh`即可。这样就可以在Windows这一侧统一管理ssh配置。首先确保PowerShell下能正常连接ssh，并且WSL中的~/.ssh是不存在的，然后在wsl中输入`ln -s /mnt/c/Users/your_name/.ssh/id_rsa ~/.ssh/id_rsa`即可。由于ssh对密钥文件的权限有严格要求，而默认情况下Win的文件系统挂载到Linux时会被设为777权限，显然这个权限对密钥文件来说实在是太大了，于是ssh会阻止密钥的使用。为了解决这个问题，Win10 Build 17093及以后的版本已经支持了WSL启动选项，就是你可以在`/etc/wsl.conf`里自定义wsl启动时的一些配置。我们可以在`wsl.conf`中加入这个：
 
 ```ini
 [automount]
