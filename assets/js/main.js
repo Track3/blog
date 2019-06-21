@@ -118,23 +118,19 @@ let comments = document.getElementById('comments');
 let commentsLoader = document.getElementById('comments-loader');
 
 const avJsUrl = '//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js';
-const valineJsUrl = 'https://cdn.jsdelivr.net/npm/valine@1.3.6/dist/Valine.min.js';
+const valineJsUrl = 'https://cdn.jsdelivr.net/npm/valine@1.3.7/dist/Valine.min.js';
 
 const loadComments = () => {
-  loadScript(avJsUrl).then(() => {
-    loadScript(valineJsUrl).then(() => {
-      new Valine({
-        el: '#comments',
-        appId: 'QfBLso0johYg7AXtV9ODU6FC-gzGzoHsz',
-        appKey: 'J1tpEEsENa48aLVsPdvwMP14',
-        placeholder: '说点什么吧'
-      });
-      commentsLoader.style.display = 'none';
-    }, () => {
-      console.log('Failed to Load Valine.min.js');
+  loadScript(valineJsUrl).then(() => {
+    new Valine({
+      el: '#comments',
+      appId: 'QfBLso0johYg7AXtV9ODU6FC-gzGzoHsz',
+      appKey: 'J1tpEEsENa48aLVsPdvwMP14',
+      placeholder: '说点什么吧'
     });
+    commentsLoader.style.display = 'none';
   }, () => {
-    console.log('Failed to Load av-min.js');
+    console.log('Failed to Load Valine.min.js');
   });
 }
 
