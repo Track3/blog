@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://fervent-swanson-61f7cc.netlify.com/* https://www.xxxlbox.com/:splat 301!
