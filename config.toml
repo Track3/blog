@@ -2,7 +2,6 @@ baseURL = "https://ojbk.im"
 languageCode = "zh-hans"
 title = "Track3's Blog"
 
-enableGitInfo = true
 pygmentsCodefences  = true
 pygmentsUseClasses  = true
 hasCJKLanguage = true
