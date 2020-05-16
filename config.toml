@@ -26,7 +26,6 @@ googleAnalytics = "UA-125057333-1"
 
   images = ["apple-touch-icon.png"]
 
-  bgImg = "https://assets.xxxlbox.com/images/bg.jpg"
   gitUrl = "https://github.com/Track3/blog/commit/"
 
   [[params.social]]
