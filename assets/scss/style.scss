@@ -18,6 +18,10 @@
   }
 }
 
+::placeholder {
+  color: $highlight-grey;
+}
+
 html {
   background: $light-grey;
   line-height: 1.6;
@@ -659,6 +663,10 @@ hr.post-end {
   * {
     color: $text;
     line-height: 1.5;
+  }
+
+  .vicon {
+    fill: $text;
   }
 
   .vcontrol {

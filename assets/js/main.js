@@ -111,14 +111,14 @@ const toggleToc = () => {
   document.getElementById('toc').classList.toggle('show-toc');
 }
 
-//Load Comments
+// Load Comments
 //
 let commentsLoaded = false;
 let comments = document.getElementById('comments');
 let commentsLoader = document.getElementById('comments-loader');
 
-const avJsUrl = '//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js';
-const valineJsUrl = 'https://cdn.jsdelivr.net/npm/valine@1.3.7/dist/Valine.min.js';
+// const avJsUrl = '//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js';
+const valineJsUrl = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
 
 const loadComments = () => {
   loadScript(valineJsUrl).then(() => {
