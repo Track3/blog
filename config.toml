@@ -3,8 +3,6 @@ languageCode = "zh-hans"
 title = "Track3's Blog"
 staticDir = ["static", "content-static"]
 
-pygmentsCodefences  = true
-pygmentsUseClasses  = true
 hasCJKLanguage = true
 rssLimit = 10
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
@@ -13,8 +11,16 @@ googleAnalytics = "UA-125057333-1"
 [author]
   name = "Track3"
 
-[blackfriday]
-  hrefTargetBlank = true
+[markup]
+  defaultMarkdownHandler = "goldmark"
+
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    noClasses = false
+
+  [markup.blackFriday]
+    hrefTargetBlank = true
 
 [taxonomies]
   tag = "tags"
