@@ -13,8 +13,8 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#494f5c",
-    "background_color": "#494f5c",
+    "theme_color": "#54bab9",
+    "background_color": "#54bab9",
     "start_url": "https://ojbk.im",
     "display": "standalone"
 }

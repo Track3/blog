@@ -27,11 +27,13 @@ googleAnalytics = "UA-125057333-1"
 
 [params]
   dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 2"
+  dateformShort   = "Jan 02"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
 
+  accentColor = "#54BAB9"
   images = ["apple-touch-icon.png"]
+  # bgImg = "/img/bg.jpg"
 
   gitUrl = "https://github.com/Track3/blog/commit/"
 
@@ -52,14 +54,14 @@ googleAnalytics = "UA-125057333-1"
   [[menu.main]]
     name = "Writing"
     url = "/posts/"
-    weight = 10
+    weight = 20
 
   [[menu.main]]
     name = "Friends"
     url = "/friends/"
-    weight = 20
+    weight = 30
 
   [[menu.main]]
     name = "About"
     url = "/about/"
-    weight = 30
+    weight = 40

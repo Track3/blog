@@ -1,10 +1,9 @@
-{{ define "header" }}
-{{ partialCached "header.html" . }}
-{{ end }}
-
 {{ define "main" }}
-	<main class="site-main section-inner thin animated fadeIn faster">
-		<h1>{{ .Title }}</h1>
+	<main id="site-main" class="wrapper">
+		<div class="title-area">
+			<a id="home-btn" title="{{.Site.Title}}" href="{{.Site.BaseURL}}"><img src="/apple-touch-icon.png" alt="Logo"></a>
+			<h1 id="page-title" class="title-area-l">{{ .Title }}</h1>
+		</div>
 		{{- if .Content }}
 		<div class="content">
 			{{ .Content }}

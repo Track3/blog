@@ -1,6 +1,0 @@
-# Redirect domain aliases to primary domain
-https://xxxlbox.com/* https://ojbk.im/:splat 301!
-https://www.xxxlbox.com/* https://ojbk.im/:splat 301!
-
-# Redirect default Netlify subdomain to primary domain
-https://quirky-bohr-deba40.netlify.com/* https://ojbk.im/:splat 301!

@@ -60,56 +60,25 @@ const listen = (ele, e, callback) => {
  * Functions
  */
 
-// Auto Hide Header
-//
-let header = document.getElementById('site-header');
-let lastScrollPosition = window.pageYOffset;
-
-const autoHideHeader = () => {
-  let currentScrollPosition = window.pageYOffset;
-  if (currentScrollPosition > lastScrollPosition) {
-    header.classList.remove('slideInUp');
-    header.classList.add('slideOutDown');
-  } else {
-    header.classList.remove('slideOutDown');
-    header.classList.add('slideInUp');
-  }
-  lastScrollPosition = currentScrollPosition;
-}
-
-// Mobile Menu Toggle
-//
-let mobileMenuVisible = false;
-
-const toggleMobileMenu = () => {
-  let mobileMenu = document.getElementById('mobile-menu');
-  if (mobileMenuVisible == false) {
-    mobileMenu.style.animationName = 'bounceInRight';
-    mobileMenu.style.webkitAnimationName = 'bounceInRight';
-    mobileMenu.style.display = 'block';
-    mobileMenuVisible = true;
-  } else {
-    mobileMenu.style.animationName = 'bounceOutRight';
-    mobileMenu.style.webkitAnimationName = 'bounceOutRight'
-    mobileMenuVisible = false;
-  }
-}
-
-// Featured Image Toggle
-//
-const showImg = () => {
-  document.querySelector('.bg-img').classList.add('show-bg-img');
-}
-
-const hideImg = () => {
-  document.querySelector('.bg-img').classList.remove('show-bg-img');
-}
-
-// ToC Toggle
-//
 const toggleToc = () => {
-  document.getElementById('toc').classList.toggle('show-toc');
+  const toc = document.getElementById('toc');
+  if (toc.style.display === 'block') {
+    toc.style.display = 'none';
+  } else {
+    toc.style.display = 'block';
+  };
 }
+
+listen ("#toc-btn", "click", toggleToc);
+
+
+// Anchor points for list page
+//
+document.querySelectorAll('.post-year').forEach((ele)=> {
+  ele.addEventListener('click', () => {
+    window.location.hash = '#' + ele.id;
+  });
+});
 
 // Load Comments
 //
@@ -117,8 +86,7 @@ let commentsLoaded = false;
 let comments = document.getElementById('comments');
 let commentsLoader = document.getElementById('comments-loader');
 
-// const avJsUrl = '//cdn.jsdelivr.net/npm/leancloud-storage@3.11.1/dist/av-min.js';
-const valineJsUrl = 'https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js';
+const valineJsUrl = 'https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js';
 
 const loadComments = () => {
   loadScript(valineJsUrl).then(() => {
@@ -134,38 +102,19 @@ const loadComments = () => {
   });
 }
 
-
-if (header !== null) {
-  listen('#menu-btn', "click", toggleMobileMenu);
-  listen('#toc-btn', "click", toggleToc);
-  listen('#img-btn', "click", showImg);
-  listen('.bg-img', "click", hideImg);
-
-  // Load comments if the window is not scrollable
-  if ((comments !== null) && (comments.offsetTop < window.innerHeight)) {
-    commentsLoader.style.display = 'block';
-    loadComments();
-    commentsLoaded = true;
+window.addEventListener('scroll', throttle(() => {
+  if ((comments !== null) && (commentsLoaded == false)) {
+    if (window.pageYOffset + window.innerHeight > comments.offsetTop) {
+      commentsLoader.style.display = 'block';
+      loadComments();
+      commentsLoaded = true;
+    }
   }
+}, 250));
 
-  document.querySelectorAll('.post-year').forEach((ele) => {
-    ele.addEventListener('click', () => {
-      window.location.hash = '#' + ele.id;
-    });
-  });
-
-  window.addEventListener('scroll', throttle(() => {
-    autoHideHeader();
-    if (mobileMenuVisible == true) {
-      toggleMobileMenu();
-    }
-
-    if ((comments !== null) && (commentsLoaded == false)) {
-      if (window.pageYOffset + window.innerHeight > comments.offsetTop) {
-        commentsLoader.style.display = 'block';
-        loadComments();
-        commentsLoaded = true;
-      }
-    }
-  }, 250));
-}
+// Load comments if the window is not scrollable
+if ((comments !== null) && (comments.offsetTop < window.innerHeight)) {
+  commentsLoader.style.display = 'block';
+  loadComments();
+  commentsLoaded = true;
+};

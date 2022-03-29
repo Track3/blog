@@ -1,27 +1,34 @@
 {{ define "head" }}
 	{{ if .Params.featuredImg -}}
-	<style>.bg-img {background-image: url('{{.Params.featuredImg | absURL}}');}</style>
+	<style>:root{ --bg-img: url({{.Params.featuredImg | absURL}});}</style>
 	{{- else if .Params.images -}}
 		{{- range first 1 .Params.images -}}
-		<style>.bg-img {background-image: url('{{. | absURL}}');}</style>
+		<style>:root{ --bg-img: url({{. | absURL}});}</style>
 		{{- end -}}
 	{{- end -}}
 {{ end }}
 
-{{ define "header" }}
-{{ partial "header.html" . }}
-{{ end }}
-
 {{ define "main" }}
-	{{- if (or .Params.images .Params.featuredImg) }}
-	<div class="bg-img"></div>
-	{{- end }}
-	<main class="site-main section-inner animated fadeIn faster">
-		<article class="thin">
+	<main id="site-main" class="wrapper">
+		<article>
 			<header class="post-header">
-				<div class="post-meta"><span>{{ .Date.Format .Site.Params.dateform }}</span></div>
-				<h1>{{ .Title }}</h1>
+				<div class="title-area">
+					<a id="home-btn" title="{{.Site.Title}}" href="{{.Site.BaseURL}}"><img src="/apple-touch-icon.png" alt="Logo"></a>
+					<div class="title-area-l">
+						<div id="post-header-date">{{ .Date.Format .Site.Params.dateform }}</div>
+						<h1 id="page-title">{{ .Title }}</h1>
+					</div>
+				</div>
+				{{- if .Params.toc }}
+				<button id="toc-btn" title="目录"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3" y2="6"></line><line x1="3" y1="12" x2="3" y2="12"></line><line x1="3" y1="18" x2="3" y2="18"></line></svg> 目录</button>
+				{{- end }}
 			</header>
+			{{- if .Params.toc }}
+			<div id="toc">
+				<p class="toc-title">目录</p>
+				{{ .TableOfContents }}
+			</div>
+			{{- end }}
 			<div class="content">
 				{{ .Content }}
 			</div>
@@ -42,13 +49,7 @@
 				{{- end }}
 			</footer>
 		</article>
-		{{- if .Params.toc }}
-		<aside id="toc">
-			<div class="toc-title">Table of Contents</div>
-			{{ .TableOfContents }}
-		</aside>
-		{{- end }}
-		<div class="post-nav thin">
+		<div class="post-nav">
 			{{- with .NextInSection }}
 			<a class="next-post" href="{{ .Permalink }}">
 				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>{{ .Title }}</span>

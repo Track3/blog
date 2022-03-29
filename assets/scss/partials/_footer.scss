@@ -1,0 +1,24 @@
+#site-footer {
+  font-size: 0.8em;
+  padding-top: 1em;
+  margin-top: 1em;
+  background-color: var(--c-bg-alt);
+}
+
+p.site-copy {
+  margin-top: 0;
+}
+
+.site-nav > span {
+  margin: 0 .2em;
+  color: var(--c-bg-alt);
+  &:last-child{
+    display: none;
+  }
+}
+
+.social-icon > .icon-link {
+  font-size: 2em;
+  margin-right: .4em;
+}
+
