@@ -51,9 +51,7 @@ pre {
   font-size: .9em;
   line-height: 1.5;
   white-space: pre;
-
   border-radius: 4px;
-  // -webkit-overflow-scrolling: touch;
   code {
     padding: 0;
     margin: 0;
@@ -74,7 +72,6 @@ blockquote {
   margin: 1.5em 1em;
   font-style: italic;
   color: var(--c-txt-alt);
-
   &::before {
     content: "“ ";
     position: absolute;
@@ -90,7 +87,6 @@ blockquote {
     font-weight: bold;
     font-style: normal;
     margin-left: 1em;
-
     &::before {
     content: "—— ";
     }
@@ -102,7 +98,6 @@ a {
   text-decoration: none;
   border-bottom: solid 1px var(--c-bg-alt);
   transition: color .2s;
-
   &:hover {
     color: $accent;
     border-bottom-color: $accent;
@@ -127,7 +122,7 @@ table {
   }
 
   th {
-    font-weight: 700;
+    font-weight: bold;
     vertical-align: bottom;
   }
 }
@@ -192,7 +187,6 @@ main#site-main {
 h1#page-title {
   margin: 0;
   font-size: 2em;
-  font-weight: normal;
   line-height: normal;
 }
 
@@ -319,6 +313,10 @@ h1#page-title {
   }
   #TableOfContents {
     direction: rtl;
+    font-size: .8em;
+    a {
+      display: inline;
+    }
   }
   .content figure.big {
     width: calc(100vw - var(--offset) - 1em);

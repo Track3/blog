@@ -27,12 +27,12 @@
     align-items: baseline;
     padding: 12px 0;
     border-bottom: 1px dashed;
-    font-weight: lighter;
   }
 
   .post-day {
     flex-shrink: 0;
     margin-left: 1em;
+    font-weight: lighter;
     color: var(--c-txt-alt);
   }
 }
