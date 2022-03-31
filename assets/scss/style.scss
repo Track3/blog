@@ -10,18 +10,18 @@ html {
 }
 
 body {
-  --c-bg: #fafafa;
-  --c-bg-alt: #dfdfdf;
-  --c-txt: #424242;
-  --c-txt-alt: #8a8a8a;
+  --c-bg: #faf9f8;
+  --c-bg-alt: #edebe9;
+  --c-txt: #3b3a39;
+  --c-txt-alt: #605e5c;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
     --c-bg: #201f1e;
     --c-bg-alt: #3b3a39;
-    --c-txt: #ddd;
-    --c-txt-alt: #aaa;
+    --c-txt: #d2d0ce;
+    --c-txt-alt: #a19f9d;
   }
 }
 
@@ -216,6 +216,9 @@ h1#page-title {
   }
   .footer-l {
     flex: 1;
+  }
+  .site-nav > span {
+    color: var(--c-bg-alt);
   }
   .social-icon > .icon-link {
     margin-left: .4em;
