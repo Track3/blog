@@ -182,6 +182,7 @@ hr.post-end {
 .post-info {
   font-size: .8rem;
   line-height: normal;
+  color: var(--c-txt-alt);
 
   p {
     margin: .8em 0;
@@ -194,6 +195,10 @@ hr.post-end {
   a {
     border-bottom: none;
     text-decoration: underline;
+    color: var(--c-txt-alt);
+    &:hover {
+      color: $accent;
+    }
   }
 
 
@@ -230,6 +235,3 @@ hr.post-end {
     text-transform: uppercase;
   }
 }
-
-
-

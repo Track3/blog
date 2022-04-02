@@ -23,6 +23,9 @@ body {
     --c-bg-alt: #3b3a39;
     --c-txt: #d2d0ce;
     --c-txt-alt: #a19f9d;
+    img {
+      filter: brightness(.9);
+    }
   }
 }
 
@@ -50,7 +53,7 @@ pre {
   padding: .7em 1.1em;
   overflow: auto;
   font-size: .9em;
-  line-height: 1.5;
+  line-height: 1.2;
   white-space: pre;
   border-radius: 4px;
   code {
