@@ -45,8 +45,8 @@ const throttle = (callback, limit) => {
         timeoutHandler = null;
       }, limit);
     }
-  };
-};
+  }
+}
 
 // addEventListener Helper
 //
@@ -60,13 +60,26 @@ const listen = (ele, e, callback) => {
  * Functions
  */
 
-const toggleToc = () => {
+// Set inner width into CSS variable
+//
+function setVw() {
+  let vw = document.documentElement.clientWidth / 100;
+  document.documentElement.style.setProperty('--vw', `${vw}px`);
+}
+
+setVw();
+window.addEventListener('resize', setVw);
+
+
+// ToC toggle
+//
+function toggleToc() {
   const toc = document.getElementById('toc');
   if (toc.style.display === 'block') {
     toc.style.display = 'none';
   } else {
     toc.style.display = 'block';
-  };
+  }
 }
 
 listen ("#toc-btn", "click", toggleToc);
@@ -117,4 +130,4 @@ if ((comments !== null) && (comments.offsetTop < window.innerHeight)) {
   commentsLoader.style.display = 'block';
   loadComments();
   commentsLoaded = true;
-};
+}

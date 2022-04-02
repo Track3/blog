@@ -2,6 +2,7 @@
 
 :root {
   --offset: 0;
+  --vw: 1vw;
 }
 
 html {
@@ -64,7 +65,6 @@ code {
   border-radius: 3px;
   padding: 0 3px;
   margin: 0 4px;
-  word-break: break-all;
   letter-spacing: normal;
 }
 
@@ -251,7 +251,7 @@ h1#page-title {
     display: flex;
   }
   .content figure.big {
-    margin-left: calc(390px - 50vw - 1em);
+    margin-left: calc(390px - var(--vw) * 50 - 1em);
   }
 }
 
@@ -270,7 +270,7 @@ h1#page-title {
     display: flex;
   }
   .content figure.big {
-    margin-left: calc(490px - 50vw - 1em);
+    margin-left: calc(490px - var(--vw) * 50 - 1em);
   }
 }
 
@@ -322,7 +322,7 @@ h1#page-title {
     }
   }
   .content figure.big {
-    width: calc(100vw - var(--offset) - 1em);
+    width: calc(var(--vw) * 100 - var(--offset) - 1em);
     margin-left: 0;
     text-align: left;
     &>img {

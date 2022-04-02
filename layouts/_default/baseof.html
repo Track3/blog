@@ -37,7 +37,17 @@
 	<div id="bg-img"></div>
 	{{ $script := resources.Get "js/main.js" | minify | fingerprint -}}
 	<script src="{{ $script.Permalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }}></script>
-	{{ template "_internal/google_analytics_async.html" . }}
+	{{ with .Site.GoogleAnalytics -}}
+	<script>
+		(function(e,t,n,i,s,a,c){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)}
+		;a=t.createElement(i);c=t.getElementsByTagName(i)[0];a.async=true;a.src=s
+		;c.parentNode.insertBefore(a,c)
+		})(window,document,"galite","script","/js/ga-lite.min.js");
+
+		galite('create', '{{.}}', 'auto');
+		galite('send', 'pageview');
+	</script>
+	{{ end -}}
 	<script src="/js/instant.page-5.1.0.js" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
 </body>
 

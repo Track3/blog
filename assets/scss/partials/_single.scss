@@ -49,6 +49,7 @@
 
 .content {
   text-justify: inter-ideograph; //For IE/Edge
+  overflow-wrap: break-word;
 
   @include stylized-link;
 
@@ -59,11 +60,12 @@
     height: auto;
     margin: 0;
     text-align: center;
-    p {
-      font-size: .8em;
-      font-style: italic;
-      color: var(--c-txt-alt);
-    }
+  }
+  figcaption > p {
+    margin-top: .5em;
+    font-size: .8em;
+    font-style: italic;
+    color: var(--c-txt-alt);
   }
 
   figure.left {
@@ -77,7 +79,7 @@
     max-width: 50%;
   }
   figure.big {
-    width: 100vw;
+    width: calc(var(--vw) * 100);
     margin-left: -1em;
   }
 
