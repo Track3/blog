@@ -209,10 +209,14 @@ h1#page-title {
   html {
     font-size: 1.1em;
   }
-  .wrapper#site-footer {
-    display: flex;
-    flex-direction: row-reverse;
+  #site-footer {
     background: transparent;
+    &>.footer-inner {
+      display: flex;
+      flex-direction: row-reverse;
+      padding-top: 1em;
+      border-top: 2px solid var(--c-bg-alt);
+    }
   }
   .posts-group {
     display: flex;
@@ -292,7 +296,6 @@ h1#page-title {
     padding-right: 15vw;
   }
   .wrapper {
-    width: 1028px;
     margin-left: var(--offset);
   }
   #toc-btn {
@@ -306,7 +309,7 @@ h1#page-title {
     width: calc(var(--offset) - 2em);
     padding: 0 0 0 1em;
     margin-left: calc(0px - var(--offset));
-    border-right: 1px dashed;
+    border-right: 2px solid var(--c-bg-alt);
     border-radius: 0;
     background: transparent;
     text-align: right;
@@ -324,12 +327,17 @@ h1#page-title {
       display: inline;
     }
   }
-  .content figure.big {
-    width: calc(var(--vw) * 100 - var(--offset) - 1em);
-    margin-left: 0;
+  .content > figure {
     text-align: left;
-    &>img {
+    &.big {
+      width: calc(var(--vw) * 100 - var(--offset) - 1em);
       margin-left: 0;
+      &>img {
+        margin-left: 0;
+      }
+    }
+    &.right  {
+      margin-right: -280px;
     }
   }
 }
