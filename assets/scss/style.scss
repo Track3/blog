@@ -11,21 +11,21 @@ html {
 }
 
 body {
-  --c-bg: #faf9f8;
-  --c-bg-alt: #edebe9;
-  --c-txt: #3b3a39;
-  --c-txt-alt: #605e5c;
+  --c-bg: #f3f6f6;
+  --c-bg-alt: #dee8e5;
+  --c-txt: #545250;
+  --c-txt-alt: #6d6b69;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    --c-bg: #201f1e;
-    --c-bg-alt: #323130;
+    --c-bg: #27343a;
+    --c-bg-alt: #364045;
     --c-txt: #c8c6c4;
     --c-txt-alt: #a19f9d;
-    img {
-      filter: brightness(.9);
-    }
+  }
+  #page img {
+    filter: brightness(.9);
   }
 }
 
@@ -100,7 +100,8 @@ a {
   color: var(--c-txt);
   text-decoration: none;
   border-bottom: solid 1px var(--c-bg-alt);
-  transition: color .2s;
+  transition-property: color, border-color;
+  transition-duration: .2s;
   &:hover {
     color: $accent;
     border-bottom-color: $accent;
