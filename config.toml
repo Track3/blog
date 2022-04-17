@@ -31,6 +31,8 @@ googleAnalytics = "UA-125057333-1"
   dateformNum     = "2006-01-02"
   dateformNumTime = "2006-01-02 15:04"
 
+  description = "Track3的个人博客"
+  keywords = "Track3,blog,博客,个人网站,中文独立博客"
   accentColor = "#54BAB9"
   images = ["apple-touch-icon.png"]
   # bgImg = "/img/bg.jpg"

@@ -38,7 +38,7 @@ textarea {
   background-color: var(--c-bg);
   line-height: 1.6em;
   font-family: $fonts;
-  letter-spacing: .06em;
+  letter-spacing: 1px;
   transition: background-color .5s, color .5s;
 }
 
@@ -68,7 +68,6 @@ code {
   border-radius: 3px;
   padding: 0 3px;
   margin: 0 4px;
-  letter-spacing: normal;
 }
 
 blockquote {
@@ -80,7 +79,7 @@ blockquote {
     position: absolute;
     opacity: 0.3;
     font-size: 80px;
-    transform: translate(-16px,5px);
+    transform: translate(-64px,5px);
   }
 
   p {
