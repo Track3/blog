@@ -31,6 +31,7 @@
 
 <body>
 	<div id="page" class="{{.Scratch.Get "pageClass"}}">
+		{{ block "header" . -}}{{ end -}}
 		{{ block "main" . -}}{{ end -}}
 		{{ block "footer" . -}}{{ end }}
 	</div>

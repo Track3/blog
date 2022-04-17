@@ -203,7 +203,7 @@ h1#page-title {
 
 @import "partials/home.scss", "partials/404.scss";
 @import "partials/single.scss", "partials/list.scss";
-@import "partials/footer.scss", "partials/comments.scss";
+@import "partials/header.scss", "partials/footer.scss", "partials/comments.scss";
 
 
 @media all and (min-width: 550px) {
@@ -298,6 +298,16 @@ h1#page-title {
   }
   .wrapper {
     margin-left: var(--offset);
+  }
+  #home-btn {
+    top: .2em;
+    right: .8em;
+    &>img{
+      width: 1.5em;
+    }
+  }
+  #site-header {
+    display: block;
   }
   #toc-btn {
     display: none;

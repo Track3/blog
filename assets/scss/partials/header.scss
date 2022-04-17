@@ -1,0 +1,26 @@
+#site-header {
+  display: none;
+  background: var(--c-bg-alt);
+  padding: .2em .8em;
+}
+#site-branding {
+  display: inline-block;
+  margin-right: 1em;
+  font-weight: bold;
+  > a {
+    border: none;
+  }
+}
+#site-nav {
+  display: inline-block;
+  font-size: .8em;
+  > a {
+    margin-right: .2em;
+    border: none;
+    &::before {
+      content: "~/";
+      color: var(--c-txt-alt);
+      margin-right: .1em;
+    }
+  }
+}
