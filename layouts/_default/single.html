@@ -1,7 +1,5 @@
 {{ define "head" }}
-	{{ if .Params.featuredImg -}}
-	<style>:root{ --bg-img: url({{.Params.featuredImg | absURL}});}</style>
-	{{- else if .Params.images -}}
+	{{ if .Params.images -}}
 		{{- range first 1 .Params.images -}}
 		<style>:root{ --bg-img: url({{. | absURL}});}</style>
 		{{- end -}}
