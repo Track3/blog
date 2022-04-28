@@ -17,11 +17,12 @@
 }
 #home-nav {
   margin: 1em 0;
-  a {
+  letter-spacing: normal;
+  > a {
     display: inline-block;
     border: 1px solid;
     border-radius: 4px;
-    padding: .2em .4em;
+    padding: .1em .4em;
     font-size: .8em;
     margin-top: .5em;
   }
@@ -47,4 +48,5 @@
 #home-footer {
   padding: 0 10vw;
   font-size: .8em;
+  letter-spacing: normal;
 }

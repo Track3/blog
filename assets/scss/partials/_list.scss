@@ -34,3 +34,47 @@
     color: var(--c-txt-alt);
   }
 }
+
+// Gallery Page
+//
+.album {
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+}
+
+.album-title {
+  margin-bottom: 0;
+  font-weight: normal;
+  > a {
+    border: none;
+  }
+}
+
+.album-date {
+  margin-top: .5em;
+  margin-bottom: .8em;
+  font-size: .8em;
+  color: var(--c-txt-alt);
+}
+
+.album-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  border: none;
+  &::after {
+    content: '';
+    display: block;
+    flex-grow: 10;
+  }
+}
+.img-tile {
+  height: 100px;
+  flex: 1;
+  & > img {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+}

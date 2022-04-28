@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/posts/:path",
+      "destination": "/writing/:path",
+      "permanent": true
+    },
+    {
+      "source": "/post/:path",
+      "destination": "/writing/:path",
+      "permanent": true
+    },
+    {
+      "source": "/friends",
+      "destination": "/links",
+      "permanent": true
+    }
+  ]
+}

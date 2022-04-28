@@ -235,3 +235,20 @@ hr.post-end {
     text-transform: uppercase;
   }
 }
+
+// Gallery Page
+//
+.album-meta {
+  color: var(--c-txt-alt);
+  font-size: .8em;
+  > p {
+    margin: 0;
+    &.album-desc {
+      margin-top: 1em;
+      line-height: normal;
+    }
+    > .feather {
+      margin-right: 1em;
+    }
+  }
+}

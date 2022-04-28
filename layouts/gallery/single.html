@@ -1,0 +1,50 @@
+{{ define "header" }}
+{{ partialCached "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+	<main id="site-main" class="wrapper">
+		<article>
+			<header class="post-header">
+				<div class="title-area">
+					<a id="home-btn" title="{{.Site.Title}}" href="{{.Site.BaseURL}}"><img src="/apple-touch-icon.png" width="180" height="180" alt="Logo"></a>
+					<div class="title-area-l">
+						<h1 id="page-title">{{ .Title }}</h1>
+					</div>
+				</div>
+				<div class="album-meta">
+					{{ with .Params.location -}}
+					<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>{{ . }}</p>
+					{{ end -}}
+					<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>{{ dateFormat .Site.Params.dateform .Date }}</p>
+					{{ with .Params.shot_on -}}
+					<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>{{ . }}</p>
+					{{ end -}}
+					{{ with .Params.description -}}
+					<p class="album-desc">{{ . }}</p>
+					{{ end -}}
+				</div>
+			</header>
+			<div class="content">
+				{{ .Content }}
+			</div>
+		</article>
+		<div class="post-nav">
+			{{- with .NextInSection }}
+			<a class="next-post" href="{{ .Permalink }}">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>{{ .Title }}</span>
+			</a>
+			{{- end }}
+			{{- with .PrevInSection }}
+			<a class="prev-post" href="{{ .Permalink }}">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>{{ .Title }}</span>
+			</a>
+			{{- end }}
+		</div>
+		{{ partialCached "comments.html" . }}
+	</main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partialCached "footer.html" . }}
+{{ end }}

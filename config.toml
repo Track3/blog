@@ -55,8 +55,13 @@ googleAnalytics = "UA-125057333-1"
 
   [[menu.main]]
     name = "Writing"
-    url = "/posts/"
-    weight = 20
+    url = "/writing/"
+    weight = 10
+
+  # [[menu.main]]
+  #   name = "Gallery"
+  #   url = "/gallery/"
+  #   weight = 20
 
   [[menu.main]]
     name = "Links"

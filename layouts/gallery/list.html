@@ -1,0 +1,35 @@
+{{ define "header" }}
+{{ partialCached "header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+	<main id="site-main" class="wrapper">
+		<div class="title-area">
+			<a id="home-btn" title="{{.Site.Title}}" href="{{.Site.BaseURL}}"><img src="/apple-touch-icon.png" width="180" height="180" alt="Logo"></a>
+			<h1 id="page-title" class="title-area-l">{{ .Title }}</h1>
+		</div>
+		{{- if .Content }}
+		<div class="content">
+			{{ .Content }}
+		</div>
+		{{- end }}
+		{{- range .Pages }}
+		<div class="album">
+			<h2 class="album-title">
+				{{ $abulmLink := .Permalink -}}
+				<a href="{{ $abulmLink }}">{{.Title}}</a>
+			</h2>
+			<p class="album-date">{{ .Date.Format .Site.Params.dateform }}</p>
+			<a href="{{ $abulmLink }}" class="album-row">
+				{{- range .Params.images -}}
+				<div class="img-tile"><img src="{{. | absURL}}" loading="lazy"></div>
+				{{- end -}}
+			</a>
+		</div>
+		{{- end }}
+	</main>
+{{ end }}
+
+{{ define "footer" }}
+{{ partialCached "footer.html" . }}
+{{ end }}

@@ -234,6 +234,9 @@ h1#page-title {
   .recent-posts-list a {
     display: inline;
   }
+  .img-tile {
+    height: 150px;
+  }
 }
 
 @media all and (min-width: 810px) {
@@ -259,6 +262,9 @@ h1#page-title {
   }
   .content figure.big {
     margin-left: calc(390px - var(--vw) * 50 - 1em);
+  }
+  .img-tile {
+    height: 200px;
   }
 }
 
