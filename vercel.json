@@ -2,13 +2,13 @@
   "trailingSlash": true,
   "redirects": [
     {
-      "source": "/posts/*",
-      "destination": "/writing/*",
+      "source": "/posts/(.*)",
+      "destination": "/writing/$1",
       "permanent": true
     },
     {
-      "source": "/post/*",
-      "destination": "/writing/*",
+      "source": "/post/(.*)",
+      "destination": "/writing/$1",
       "permanent": true
     },
     {
