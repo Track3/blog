@@ -38,7 +38,7 @@ textarea {
   background-color: var(--c-bg);
   line-height: 1.6em;
   font-family: $fonts;
-  letter-spacing: 1px;
+  letter-spacing: .05rem;
   transition: background-color .5s, color .5s;
 }
 
@@ -73,13 +73,15 @@ code {
 blockquote {
   margin: 1.5em 1em;
   font-style: italic;
+  font-family: $serif-fonts;
+  letter-spacing: normal;
   color: var(--c-txt-alt);
   &::before {
-    content: "“ ";
+    content: "“";
     position: absolute;
     opacity: 0.3;
     font-size: 80px;
-    transform: translate(-64px,5px);
+    transform: translate(-20px,5px);
   }
 
   p {
@@ -340,12 +342,12 @@ h1#page-title {
   }
   .content > figure {
     text-align: left;
+    &>img {
+      margin-left: 0;
+    }
     &.big {
       width: calc(var(--vw) * 100 - var(--offset) - 1em);
       margin-left: 0;
-      &>img {
-        margin-left: 0;
-      }
     }
     &.right  {
       margin-right: -280px;

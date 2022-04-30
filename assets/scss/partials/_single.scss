@@ -48,6 +48,7 @@
 }
 
 .content {
+  margin-top: 1.5rem;
   text-justify: inter-ideograph; //For IE/Edge
   overflow-wrap: break-word;
 
@@ -55,6 +56,8 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
   }
   figure {
     height: auto;
