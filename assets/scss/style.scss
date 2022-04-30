@@ -213,7 +213,6 @@ h1#page-title {
     background: transparent;
     &>.footer-inner {
       display: flex;
-      flex-direction: row-reverse;
       padding-top: 1em;
       border-top: 2px solid var(--c-bg-alt);
     }
@@ -222,14 +221,10 @@ h1#page-title {
     display: flex;
   }
   .footer-l {
-    flex: 1;
+    flex-grow: 1;
   }
   .site-nav > span {
     color: var(--c-bg-alt);
-  }
-  .social-icon > .icon-link {
-    margin-left: .4em;
-    margin-right: 0;
   }
   .recent-posts-list a {
     display: inline;
