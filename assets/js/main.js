@@ -88,16 +88,18 @@ listen ("#toc-btn", "click", toggleToc);
 //
 const scrollBtn = document.getElementById('scroll-top-btn');
 const btnVisibility = () => {
-    if ((window.scrollY > 400) && (window.innerWidth >= 1590)) {
-        scrollBtn.style.display = "block";
-    } else {
-        scrollBtn.style.display = "none";
-    }
+  if ((window.scrollY > 400) && (window.innerWidth >= 1590)) {
+      scrollBtn.style.display = "block";
+  } else {
+      scrollBtn.style.display = "none";
+  }
 };
 
-scrollBtn.addEventListener("click", () => {
-  window.scrollTo(0,0);
-});
+if (scrollBtn !== null) {
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo(0,0);
+  });
+}
 
 // Anchor points for list page
 //
