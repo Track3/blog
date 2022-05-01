@@ -239,6 +239,22 @@ hr.post-end {
   }
 }
 
+#scroll-top-btn {
+  display: none;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  bottom: .8rem;
+  left: calc(var(--offset) - 2.5rem);
+  line-height: 0;
+  font-size: 1.5rem;
+  border: none;
+  color: var(--c-txt-alt);
+  background: transparent;
+  cursor: pointer;
+  animation: slideIn .2s ease-out;
+}
+
 // Gallery Page
 //
 .album-meta {

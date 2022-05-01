@@ -84,6 +84,20 @@ function toggleToc() {
 
 listen ("#toc-btn", "click", toggleToc);
 
+// Scroll to Top
+//
+const scrollBtn = document.getElementById('scroll-top-btn');
+const btnVisibility = () => {
+    if ((window.scrollY > 400) && (window.innerWidth >= 1590)) {
+        scrollBtn.style.display = "block";
+    } else {
+        scrollBtn.style.display = "none";
+    }
+};
+
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo(0,0);
+});
 
 // Anchor points for list page
 //
@@ -115,6 +129,13 @@ const loadComments = () => {
   });
 }
 
+// Load comments if the window is not scrollable
+if ((comments !== null) && (comments.offsetTop < window.innerHeight)) {
+  commentsLoader.style.display = 'block';
+  loadComments();
+  commentsLoaded = true;
+}
+
 window.addEventListener('scroll', throttle(() => {
   if ((comments !== null) && (commentsLoaded == false)) {
     if (window.pageYOffset + window.innerHeight > comments.offsetTop) {
@@ -123,11 +144,7 @@ window.addEventListener('scroll', throttle(() => {
       commentsLoaded = true;
     }
   }
-}, 250));
-
-// Load comments if the window is not scrollable
-if ((comments !== null) && (comments.offsetTop < window.innerHeight)) {
-  commentsLoader.style.display = 'block';
-  loadComments();
-  commentsLoaded = true;
-}
+  if (scrollBtn !== null) {
+    btnVisibility();
+  }
+}, 150));
