@@ -327,17 +327,24 @@ h1#page-title {
     text-align: right;
     .toc-title {
       display: block;
-      padding-right: 1em;
-      margin-top: 0;
-      font-weight: bold;
     }
   }
   #TableOfContents {
     direction: rtl;
     font-size: .8em;
+    line-height: 1.4;
     a {
       display: inline;
     }
+  }
+  .album-meta {
+    position: sticky;
+    float: left;
+    top: 2em;
+    width: calc(var(--offset) - 2em);
+    padding: 0 .5rem;
+    margin-left: calc(0px - var(--offset));
+    text-align: right;
   }
   .content > figure {
     text-align: left;
