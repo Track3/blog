@@ -8,7 +8,6 @@
   position: relative;
   top: -1em;
   border: solid 1px;
-  border-radius: 4px;
   background: transparent;
   color: var(--c-txt-alt);
   font-size: .8em;
@@ -23,7 +22,6 @@
   display: none;
   color: var(--c-txt-alt);
   padding: 1em;
-  border-radius: 4px;
   background-color: var(--c-bg-alt);
 }
 .toc-title {
@@ -219,23 +217,26 @@ hr.post-end {
 .post-nav {
   display: flex;
   justify-content: space-between;
+  gap: 1em;
   margin-top: 1.5em;
   margin-bottom: 2em;
   font-size: 1.2em;
-
-  a {
+  padding: .5em;
+  background: var(--c-bg-alt);
+  > a {
     flex-basis: 50%;
     flex-grow: 1;
     border: none;
   }
 
-  .next-post {text-align: left; padding-right: 5px;}
-  .prev-post {text-align: right; padding-left: 5px;}
+  .next-post {text-align: left;}
+  .prev-post {text-align: right;}
 
   .post-nav-label {
     font-size: .8em;
     opacity: .8;
     text-transform: uppercase;
+    color: var(--c-txt-alt);
   }
 }
 

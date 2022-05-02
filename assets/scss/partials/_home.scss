@@ -20,11 +20,16 @@
   letter-spacing: normal;
   > a {
     display: inline-block;
-    border: 1px solid;
-    border-radius: 4px;
-    padding: .1em .4em;
+    border: 1px solid var(--c-txt-alt);
+    padding: 0 .4em;
     font-size: .8em;
     margin-top: .5em;
+    &:hover {
+      border-color: $accent;
+    }
+    &:active {
+      border-style: dashed;
+    }
   }
 }
 #recent-posts {

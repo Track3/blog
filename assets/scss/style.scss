@@ -55,7 +55,6 @@ pre {
   font-size: .9em;
   line-height: 1.2;
   white-space: pre;
-  border-radius: 4px;
   code {
     padding: 0;
     margin: 0;
@@ -65,7 +64,6 @@ pre {
 
 code {
   background: var(--c-bg-alt);
-  border-radius: 3px;
   padding: 0 3px;
   margin: 0 4px;
 }
@@ -107,7 +105,9 @@ a {
     color: $accent;
     border-bottom-color: $accent;
   }
-
+  &:active {
+    border-bottom-style: dashed;
+  }
   &.icon-link {
     border-bottom: none;
   }
@@ -323,7 +323,6 @@ h1#page-title {
     padding: 0 0 0 1em;
     margin-left: calc(0px - var(--offset));
     border-right: 2px solid var(--c-bg-alt);
-    border-radius: 0;
     background: transparent;
     text-align: right;
     .toc-title {

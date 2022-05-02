@@ -9,8 +9,13 @@
 .btn-404 > a {
   display: inline-block;
   font-size: .8em;
-  border: 1px solid;
-  border-radius: 4px;
+  border: 1px solid var(--c-txt-alt);
   padding: .2em .4em;
   margin-bottom: .4em;
+  &:hover {
+    border-color: $accent;
+  }
+  &:active {
+    border-style: dashed;
+  }
 }
