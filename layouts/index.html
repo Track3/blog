@@ -21,8 +21,7 @@
 		<div id="recent-posts">
 			<div>Recent Posts</div>
 			<ul class="recent-posts-list">
-				{{ $articleList := (sort ( where site.RegularPages "Type" "in" "writing" ) "Date" "desc") -}}
-				{{ range first 3 $articleList -}}
+				{{ range first 3 (where site.RegularPages "Type" "in" "writing") -}}
 				<li>
 					<span>{{ .Date.Format .Site.Params.dateformNum }} </span>
 					<a href="{{.Permalink}}">{{.Title}}</a>
