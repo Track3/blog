@@ -28,7 +28,6 @@
   display: none;
   padding-right: 1em;
   margin-top: 0;
-  line-height: 1;
   font-weight: bold;
 }
 
@@ -65,7 +64,8 @@
     text-align: center;
   }
   figcaption > p {
-    margin-top: .5em;
+    margin-top: .1rem;
+    margin-bottom: 1rem;
     font-size: .8em;
     font-style: italic;
     color: var(--c-txt-alt);
@@ -266,8 +266,7 @@ hr.post-end {
     margin: 0;
     &.album-desc {
       margin-top: 1em;
-      line-height: normal;
-      font-size: 1rem;
+      font-size: .95rem;
     }
     > .feather {
       margin-right: .5em;

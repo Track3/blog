@@ -1,5 +1,5 @@
 #site-footer {
-  font-size: 0.8em;
+  font-size: .8em;
   padding-top: 1em;
   margin-top: 2em;
   background-color: var(--c-bg-alt);
@@ -11,7 +11,7 @@ p.site-copy {
 }
 
 .site-nav > span {
-  margin: 0 .2em;
+  margin: 0 .15em;
   color: var(--c-txt-alt);
   &:last-child{
     display: none;

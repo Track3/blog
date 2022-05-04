@@ -77,7 +77,7 @@ blockquote {
   &::before {
     content: "“";
     position: absolute;
-    opacity: 0.3;
+    opacity: .3;
     font-size: 80px;
     transform: translate(-20px,5px);
   }
