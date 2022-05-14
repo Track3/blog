@@ -2,38 +2,6 @@
  * Utils
  */
 
-// Load and run script via AJAX
-//
-const loadScript = (source, beforeEl, async = true, defer = true) => {
-  return new Promise((resolve, reject) => {
-    let script = document.createElement('script');
-    const prior = beforeEl || document.getElementsByTagName('script')[0];
-
-    script.async = async;
-    script.defer = defer;
-
-    function onloadHander(_, isAbort) {
-      if (isAbort || !script.readyState || /loaded|complete/.test(script.readyState)) {
-        script.onload = null;
-        script.onreadystatechange = null;
-        script = undefined;
-
-        if (isAbort) {
-          reject();
-        } else {
-          resolve();
-        }
-      }
-    }
-
-    script.onload = onloadHander;
-    script.onreadystatechange = onloadHander;
-
-    script.src = source;
-    prior.parentNode.insertBefore(script, prior);
-  });
-}
-
 // Throttle
 //
 const throttle = (callback, limit) => {
@@ -112,23 +80,22 @@ document.querySelectorAll('.post-year').forEach((ele)=> {
 // Load Comments
 //
 let commentsLoaded = false;
-let comments = document.getElementById('comments');
+let comments = document.getElementById('isso-thread');
 let commentsLoader = document.getElementById('comments-loader');
 
-const valineJsUrl = 'https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js';
-
 const loadComments = () => {
-  loadScript(valineJsUrl).then(() => {
-    new Valine({
-      el: '#comments',
-      appId: 'QfBLso0johYg7AXtV9ODU6FC-gzGzoHsz',
-      appKey: 'J1tpEEsENa48aLVsPdvwMP14',
-      placeholder: '说点什么吧'
-    });
-    commentsLoader.style.display = 'none';
-  }, () => {
-    console.log('Failed to Load Valine.min.js');
-  });
+  let script = document.createElement("script");
+  script.setAttribute("type", "text/javascript");
+  script.setAttribute("src", "https://comment.ojbk.im/js/embed.min.js");
+
+  // add relevant data-isso attributes here
+  script.setAttribute("data-isso", "https://comment.ojbk.im");
+  script.setAttribute("data-isso-vote", "false");
+  script.setAttribute("data-isso-max-comments-top", "10");
+  script.setAttribute("data-isso-reveal-on-click", "10");
+
+  document.getElementsByTagName("head")[0].appendChild(script);
+  commentsLoader.style.display = 'none';
 }
 
 // Load comments if the window is not scrollable

@@ -1,22 +1,93 @@
-#comments {
+#site-main > #isso-thread {
   margin-top: 3em;
   font-size: 1em;
 
-  .vwrap {
-    border: 2px solid var(--c-txt-alt);
-  }
-  .vat {
+  > h4 {
     color: var(--c-txt);
-    &:hover {
-      color: $accent;
+  }
+  .isso-comment {
+    border-color: var(--c-bg-alt);
+  }
+
+  .isso-postbox {
+    max-width: unset;
+    margin-bottom: 1em;
+  }
+
+  .isso-preview {
+    color: #545250;
+  }
+
+  .isso-textarea {
+    border-radius: 0;
+    border-color: transparent;
+    color: var(--c-txt);
+    background-color: var(--c-bg-alt);
+    box-shadow: none;
+  }
+
+  .isso-input-wrapper {
+    > label {
+      font-size: .85em;
+      color: var(--c-txt-alt);
+    }
+    > input {
+      width: 100%;
+      background-color: var(--c-bg-alt);
+      line-height: unset;
+      border: 1px solid var(--c-bg);
+      border-radius: 0;
+      box-shadow: none;
     }
   }
 
-  .vquote {
-    border: none;
-  }
-  .vh {
+  .isso-post-action > input {
+    margin-top: .2em;
+    padding: .4em;
+    border-radius: 0;
     border-color: var(--c-bg-alt);
-    border-width: 2px;
+    color: var(--c-txt);
+    background: transparent;
+    box-shadow: none;
+    &:hover {
+      border-color: $accent;
+    }
+    &:active {
+      border-style: dashed;
+    }
+  }
+
+  .isso-notification-section > label {
+    font-size: .8em;
+    color: var(--c-txt-alt);
+    vertical-align: middle;
+    &> input {
+      margin-right: .5em;
+    }
+  }
+
+  .isso-avatar > img {
+    max-width: 3em;
+    height: auto;
+  }
+
+  .isso-text {
+    text-align: initial;
+  }
+
+  a.isso-reply,
+  a.isso-permalink {
+    border: none;
+    &:hover {
+      color: $accent!important;
+    }
+  }
+
+
+  .isso-author {
+    color: var(--c-txt);
+  }
+  a.isso-author:hover {
+    color: $accent!important;
   }
 }
