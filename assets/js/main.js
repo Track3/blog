@@ -86,13 +86,14 @@ let commentsLoader = document.getElementById('comments-loader');
 const loadComments = () => {
   let script = document.createElement("script");
   script.setAttribute("type", "text/javascript");
-  script.setAttribute("src", "https://comment.ojbk.im/js/embed.min.js");
+  script.setAttribute("src", "/js/embed.min.js");
 
   // add relevant data-isso attributes here
   script.setAttribute("data-isso", "https://comment.ojbk.im");
-  script.setAttribute("data-isso-vote", "false");
-  script.setAttribute("data-isso-max-comments-top", "10");
-  script.setAttribute("data-isso-reveal-on-click", "10");
+  // script.setAttribute("data-isso-vote", "false");
+  // script.setAttribute("data-isso-max-comments-top", "10");
+  // script.setAttribute("data-isso-reveal-on-click", "10");
+  script.setAttribute("data-isso-css-url", "/css/isso.css");
 
   document.getElementsByTagName("head")[0].appendChild(script);
   commentsLoader.style.display = 'none';
@@ -100,7 +101,6 @@ const loadComments = () => {
 
 // Load comments if the window is not scrollable
 if ((comments !== null) && (comments.offsetTop < window.innerHeight)) {
-  commentsLoader.style.display = 'block';
   loadComments();
   commentsLoaded = true;
 }
@@ -108,7 +108,6 @@ if ((comments !== null) && (comments.offsetTop < window.innerHeight)) {
 window.addEventListener('scroll', throttle(() => {
   if ((comments !== null) && (commentsLoaded == false)) {
     if (window.pageYOffset + window.innerHeight > comments.offsetTop) {
-      commentsLoader.style.display = 'block';
       loadComments();
       commentsLoaded = true;
     }

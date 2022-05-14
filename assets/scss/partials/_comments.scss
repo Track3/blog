@@ -5,8 +5,15 @@
   > h4 {
     color: var(--c-txt);
   }
+
+  #isso-root {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
   .isso-comment {
     border-color: var(--c-bg-alt);
+    clear: both;
   }
 
   .isso-postbox {
@@ -19,6 +26,7 @@
   }
 
   .isso-textarea {
+    min-height: 5em;
     border-radius: 0;
     border-color: transparent;
     color: var(--c-txt);
@@ -66,28 +74,41 @@
     }
   }
 
-  .isso-avatar > img {
-    max-width: 3em;
-    height: auto;
+  .isso-avatar {
+    margin-top: 1.3em;
+    margin-left: 0;
+    > img {
+      max-width: 2.5em;
+      height: auto;
+      border-radius: 50%;
+    }
   }
 
   .isso-text {
     text-align: initial;
   }
 
-  a.isso-reply,
-  a.isso-permalink {
+  .isso-comment-footer {
+    text-align: right;
+    > .isso-downvote {
+      display: none;
+    }
+  }
+
+  a {
     border: none;
     &:hover {
       color: $accent!important;
     }
   }
 
-
   .isso-author {
     color: var(--c-txt);
   }
-  a.isso-author:hover {
-    color: $accent!important;
+  a.isso-author {
+    border-bottom: 1px solid var(--c-bg-alt);
+    &:hover {
+      color: $accent!important;
+    }
   }
 }
