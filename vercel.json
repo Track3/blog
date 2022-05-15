@@ -20,6 +20,11 @@
       "source": "/links/",
       "destination": "/link/",
       "permanent": true
+    },
+    {
+      "source": "/writing/2018/compile-nginx-tls1.3",
+      "destination": "/writing/2018/compile-nginx-tls1.3/",
+      "permanent": true
     }
   ]
 }

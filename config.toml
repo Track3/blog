@@ -64,8 +64,8 @@ googleAnalytics = "UA-125057333-1"
     weight = 20
 
   [[menu.main]]
-    name = "Links"
-    url = "/links/"
+    name = "Link"
+    url = "/link/"
     weight = 30
 
   [[menu.main]]
