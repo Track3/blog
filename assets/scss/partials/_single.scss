@@ -220,7 +220,7 @@ hr.post-end {
   margin-bottom: 2em;
   font-size: 1.2em;
   padding: .5em;
-  border: 1px solid $accent;
+  border: 1px solid var(--c-txt-alt);
   > a {
     flex-basis: 50%;
     flex-grow: 1;

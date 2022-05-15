@@ -1,6 +1,7 @@
 #site-main > #isso-thread {
   margin-top: 3em;
   font-size: 1rem;
+  overflow-wrap: break-word;
 
   > h4 {
     color: var(--c-txt);

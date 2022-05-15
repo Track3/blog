@@ -1,4 +1,5 @@
 {
+  "trailingSlash": true,
   "redirects": [
     {
       "source": "/posts/(.*)",
@@ -12,7 +13,12 @@
     },
     {
       "source": "/friends/",
-      "destination": "/links/",
+      "destination": "/link/",
+      "permanent": true
+    },
+    {
+      "source": "/links/",
+      "destination": "/link/",
       "permanent": true
     }
   ]
