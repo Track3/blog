@@ -90,7 +90,7 @@ const loadComments = () => {
 
   // add relevant data-isso attributes here
   script.setAttribute("data-isso", "https://comment.ojbk.im");
-  // script.setAttribute("data-isso-vote", "false");
+  script.setAttribute("data-isso-vote", "false");
   // script.setAttribute("data-isso-max-comments-top", "10");
   // script.setAttribute("data-isso-reveal-on-click", "10");
   script.setAttribute("data-isso-css-url", "/css/isso.css");

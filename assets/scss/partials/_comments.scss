@@ -1,6 +1,6 @@
 #site-main > #isso-thread {
   margin-top: 3em;
-  font-size: 1em;
+  font-size: 1rem;
 
   > h4 {
     color: var(--c-txt);
@@ -18,6 +18,7 @@
 
   .isso-postbox {
     max-width: unset;
+    min-width: 100%;
     margin-bottom: 1em;
   }
 
@@ -90,9 +91,7 @@
 
   .isso-comment-footer {
     text-align: right;
-    > .isso-downvote {
-      display: none;
-    }
+    font-size: .85em;
   }
 
   a {
@@ -109,6 +108,7 @@
     border-bottom: 1px solid var(--c-bg-alt);
     &:hover {
       color: $accent!important;
+      border-bottom-color: $accent;
     }
   }
 }
