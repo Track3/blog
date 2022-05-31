@@ -39,7 +39,7 @@ textarea {
   line-height: 1.6em;
   font-family: $fonts;
   letter-spacing: .05rem;
-  transition: background-color .5s, color .5s;
+  transition: color .5s, background-color .5s, border-color .5s;
 }
 
 pre,
@@ -137,6 +137,20 @@ hr {
   border-top: none;
   border-width: 3px 0 0 0;
   border-style: dashed;
+}
+
+button, [type=button], [type=reset], [type=submit] {
+  border: 1px solid var(--c-txt-alt);
+  &:hover {
+    border-color: $accent;
+  }
+  &:active {
+    border-style: dashed;
+  }
+}
+
+input[type=text], input[type=email]{
+  border: 1px solid var(--c-txt-alt);
 }
 
 // Global layouts

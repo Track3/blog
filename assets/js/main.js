@@ -93,7 +93,7 @@ const loadComments = () => {
   script.setAttribute("data-isso-vote", "false");
   // script.setAttribute("data-isso-max-comments-top", "10");
   // script.setAttribute("data-isso-reveal-on-click", "10");
-  script.setAttribute("data-isso-css-url", "/css/isso.css");
+  script.setAttribute("data-isso-css", "false");
 
   document.getElementsByTagName("head")[0].appendChild(script);
   commentsLoader.style.display = 'none';

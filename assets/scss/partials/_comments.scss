@@ -1,115 +1,156 @@
-#site-main > #isso-thread {
+#isso-thread {
   margin-top: 3em;
-  font-size: 1rem;
+  font-size: 0.95rem;
   overflow-wrap: break-word;
 
   > h4 {
     color: var(--c-txt);
   }
+}
 
-  #isso-root {
-    display: flex;
-    flex-direction: column-reverse;
+#isso-root {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+// Comment Post Box
+//
+.isso-postbox {
+  padding: .5em;
+  background-color: var(--c-bg-alt);
+  label {
+    font-size: .9em;
   }
+}
 
-  .isso-comment {
+.isso-textarea {
+  min-height: 6em;
+  padding: .1em .3em;
+  background-color: var(--c-bg);
+}
+
+.isso-preview {
+  border: 1px dashed var(--c-txt-alt);
+  padding: .1em .3em;
+  .isso-text-wrapper {
+    margin: 0;
+  }
+}
+
+.isso-auth-section {
+  margin-top: .2rem;
+}
+
+.isso-input-wrapper {
+  display: inline-block;
+  position: relative;
+  max-width: 25%;
+  margin: 0;
+  > label {
+    display: inline-block;
+    font-size: .85em;
+    line-height: normal;
+  }
+  > input {
+    width: 100%;
     border-color: var(--c-bg-alt);
-    clear: both;
+    letter-spacing: normal;
   }
+}
 
-  .isso-postbox {
-    max-width: unset;
-    min-width: 100%;
-    margin-bottom: 1em;
+.isso-post-action {
+  float: right;
+  margin: 1.7em 0 0 .2em;
+}
+
+.isso-notification-section input[type=checkbox] {
+  margin-right: .4em;
+  vertical-align: middle;
+}
+
+.isso-preview,
+.isso-form-wrapper input[name="edit"],
+.isso-preview-mode .isso-post-action > input[name="preview"],
+.isso-preview-mode .isso-textarea {
+  display: none;
+}
+.isso-preview-mode .isso-preview {
+  display: block;
+}
+.isso-preview-mode .isso-post-action > input[name="edit"] {
+  display: inline-block;
+}
+
+// Comments list
+//
+.isso-comment {
+  border-top: 1px solid var(--c-bg-alt);
+  clear: both;
+}
+
+.isso-follow-up {
+  padding-left: calc(7% + 1em);
+}
+
+.isso-avatar {
+  float: left;
+  margin-top: 1.2em;
+  > img {
+    max-width: 2.5em;
+    height: auto;
+    border-radius: 50%;
   }
+}
 
-  .isso-preview {
-    color: #545250;
+.isso-text-wrapper {
+  margin: 1em 0 1em 3.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.isso-comment-header {
+  font-size: .9em;
+  line-height: normal;
+  .isso-spacer {
+    margin: 0 .5em;
+    color: var(--c-bg-alt);
   }
-
-  .isso-textarea {
-    min-height: 5em;
-    border-radius: 0;
-    border-color: transparent;
-    color: var(--c-txt);
-    background-color: var(--c-bg-alt);
-    box-shadow: none;
+  .isso-permalink {
+    color: var(--c-txt-alt);
+    font-size: .9em;
+    border: none;
   }
+}
 
-  .isso-input-wrapper {
-    > label {
-      font-size: .85em;
-      color: var(--c-txt-alt);
-    }
-    > input {
-      width: 100%;
-      background-color: var(--c-bg-alt);
-      line-height: unset;
-      border: 1px solid var(--c-bg);
-      border-radius: 0;
-      box-shadow: none;
-    }
+.isso-comment-footer {
+  text-align: right;
+  font-size: .95em;
+  > a {
+    border: none;
   }
+}
 
-  .isso-post-action > input {
-    margin-top: .2em;
-    padding: .4em;
-    border-radius: 0;
-    border-color: var(--c-bg-alt);
-    color: var(--c-txt);
-    background: transparent;
-    box-shadow: none;
+.isso-text {
+  text-align: initial;
+  a {
+    border-color: var(--c-txt-alt);
     &:hover {
       border-color: $accent;
     }
-    &:active {
-      border-style: dashed;
-    }
   }
+  p {
+    margin: .8em 0;
+  }
+}
 
-  .isso-notification-section > label {
-    font-size: .8em;
-    color: var(--c-txt-alt);
-    vertical-align: middle;
-    &> input {
-      margin-right: .5em;
-    }
-  }
 
-  .isso-avatar {
-    margin-top: 1.3em;
-    margin-left: 0;
-    > img {
-      max-width: 2.5em;
-      height: auto;
-      border-radius: 50%;
-    }
+@media screen and (max-width:650px) {
+  .isso-input-wrapper {
+      display: block;
+      max-width: 100%;
+      margin-bottom: .3em;
   }
-
-  .isso-text {
-    text-align: initial;
-  }
-
-  .isso-comment-footer {
-    text-align: right;
-    font-size: .85em;
-  }
-
-  a {
-    border: none;
-    &:hover {
-      color: $accent!important;
-    }
-  }
-
-  .isso-author {
-    color: var(--c-txt);
-  }
-  a.isso-author {
-    border-bottom: 1px solid var(--c-bg-alt);
-    &:hover {
-      color: $accent!important;
-      border-bottom-color: $accent;
-    }
+  .isso-post-action {
+    margin-top: 1em;
   }
 }
