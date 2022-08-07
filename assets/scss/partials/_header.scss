@@ -22,4 +22,7 @@
       color: var(--c-txt-alt);
     }
   }
+  >a.active {
+    color: #fff;
+  }
 }
