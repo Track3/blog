@@ -56,7 +56,7 @@ listen ("#toc-btn", "click", toggleToc);
 //
 const scrollBtn = document.getElementById('scroll-top-btn');
 const btnVisibility = () => {
-  if ((window.scrollY > 400) && (window.innerWidth >= 1590)) {
+  if ((window.scrollY > 400) && (window.innerWidth >= 1530)) {
       scrollBtn.style.display = "block";
   } else {
       scrollBtn.style.display = "none";

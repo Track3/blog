@@ -254,6 +254,10 @@ h1#page-title {
   main#site-main {
     margin-top: 3em;
   }
+  #home-center, #home-footer {
+    padding-left: 15vw;
+    padding-right: 15vw;
+  }
   .wrapper {
     max-width: 780px;
     text-align: justify;
@@ -298,19 +302,16 @@ h1#page-title {
   }
 }
 
-@media all and (min-width: 1590px) {
+@media all and (min-width: 1530px) {
   :root {
     --offset: 280px;
-  }
-  html {
-    font-size: 1.2em;
   }
   main#site-main {
     margin-top: 6em;
   }
   #home-center, #home-footer {
-    padding-left: 15vw;
-    padding-right: 15vw;
+    padding-left: 16vw;
+    padding-right: 16vw;
   }
   .wrapper {
     margin-left: var(--offset);
@@ -378,5 +379,8 @@ h1#page-title {
 @media all and (min-width: 1800px) {
   :root {
     --offset: 380px;
+  }
+  html {
+    font-size: 1.2em;
   }
 }

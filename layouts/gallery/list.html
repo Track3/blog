@@ -19,7 +19,7 @@
 				{{ $abulmLink := .Permalink -}}
 				<a href="{{ $abulmLink }}">{{.Title}}</a>
 			</h2>
-			<p class="album-date">{{ time.Format .Site.Params.dateform .Params.shot_date }}</p>
+			<p class="album-info">{{ time.Format .Site.Params.dateform .Params.shot_date }} &#183; In {{.Params.location}}</p>
 			<a href="{{ $abulmLink }}" class="album-row">
 				{{- range .Params.images -}}
 				<div class="img-tile"><img src="{{. | absURL}}" loading="lazy"></div>

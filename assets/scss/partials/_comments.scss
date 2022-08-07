@@ -16,7 +16,7 @@
 // Comment Post Box
 //
 .isso-postbox {
-  padding: .5em;
+  padding: .7em;
   background-color: var(--c-bg-alt);
   label {
     font-size: .9em;
@@ -24,7 +24,7 @@
 }
 
 .isso-textarea {
-  min-height: 6em;
+  min-height: 7em;
   padding: .1em .3em;
   background-color: var(--c-bg);
 }
@@ -55,6 +55,7 @@
     width: 100%;
     border-color: var(--c-bg-alt);
     letter-spacing: normal;
+    padding: .1em .3em;
   }
 }
 
@@ -94,7 +95,7 @@
 
 .isso-avatar {
   float: left;
-  margin-top: 1.2em;
+  margin-top: 1em;
   > img {
     max-width: 2.5em;
     height: auto;
@@ -103,7 +104,7 @@
 }
 
 .isso-text-wrapper {
-  margin: 1em 0 1em 3.5em;
+  margin: .8em 0 1em 3.5em;
   display: flex;
   flex-direction: column;
 }
