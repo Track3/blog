@@ -23,7 +23,7 @@
     }
   }
   >a.active {
-    color: #fff;
+    color: var(--c-txt-em);
     &:hover {
       color: $accent;
     }

@@ -15,6 +15,7 @@ body {
   --c-bg-alt: #dee8e5;
   --c-txt: #545250;
   --c-txt-alt: #6d6b69;
+  --c-txt-em: #000;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,6 +24,7 @@ body {
     --c-bg-alt: #364045;
     --c-txt: #c8c6c4;
     --c-txt-alt: #a19f9d;
+    --c-txt-em: #fff;
   }
   #page img {
     filter: brightness(.9);
@@ -290,6 +292,16 @@ h1#page-title {
   .wrapper {
     max-width: 980px;
   }
+  #home-btn {
+    top: .2em;
+    right: .8em;
+    &>img{
+      width: 1.5em;
+    }
+  }
+  #site-header {
+    display: block;
+  }
   .content a.anchor {
     float: left;
     margin-left: -1em;
@@ -316,30 +328,23 @@ h1#page-title {
   .wrapper {
     margin-left: var(--offset);
   }
-  #home-btn {
-    top: .2em;
-    right: .8em;
-    &>img{
-      width: 1.5em;
-    }
-  }
-  #site-header {
-    display: block;
+  .sidebar {
+    position: sticky;
+    float: left;
+    top: 2em;
+    width: calc(var(--offset) - 2em);
+    padding: 0 .5rem;
+    margin-left: calc(0px - var(--offset));
+    text-align: right;
   }
   #toc-btn {
     display: none;
   }
   #toc {
     display: block!important;
-    position: sticky;
-    float: left;
-    top: 2em;
-    width: calc(var(--offset) - 2em);
     padding: 0 0 0 1em;
-    margin-left: calc(0px - var(--offset));
     border-right: 2px solid var(--c-bg-alt);
     background: transparent;
-    text-align: right;
     .toc-title {
       display: block;
     }
@@ -352,14 +357,24 @@ h1#page-title {
       display: inline;
     }
   }
-  .album-meta {
-    position: sticky;
-    float: left;
-    top: 2em;
-    width: calc(var(--offset) - 2em);
-    padding: 0 .5rem;
-    margin-left: calc(0px - var(--offset));
-    text-align: right;
+  .album {
+    width: calc(var(--vw) * 100 - var(--offset) - 1em);
+    margin-top: 3em;
+  }
+  .album-title {
+    margin-top: 0;
+    margin-bottom: .5em;
+  }
+  .album-info {
+    display: block;
+    margin: 0;
+    line-height: 1.5;
+    > .separator {
+      display: none;
+    }
+  }
+  .album-row {
+    gap: 1em;
   }
   .content > figure {
     text-align: left;
