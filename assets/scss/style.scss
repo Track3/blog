@@ -60,6 +60,8 @@ pre {
   font-size: .9em;
   line-height: 1.2;
   white-space: pre;
+  color: var(--c-txt);
+  background-color: var(--c-bg-alt);
   code {
     padding: 0;
     margin: 0;
