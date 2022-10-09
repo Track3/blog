@@ -1,6 +1,6 @@
 {
-    "name": "Track3's Blog",
-    "short_name": "Track3's Blog",
+    "name": "Zakee's Planet",
+    "short_name": "Zakee's Planet",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -15,6 +15,6 @@
     ],
     "theme_color": "#54bab9",
     "background_color": "#54bab9",
-    "start_url": "https://ojbk.im",
+    "start_url": "https://zak.ee",
     "display": "standalone"
 }

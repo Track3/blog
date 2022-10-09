@@ -23,7 +23,7 @@
 	<link rel="shortcut icon" href="/favicon.ico">
 	<title>{{.Title}}</title>
 	<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
-	<link rel="dns-prefetch" href="//comment.ojbk.im">
+	<link rel="dns-prefetch" href="//comment.zak.ee">
 	<link rel="dns-prefetch" href="//gravatar.loli.net">
 	{{ range .AlternativeOutputFormats -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="{{ $style.Permalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr }}>
 	{{- .Scratch.Set "pageClass" ""}}
 	{{ block "head" . -}}{{- end }}
-	<script async defer data-website-id="7330213f-48d1-46e2-b669-758ccca4ba47" src="https://analytics.ojbk.im/umami.js" data-domains="ojbk.im"></script>
+	<script async defer data-website-id="7330213f-48d1-46e2-b669-758ccca4ba47" src="https://analytics.zak.ee/umami.js" data-domains="zak.ee"></script>
 </head>
 
 <body>
