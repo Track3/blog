@@ -12,6 +12,7 @@ trim_trailing_whitespace = true
 
 [*.{html,xml}]
 indent_style = tab
+insert_final_newline = unset
 
 [*.md]
 indent_style = unset
