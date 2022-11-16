@@ -77,41 +77,7 @@ document.querySelectorAll('.post-year').forEach((ele)=> {
   });
 });
 
-// Load Comments
-//
-let commentsLoaded = false;
-let comments = document.getElementById('isso-thread');
-let commentsLoader = document.getElementById('comments-loader');
-
-const loadComments = () => {
-  let script = document.createElement("script");
-  script.setAttribute("type", "text/javascript");
-  script.setAttribute("src", "/js/embed.min.js");
-
-  // add relevant data-isso attributes here
-  script.setAttribute("data-isso", "https://comment.zak.ee");
-  script.setAttribute("data-isso-vote", "false");
-  // script.setAttribute("data-isso-max-comments-top", "10");
-  // script.setAttribute("data-isso-reveal-on-click", "10");
-  script.setAttribute("data-isso-css", "false");
-
-  document.getElementsByTagName("head")[0].appendChild(script);
-  commentsLoader.style.display = 'none';
-}
-
-// Load comments if the window is not scrollable
-if ((comments !== null) && (comments.offsetTop < window.innerHeight)) {
-  loadComments();
-  commentsLoaded = true;
-}
-
 window.addEventListener('scroll', throttle(() => {
-  if ((comments !== null) && (commentsLoaded == false)) {
-    if (window.pageYOffset + window.innerHeight > comments.offsetTop) {
-      loadComments();
-      commentsLoaded = true;
-    }
-  }
   if (scrollBtn !== null) {
     btnVisibility();
   }

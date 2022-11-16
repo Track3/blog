@@ -157,7 +157,17 @@ button, [type=button], [type=reset], [type=submit] {
 }
 
 input[type=text], input[type=email]{
+  width: 100%;
   border: 1px solid var(--c-txt-alt);
+  border-width: 0 0 1px 0;
+}
+
+textarea {
+  width: 100%;
+  max-width: 100%;
+  padding: 2px 6px;
+  border: 1px solid var(--c-txt-alt);
+
 }
 
 // Global layouts
