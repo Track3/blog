@@ -1,4 +1,5 @@
 #comments {
+  font-size: .95rem;
   margin-top: 3em;
   overflow-wrap: break-word;
   text-align: initial;
@@ -9,33 +10,49 @@
 }
 
 .comment-form {
-  margin: 1em 0;
+  margin-top: 1em;
   border: 3px double var(--c-txt-alt);
   padding: .5em;
-  > label {
+
+  label {
+    display: inline-block;
+    width: 100%;
+    margin-top: .5em;
     font-size: .9em;
   }
-  > button[type=submit] {
+  button {
+    width: 100%;
     margin-top: 1em;
     margin-bottom: .2em;
-    width: 100%;
+    line-height: 2;
+  }
+  .form-wrapper {
+    display: flex;
+    gap: .5em;
   }
 }
 
+.comment-preview {
+  width: 100%;
+  min-height: 1em;
+  padding: 2px 6px;
+  border: 1px dashed var(--c-txt-alt);
+}
+
 .comment-group {
-  margin-top: 1em;
+  margin-top: 2em;
   article {
     display: flex;
     margin: 1em 0;
-    padding: 1em 0;
+    padding-top: 1em;
     border-top: 1px solid var(--c-bg-alt);
   }
 }
 
 .comment-avatar {
-  margin-right: 1em;
+  margin-right: .8em;
   > img {
-    width: 50px;
+    width: 40px;
     height: auto;
     border-radius: 50%;
   }
@@ -53,6 +70,9 @@
   > main {
     margin: 1em 0;
     overflow-wrap: anywhere;
+  }
+  img {
+    max-width: 100%;
   }
 }
 
