@@ -29,7 +29,7 @@
   ],
   "headers": [
     {
-      "source": "/(.*).(jpe?g|png|gif|webp|ico|svg|ttf|otf|woff2?)",
+      "source": "/(.*).(jpe?g|png|gif|webp|ico|svg|css|js|ttf|otf|woff2?)",
       "headers": [
         {
           "key": "Cache-Control",
