@@ -25,11 +25,26 @@
       "source": "/writing/2018/compile-nginx-tls1.3/",
       "destination": "/writing/2018/compile-nginx-tls1_3/",
       "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*).(jpe?g|png|gif|webp|ico|svg|ttf|otf|woff2?)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=15552000, immutable"
+        }
+      ]
     },
     {
-      "source": "/writing/2018/compile-nginx-tls1.3",
-      "destination": "/writing/2018/compile-nginx-tls1_3/",
-      "permanent": true
+      "source": "/js/comment.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000, must-revalidate"
+        }
+      ]
     }
   ]
 }
