@@ -140,10 +140,17 @@ table {
 }
 
 hr {
+  width: auto;
+  height: 2rem;
+  margin-top: 2rem;
+  border: none;
+  text-align: center;
   color: var(--c-bg-alt);
-  border-top: none;
-  border-width: 3px 0 0 0;
-  border-style: dashed;
+  &::after {
+    content: "* * *";
+    display: block;
+    font-size: 1.5rem;
+  }
 }
 
 button, [type=button], [type=reset], [type=submit] {

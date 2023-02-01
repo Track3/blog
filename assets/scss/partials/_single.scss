@@ -135,18 +135,9 @@
     margin: 0;
   }
 
-  hr {
-    width: auto;
-    height: 2em;
-    border: none;
-    text-align: center;
-
-    &::after {
-      content: "* * *";
-      display: block;
-      font-size: 2em;
-    }
-
+  hr::after {
+    content: "# FOOTNOTES #";
+    font-size: 1rem;
   }
 
   a {
@@ -179,7 +170,12 @@ a.footnote-ref {
 
 hr.post-end {
   margin: 2rem auto 1rem 0;
-  width: 50%;
+  width: 33%;
+  height: 0;
+  border-top: 3px solid;
+  &::after {
+    display: none;
+  }
 }
 
 .post-info {
@@ -222,7 +218,7 @@ hr.post-end {
   margin-bottom: 2em;
   font-size: 1.2em;
   padding: .5em;
-  border: 1px solid var(--c-txt-alt);
+  border: 1px dashed var(--c-txt-alt);
   > a {
     flex-basis: 50%;
     flex-grow: 1;
