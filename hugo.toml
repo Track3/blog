@@ -1,8 +1,8 @@
 baseURL = "https://zak.ee"
-languageCode = "zh-hans"
 title = "Zakee's Planet"
 staticDir = ["static", "content-static"]
-
+languageCode = "zh-CN"
+defaultContentLanguage = 'zh'
 hasCJKLanguage = true
 rssLimit = 10
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
@@ -13,13 +13,16 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 [markup]
   defaultMarkdownHandler = "goldmark"
 
+  [markup.goldmark.renderer]
+    unsafe = true
+
   [markup.highlight]
     codeFences = true
     guessSyntax = false
     noClasses = false
 
-  [markup.blackFriday]
-    hrefTargetBlank = true
+  # [markup.blackFriday]
+  #   hrefTargetBlank = true
 
 [taxonomies]
   tag = "tags"

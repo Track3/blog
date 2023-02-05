@@ -7,7 +7,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 1rem;
+  font-size: 100%;
 }
 
 body {
@@ -41,7 +41,7 @@ select,
 textarea {
   color: var(--c-txt);
   background-color: var(--c-bg);
-  line-height: 1.6em;
+  line-height: 1.6;
   font-family: $fonts;
   letter-spacing: .05rem;
   transition: color .5s, background-color .5s, border-color .5s;
@@ -57,7 +57,7 @@ pre tt {
 pre {
   padding: .7em 1.1em;
   overflow: auto;
-  font-size: .9em;
+  font-size: .9rem;
   line-height: 1.2;
   white-space: pre;
   color: var(--c-txt);
@@ -84,13 +84,15 @@ blockquote {
   &::before {
     content: "“";
     position: absolute;
-    opacity: .3;
-    font-size: 80px;
-    transform: translate(-20px,5px);
+    z-index: -1;
+    line-height: 1;
+    font-size: 5rem;
+    transform: translate(-1rem,-1rem);
+    color: var(--c-bg-alt);
   }
 
   p {
-    margin-left: 1.2em;
+    margin-left: 1.5em;
   }
   cite {
     font-weight: bold;
@@ -233,7 +235,7 @@ main#site-main {
 }
 h1#page-title {
   margin: 0;
-  font-size: 2em;
+  font-size: 2rem;
   line-height: normal;
 }
 
@@ -251,7 +253,7 @@ h1#page-title {
 
 @media all and (min-width: 550px) {
   html {
-    font-size: 1.1em;
+    font-size: 110%;
   }
   #site-footer {
     background: transparent;
@@ -422,6 +424,6 @@ h1#page-title {
     --offset: 380px;
   }
   html {
-    font-size: 1.2em;
+    font-size: 120%;
   }
 }

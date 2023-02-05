@@ -95,6 +95,11 @@
     margin: auto;
   }
 
+  video, iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
   ul,
   ol {
     padding: 0;
