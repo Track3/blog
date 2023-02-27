@@ -284,9 +284,8 @@ h1#page-title {
   main#site-main {
     margin-top: 3em;
   }
-  #home-center, #home-footer {
-    padding-left: 15vw;
-    padding-right: 15vw;
+  #home-center {
+    padding: 0 15vw;
   }
   .wrapper {
     max-width: 780px;
@@ -349,9 +348,8 @@ h1#page-title {
   main#site-main {
     margin-top: 6em;
   }
-  #home-center, #home-footer {
-    padding-left: 16vw;
-    padding-right: 16vw;
+  #home-center {
+    padding: 0 16vw;
   }
   .wrapper {
     margin-left: var(--offset);

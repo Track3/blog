@@ -3,29 +3,25 @@
 }
 
 #home-center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding: 0 10vw;
-  font-size: 1.2em;
+  font-size: 1.1rem;
 }
 #home-title {
   line-height: normal;
   margin-bottom: .3em;
 }
 #home-social > a {
-  padding-right: .5em;
-  font-size: 1.4em;
+  margin-right: .5em;
+  font-size: 1.5em;
 }
 #home-nav {
-  margin: 1em 0;
+  margin-top: 1rem;
   letter-spacing: normal;
   > a {
     display: inline-block;
     border: 1px solid var(--c-txt-alt);
     padding: 0 .4em;
-    font-size: .8em;
-    margin-top: .5em;
+    font-size: .95rem;
     &:hover {
       border-color: $accent;
     }
@@ -35,17 +31,23 @@
   }
 }
 #recent-posts {
-  margin-top: 2em;
+  margin-top: 3rem;
+  > div {
+    font-size: 1.2em;
+
+  }
 }
 .recent-posts-list {
   list-style: none;
   padding-left: 0;
+  margin-top: .5rem;
   font-size: 1rem;
   li {
-    margin-bottom: .2em;
+    margin-bottom: .3em;
   }
   span {
     margin-right: .5em;
+    font-weight: lighter;
     color: var(--c-txt-alt);
   }
   a {
@@ -53,7 +55,7 @@
   }
 }
 #home-footer {
-  padding: 0 10vw;
-  font-size: .8em;
+  margin-top: 1.5rem;
+  font-size: .8rem;
   letter-spacing: normal;
 }
