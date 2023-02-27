@@ -10,7 +10,7 @@ This repo contains everything needed for building my [blog](https://zak.ee) exce
 
 You will need to have [Hugo](https://gohugo.io/) installed to run this repo.
 
-(1) Get the source code by cloning this repo or download it as a zip file directly.
+(1) Cloning this repo or download it as a zip file directly.
 
 ```
 $ git clone https://github.com/Track3/blog.git
@@ -52,14 +52,15 @@ $ hugo server
 
 * All "code" is licensed under the MIT license (like HTML templates, CSS/JavaScript code etc.). Everything lives in this repo is MIT licensed.
 * All "content" is licensed under [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0) license (like blog post content, images, videos .etc).
+* Feel free to [contact](https://zak.ee/about/#find-me-on) me if you have any questions.
 
 ## Q&A
 
-*Q: Can I fork this repo then edit it and use it as my own website?*
+*Q: Can I fork this repo then edit and use it as my own website?*
 
-**TL;DR** Yes
+**TL;DR** Yes.
 
 * You are free to do so because it's MIT licensed.
-* It's not recommended because everything is designed for my personal use at the beginning, you may need a lot of work to make it work for your use case.
+* It's not recommended because everything is designed for my personal use at the beginning, it may require a lot of effort to make it work for your use case.
 * Please remove all of my personal information and my commit history before put your website to production.
-* It'll be highly appceciated if you can leave a link to this repo or my blog at your website. ❤️
+* It'll be highly appreciated if you could leave a link to this repo or my blog at your website. ❤️
