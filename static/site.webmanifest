@@ -8,13 +8,13 @@
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
-            "sizes": "512x512",
+            "src": "/android-chrome-256x256.png",
+            "sizes": "256x256",
             "type": "image/png"
         }
     ],
     "theme_color": "#54bab9",
-    "background_color": "#54bab9",
+    "background_color": "#defdfa",
     "start_url": "https://zak.ee",
     "display": "standalone"
 }

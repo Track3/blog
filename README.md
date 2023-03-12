@@ -10,7 +10,7 @@ This repo contains everything needed for building my [blog](https://zak.ee) exce
 
 You will need to have [Hugo](https://gohugo.io/) installed to run this repo.
 
-(1) Cloning this repo or download it as a zip file directly.
+(1) Clone this repo or download it as a zip file directly.
 
 ```
 $ git clone https://github.com/Track3/blog.git
@@ -47,6 +47,7 @@ $ hugo server
 * [Feather](https://github.com/feathericons/feather) | MIT License
 * [modern-normalize](https://github.com/sindresorhus/modern-normalize) | MIT License
 * [instant.page](https://github.com/instantpage/instant.page) | MIT License
+* [Fluent Emoji](https://github.com/microsoft/fluentui-emoji) | MIT License
 
 ## License
 
@@ -56,11 +57,11 @@ $ hugo server
 
 ## Q&A
 
-*Q: Can I fork this repo then edit and use it as my own website?*
+*Q: Can I use this repo as a template and adapt it for my own website?*
 
 **TL;DR** Yes.
 
-* You are free to do so because it's MIT licensed.
-* It's not recommended because everything is designed for my personal use at the beginning, it may require a lot of effort to make it work for your use case.
+* Feel free to do so as it's MIT licensed.
+* It's not recommended since everything was initially designed for my personal use, adapting it to suit your specific use case may require significant effort.
 * Please remove all of my personal information and my commit history before put your website to production.
 * It'll be highly appreciated if you could leave a link to this repo or my blog at your website. ❤️
