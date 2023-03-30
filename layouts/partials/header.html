@@ -1,6 +1,6 @@
 	<header id="site-header">
 		<div id="site-branding">
-			<a href="{{.Site.BaseURL}}">{{ .Site.Title }}</a>
+			<a href="{{"" | relURL}}">{{ .Site.Title }}</a>
 		</div>
 		<nav id="site-nav">
 			{{- $currentPage := . }}

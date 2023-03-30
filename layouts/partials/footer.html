@@ -2,7 +2,7 @@
 		<div class="footer-inner">
 			<div class="footer-l">
 				<nav class="site-nav">
-					<a href="{{.Site.BaseURL}}">Home</a><span>&#47;</span>
+					<a href="{{"" | relURL}}">Home</a><span>&#47;</span>
 					{{- range .Site.Menus.main -}}
 					<a href="{{ .URL }}">{{ .Name }}</a><span>&#47;</span>
 					{{- end }}

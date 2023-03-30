@@ -1,7 +1,7 @@
 {{ define "head" }}
 	{{ if .Params.images -}}
 		{{- range first 1 .Params.images -}}
-		<style>:root{ --bg-img: url({{. | absURL}});}</style>
+		<style>:root{ --bg-img: url({{. | relURL}});}</style>
 		{{- end -}}
 	{{- end -}}
 {{ end }}
@@ -13,7 +13,7 @@
 {{ define "main" }}
 	<main id="site-main" class="wrapper">
 		<div class="title-area">
-			<a id="home-btn" title="{{.Site.Title}}" href="{{.Site.BaseURL}}"><img src="/apple-touch-icon.png" width="180" height="180" alt="Logo"></a>
+			<a id="home-btn" title="{{.Site.Title}}" href="{{"" | relURL}}"><img src="/apple-touch-icon.png" width="180" height="180" alt="Logo"></a>
 			<h1 id="page-title" class="title-area-l">{{ .Title }}</h1>
 		</div>
 		<div class="content">

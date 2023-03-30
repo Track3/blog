@@ -5,7 +5,7 @@
 {{ define "main" }}
 	<main id="site-main" class="wrapper">
 		<div class="title-area">
-			<a id="home-btn" title="{{.Site.Title}}" href="{{.Site.BaseURL}}"><img src="/apple-touch-icon.png" width="180" height="180" alt="Logo"></a>
+			<a id="home-btn" title="{{.Site.Title}}" href="{{"" | relURL}}"><img src="/apple-touch-icon.png" width="180" height="180" alt="Logo"></a>
 			<h1 id="page-title" class="title-area-l">{{ .Title }}</h1>
 		</div>
 		{{- if .Content }}
@@ -19,7 +19,7 @@
 			<ul class="posts-list">
 				{{- range .Pages }}
 				<li class="post-item">
-					<a href="{{.Permalink}}">
+					<a href="{{.RelPermalink}}">
 						<span class="post-title">{{.Title}}</span>
 						<span class="post-day">{{ .Date.Format .Site.Params.dateformShort }}</span>
 					</a>

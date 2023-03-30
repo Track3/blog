@@ -5,7 +5,7 @@
 {{ define "main" }}
 	<main id="site-main" class="wrapper">
 		<div class="title-area">
-			<a id="home-btn" title="{{.Site.Title}}" href="{{.Site.BaseURL}}"><img src="/apple-touch-icon.png" width="180" height="180" alt="Logo"></a>
+			<a id="home-btn" title="{{.Site.Title}}" href="{{"" | relURL}}"><img src="/apple-touch-icon.png" width="180" height="180" alt="Logo"></a>
 			<h1 id="page-title" class="title-area-l">{{ .Title }}</h1>
 		</div>
 		{{- if .Content }}
@@ -17,7 +17,7 @@
 		<div class="album">
 			<div class="sidebar">
 				<h2 class="album-title">
-					{{ $abulmLink := .Permalink -}}
+					{{ $abulmLink := .RelPermalink -}}
 					<a href="{{ $abulmLink }}">{{.Title}}</a>
 				</h2>
 				<p class="album-info">{{ time.Format .Site.Params.dateform .Params.shot_date }}</p>
@@ -25,7 +25,7 @@
 			</div>
 			<a href="{{ $abulmLink }}" class="album-row">
 				{{- range .Params.images -}}
-				<div class="img-tile"><img src="{{. | absURL}}" loading="lazy"></div>
+				<div class="img-tile"><img src="{{. | relURL}}" loading="lazy"></div>
 				{{- end -}}
 			</a>
 		</div>

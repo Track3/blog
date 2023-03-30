@@ -1,6 +1,6 @@
 {{ define "head" }}
 	{{ if .Site.Params.bgImg -}}
-	<style>:root{ --bg-img: url({{.Site.Params.bgImg | absURL}});}</style>
+	<style>:root{ --bg-img: url({{.Site.Params.bgImg | relURL}});}</style>
 	{{- end -}}
 	{{.Scratch.Set "pageClass" "home"}}
 {{ end }}
@@ -24,7 +24,7 @@
 				{{ range first 3 (where site.RegularPages "Type" "in" "writing") -}}
 				<li>
 					<span>{{ .Date.Format .Site.Params.dateformNum }} </span>
-					<a href="{{.Permalink}}">{{.Title}}</a>
+					<a href="{{.RelPermalink}}">{{.Title}}</a>
 				</li>
 				{{ end }}
 			</ul>

@@ -1,7 +1,7 @@
 {{ define "head" }}
 	{{ if .Params.images -}}
 		{{- range first 1 .Params.images -}}
-		<style>:root{ --bg-img: url({{. | absURL}});}</style>
+		<style>:root{ --bg-img: url({{. | relURL}});}</style>
 		{{- end -}}
 	{{- end -}}
 {{ end }}
@@ -15,7 +15,7 @@
 		<article>
 			<header class="post-header">
 				<div class="title-area">
-					<a id="home-btn" title="{{.Site.Title}}" href="{{.Site.BaseURL}}"><img src="/apple-touch-icon.png" width="180" height="180" alt="Logo"></a>
+					<a id="home-btn" title="{{.Site.Title}}" href="{{"" | relURL}}"><img src="/apple-touch-icon.png" width="180" height="180" alt="Logo"></a>
 					<div class="title-area-l">
 						<div id="post-header-date">{{ .Date.Format .Site.Params.dateform }}</div>
 						<h1 id="page-title">{{ .Title }}</h1>
@@ -40,7 +40,7 @@
 				<p>
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
 					{{- range . -}}
-					<span class="tag"><a href="{{ "tags/" | absURL }}{{ . | urlize }}">{{.}}</a></span>
+					<span class="tag"><a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{.}}</a></span>
 					{{- end }}
 				</p>
 				{{- end }}
@@ -53,12 +53,12 @@
 		</article>
 		<div class="post-nav">
 			{{- with .NextInSection }}
-			<a class="next-post" href="{{ .Permalink }}">
+			<a class="next-post" href="{{ .RelPermalink }}">
 				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>{{ .Title }}</span>
 			</a>
 			{{- end }}
 			{{- with .PrevInSection }}
-			<a class="prev-post" href="{{ .Permalink }}">
+			<a class="prev-post" href="{{ .RelPermalink }}">
 				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>{{ .Title }}</span>
 			</a>
 			{{- end }}
