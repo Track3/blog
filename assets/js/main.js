@@ -2,25 +2,11 @@
  * Utils
  */
 
-// Throttle
-//
-const throttle = (callback, limit) => {
-  let timeoutHandler = null;
-  return () => {
-    if (timeoutHandler == null) {
-      timeoutHandler = setTimeout(() => {
-        callback();
-        timeoutHandler = null;
-      }, limit);
-    }
-  }
-}
-
 // addEventListener Helper
 //
 const listen = (ele, e, callback) => {
-  if (document.querySelector(ele) !== null) {
-    document.querySelector(ele).addEventListener(e, callback);
+  if (ele !== null) {
+    ele.addEventListener(e, callback);
   }
 }
 
@@ -50,35 +36,34 @@ function toggleToc() {
   }
 }
 
-listen ("#toc-btn", "click", toggleToc);
+listen(document.getElementById('toc-btn'), 'click', toggleToc);
+
 
 // Scroll to Top
 //
 const scrollBtn = document.getElementById('scroll-top-btn');
-const btnVisibility = () => {
+const toggleScrollTopBtn = () => {
   if ((window.scrollY > 400) && (window.innerWidth >= 1530)) {
-      scrollBtn.style.display = "block";
+    scrollBtn.style.display = 'block';
   } else {
-      scrollBtn.style.display = "none";
+    scrollBtn.style.display = 'none';
   }
-};
+}
+
+listen(scrollBtn, 'click', () => {
+  window.scrollTo(0, 0);
+});
 
 if (scrollBtn !== null) {
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo(0,0);
+  window.addEventListener('scroll', () => {
+    toggleScrollTopBtn();
   });
 }
 
 // Anchor points for list page
 //
-document.querySelectorAll('.post-year').forEach((ele)=> {
+document.querySelectorAll('.post-year').forEach((ele) => {
   ele.addEventListener('click', () => {
     window.location.hash = '#' + ele.id;
   });
 });
-
-window.addEventListener('scroll', throttle(() => {
-  if (scrollBtn !== null) {
-    btnVisibility();
-  }
-}, 150));
