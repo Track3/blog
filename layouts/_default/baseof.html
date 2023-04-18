@@ -30,7 +30,7 @@
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr }}>
 	{{- .Scratch.Set "pageClass" ""}}
 	{{ block "head" . -}}{{- end }}
-	<script async defer data-website-id="7330213f-48d1-46e2-b669-758ccca4ba47" src="https://analytics.zak.ee/umami.js" data-domains="zak.ee"></script>
+	<script async src="https://analytics.zak.ee/script.js" data-website-id="7330213f-48d1-46e2-b669-758ccca4ba47" data-domains="zak.ee"></script>
 </head>
 
 <body>
