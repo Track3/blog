@@ -260,6 +260,7 @@ h1#page-title {
     background: transparent;
     &>.footer-inner {
       display: flex;
+      flex-direction: row-reverse;
       padding-top: 1em;
       border-top: 2px solid var(--c-bg-alt);
     }
@@ -267,7 +268,7 @@ h1#page-title {
   .posts-group {
     display: flex;
   }
-  .footer-l {
+  .footer-left {
     flex-grow: 1;
   }
   .site-nav > span {
