@@ -51,7 +51,7 @@ $ hugo server
 
 ## License
 
-* All "code" is licensed under the MIT license (like HTML templates, CSS/JavaScript code etc.). Everything lives in this repo is MIT licensed.
+* All "code" is licensed under the Mozilla Public License Version 2.0 (like HTML templates, CSS/JavaScript code etc.). Everything lives in this repo is MPL licensed.
 * All "content" is licensed under [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0) license (like blog post content, images, videos .etc).
 * Feel free to [contact](https://zak.ee/about/#find-me-on) me if you have any questions.
 
@@ -61,7 +61,7 @@ $ hugo server
 
 **TL;DR** Yes.
 
-* Feel free to do so as it's MIT licensed.
+* Feel free to do so as it's MPL licensed. You can do whatever you want under the MPLv2 license.
 * It's not recommended since everything was initially designed for my personal use, adapting it to suit your specific use case may require significant effort.
 * Please remove all of my personal information and my commit history before put your website to production.
 * It'll be highly appreciated if you could leave a link to this repo or my blog at your website. ❤️

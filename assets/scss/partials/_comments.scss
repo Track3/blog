@@ -1,6 +1,5 @@
 #comments {
-  font-size: .95rem;
-  margin-top: 3em;
+  margin-top: 3rem;
   overflow-wrap: break-word;
   text-align: initial;
 }
@@ -11,21 +10,22 @@
 
 .comment-form {
   margin-top: 1em;
-  border: 3px double var(--c-txt-alt);
+  border: 1px solid var(--c-txt-alt);
   padding: .5em;
 
   label {
     display: inline-block;
     width: 100%;
     margin-top: .5em;
-    font-size: .9em;
+    font-size: 90%;
   }
+
   button {
     width: 100%;
     margin-top: 1em;
-    margin-bottom: .2em;
     line-height: 2;
   }
+
   .form-wrapper {
     display: flex;
     gap: .5em;
@@ -41,6 +41,7 @@
 
 .comment-group {
   margin-top: 2em;
+
   article {
     display: flex;
     margin: 1em 0;
@@ -51,7 +52,8 @@
 
 .comment-avatar {
   margin-right: .8em;
-  > img {
+
+  >img {
     width: 40px;
     height: auto;
     border-radius: 50%;
@@ -61,16 +63,20 @@
 .comment-wrapper {
   position: relative;
   width: 100%;
-  > header {
-    font-size: .9em;
+
+  >header {
+    font-size: 90%;
+
     .comment-date {
       color: var(--c-txt-alt);
     }
   }
-  > main {
+
+  >main {
     margin: 1em 0;
     overflow-wrap: anywhere;
   }
+
   img {
     max-width: 100%;
   }
@@ -80,7 +86,6 @@
   position: absolute;
   top: 0;
   right: 0;
-  font-size: .8em;
 }
 
 

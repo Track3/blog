@@ -4,7 +4,6 @@ staticDir = ["static", "content-static"]
 languageCode = "zh-CN"
 defaultContentLanguage = 'zh'
 hasCJKLanguage = true
-rssLimit = 10
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
 
 [author]
@@ -15,61 +14,55 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 
   [markup.goldmark.renderer]
     unsafe = true
-
+  [markup.goldmark.parser]
+    wrapStandAloneImageWithinParagraph = false
+  [markup.goldmark.parser.attribute]
+    block = true
+    title = true
   [markup.highlight]
     codeFences = true
     guessSyntax = false
     noClasses = false
 
-  # [markup.blackFriday]
-  #   hrefTargetBlank = true
-
-[taxonomies]
-  tag = "tags"
+# [taxonomies]
+#   tag = "tags"
 
 [params]
-  dateform        = "Jan 2, 2006"
-  dateformShort   = "Jan 02"
-  dateformNum     = "2006-01-02"
-  dateformNumTime = "2006-01-02 15:04"
-
-  description = "Zakee的个人博客"
-  keywords = "Zakee,Track3,blog,博客,个人网站,中文独立博客"
-  accentColor = "#54BAB9"
   images = ["apple-touch-icon.png"]
-  # bgImg = "/img/bg.jpg"
-  # gitUrl = "https://github.com/Track3/blog/commit/"
-
-  [[params.social]]
-    name = "twitter"
-    url = "https://twitter.com/zakee_97"
-
-  [[params.social]]
-    name = "telegram"
-    url = "http://t.me/zakee97"
-
-  [[params.social]]
-    name = "github"
-    url = "https://github.com/Track3"
 
 [menu]
+
+  [[menu.main]]
+    name = "Home"
+    pageref = "/"
+    weight = 1
+    [menu.main.params]
+      description = "主页"
 
   [[menu.main]]
     name = "Writing"
     pageref = "/writing"
     weight = 10
+    [menu.main.params]
+      description = "文章归档"
 
   [[menu.main]]
     name = "Gallery"
     pageref = "/gallery"
     weight = 20
+    [menu.main.params]
+      description = "相册"
 
   [[menu.main]]
     name = "Link"
     pageref = "/link"
     weight = 30
+    [menu.main.params]
+      description = "链接与留言板"
 
   [[menu.main]]
     name = "About"
     pageref = "/about"
     weight = 40
+    [menu.main.params]
+      description = "关于"

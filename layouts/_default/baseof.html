@@ -6,10 +6,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="color-scheme" content="dark light">
-	<meta name="theme-color" content="{{$.Site.Params.accentColor}}">
 	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 	{{ if .IsHome -}}
-	<meta name="keywords" content="{{ with .Site.Params.keywords }}{{ . }}{{ end }}">
+	<meta name="keywords" content="{{ range .Keywords }}{{ . }}{{ end }}">
 	{{ end }}
 	{{- template "_internal/schema.html" . }}
 	{{- template "_internal/opengraph.html" . }}
@@ -22,27 +21,38 @@
 	<link rel="shortcut icon" href="/favicon.ico">
 	<title>{{.Title}}</title>
 	<link rel="dns-prefetch" href="//pb.zak.ee">
-	<link rel="dns-prefetch" href="//gravatar.loli.net">
+	<link rel="dns-prefetch" href="//cravatar.cn">
 	{{ range .AlternativeOutputFormats -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{ end -}}
-	{{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "css/style.css" . | toCSS | minify | fingerprint -}}
-	<link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr }}>
-	{{- .Scratch.Set "pageClass" ""}}
-	{{ block "head" . -}}{{- end }}
+	{{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "css/style.css" . | toCSS | minify |
+	fingerprint -}}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr}}>
 	<script async src="https://analytics.zak.ee/script.js" data-website-id="7330213f-48d1-46e2-b669-758ccca4ba47" data-domains="zak.ee"></script>
 </head>
 
 <body>
-	<div id="page" class="{{.Scratch.Get "pageClass"}}">
-		{{ block "header" . -}}{{ end -}}
-		{{ block "main" . -}}{{ end -}}
-		{{ block "footer" . -}}{{ end }}
-	</div>
-	<div id="bg-img"></div>
-	{{ $script := resources.Get "js/main.js" | minify | fingerprint -}}
-	<script src="{{ $script.RelPermalink }}" {{ printf "integrity=%q" $script.Data.Integrity | safeHTMLAttr }}></script>
-	<script src="/js/instant.page-5.1.1.js" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
+	{{ block "main" . }}
+	{{ end }}
+	<nav class="wrapper">
+		<h2>Index / 索引</h2>
+		<ul class="lsc">
+			{{- range .Site.Menus.main -}}
+			<li>
+				<a href="{{ .URL }}">{{ .Name }}</a>
+			</li>
+			{{- end }}
+		</ul>
+	</nav>
+	<footer class="wrapper">
+		<h2>About / 关于</h2>
+		<ul class="lsn dim site-footer">
+			<li>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC 4.0</a>.</li>
+			<li>View the "<a href="/about/">About</a>" page to learn more. Keep track via <a href="{{ "writing/index.xml" | absURL }}" target="_blank" title="RSS">RSS</a>.</li>
+			<li class="tdln"><a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/previous">←</a> An <a href="https://xn--sr8hvo.ws/">IndieWeb Webring</a> 🕸💍 <a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/next">→</a></li>
+		</ul>
+	</footer>
+	<script src="/js/instantpage-5.2.0.js" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>
 
 </html>
