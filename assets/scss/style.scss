@@ -17,6 +17,7 @@ body {
   --c-bg-alt: #dee8e5;
   --c-txt: #545250;
   --c-txt-alt: #72706e;
+  --c-txt-alt2: rgba(114, 112, 110, .3);
   --c-txt-em: #000;
   margin: 0;
   padding: 1.5rem;
@@ -48,10 +49,11 @@ textarea {
 // Auto light/dark mode
 @media (prefers-color-scheme: dark) {
   body {
-    --c-bg: #14181a;
-    --c-bg-alt: #2d3539;
-    --c-txt: #a9a6a2;
-    --c-txt-alt: #82807d;
+    --c-bg: #1e1f20;
+    --c-bg-alt: #313a3f;
+    --c-txt: #b1aeaa;
+    --c-txt-alt: #898680;
+    --c-txt-alt2: rgba(137, 134, 128, .5);
     --c-txt-em: #fff;
   }
 
@@ -139,10 +141,14 @@ a.tdln,
   color: var(--c-txt-alt)
 }
 
+.dimmer {
+  color: var(--c-txt-alt2)
+}
+
 a {
   color: var(--c-txt);
-  text-decoration: solid underline 1px var(--c-txt-alt);
-  text-underline-offset: 0.2em;
+  text-decoration: solid underline 1px var(--c-txt-alt2);
+  text-underline-offset: 0.25em;
   transition: color .3s, text-decoration-color .3s;
 
   &:hover {
@@ -355,6 +361,10 @@ textarea {
   }
 }
 
+a.footnote-backref {
+  text-decoration: none;
+}
+
 a.footnote-ref {
   padding: 1px 2px;
   line-height: normal;
@@ -428,6 +438,6 @@ a.footnote-ref {
 
 @media all and (min-width: 1400px) {
   h1 {
-    margin-top: 6rem;
+    margin-top: 7rem;
   }
 }
