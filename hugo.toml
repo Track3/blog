@@ -24,8 +24,8 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
     guessSyntax = false
     noClasses = false
 
-# [taxonomies]
-#   tag = "tags"
+[taxonomies]
+  tag = "tags"
 
 [params]
   images = ["apple-touch-icon.png"]
