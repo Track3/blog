@@ -147,7 +147,8 @@ a.tdln,
 
 a {
   color: var(--c-txt);
-  text-decoration: solid underline 1px var(--c-txt-alt2);
+  text-decoration-color: var(--c-txt-alt2);
+  text-decoration-thickness: 1px;
   text-underline-offset: 0.25em;
   transition: color .3s, text-decoration-color .3s;
 
