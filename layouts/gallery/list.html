@@ -1,0 +1,23 @@
+{{ define "main" }}
+	<main class="wrapper">
+		<h1><a href="/" class="home">{{.Title}}</a></h1>
+		{{ if .Content -}}
+		<div class="content">
+			{{ .Content }}
+		</div>
+		{{- end }}
+
+		{{- range (.Pages.ByParam "shot_date").Reverse}}
+		<div class="album">
+			{{ $abulmLink := .RelPermalink -}}
+			<h2><a href="{{ $abulmLink }}" class="tdln">{{.Title}}</a></h2>
+			<a href="{{ $abulmLink }}" class="album-row">
+				{{- range .Params.images -}}
+				<div class="img-tile"><img src="{{. | relURL}}" loading="lazy"></div>
+				{{- end -}}
+			</a>
+		</div>
+		{{- end }}
+	</main>
+	<hr>
+{{- end }}

@@ -1,0 +1,37 @@
+.album {
+  margin-top: 2rem;
+
+  h2 {
+    margin-bottom: .25em;
+  }
+}
+
+.album-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5em;
+  border: none !important;
+}
+
+.img-tile {
+  height: 100px;
+
+  &>img {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+}
+
+.album-header {
+  font-size: 90%;
+
+  .feather {
+    margin-right: .5em;
+  }
+}
+
+.album-desc {
+  margin-block: .5em;
+}

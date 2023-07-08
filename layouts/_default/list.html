@@ -9,7 +9,7 @@
 
 		{{ range .Pages.GroupByDate "2006" -}}
 		<div class="post-group">
-			<div class="dim post-year" id="{{ .Key }}">{{ .Key }}</div>
+			<div class="post-year" id="{{ .Key }}">{{ .Key }}</div>
 			<ul class="lsn post-list">
 				{{ range .Pages -}}
 				<li class="post-item">
