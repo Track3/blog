@@ -322,13 +322,15 @@ textarea {
   figure.left {
     float: left;
     margin-right: 1em;
-    max-width: 50%;
+    max-width: 40%;
+    text-align: left;
   }
 
   figure.right {
     float: right;
     margin-left: 1em;
-    max-width: 50%;
+    max-width: 40%;
+    text-align: right;
   }
 
   img {
@@ -341,6 +343,7 @@ textarea {
   video,
   iframe {
     max-width: 100%;
+    height: auto;
   }
 }
 

@@ -23,11 +23,11 @@
 			{{- with .Params.tags }}
 			<li>标&emsp;签：{{- range . -}}<a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="post-tag">{{.}}</a>{{ end }}</li>
 			{{- end }}
-			<li></li>
-			{{- with .PrevInSection }}
+			{{- $list := (where site.RegularPages "Type" "in" "gallery") }}
+			{{- with ($list.ByParam "shot_date").Reverse.Prev . }}
 			<li>上一篇：<a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 			{{- end }}
-			{{- with .NextInSection }}
+			{{- with ($list.ByParam "shot_date").Reverse.Next . }}
 			<li>下一篇：<a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
 			{{- end }}
 		</ul>
