@@ -13,7 +13,7 @@
 			<ul class="lsn post-list">
 				{{ range .Pages -}}
 				<li class="post-item">
-					<span class="dim post-day">{{ .Date.Format "Jan 02" }}</span>
+					<span class="dim post-day">{{ .Date.Format "01/02" }}</span>
 					<a href="{{.RelPermalink}}" class="post-title">{{.Title}}</a>
 				</li>
 				{{- end }}
