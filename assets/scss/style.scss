@@ -222,10 +222,10 @@ blockquote {
   cite {
     font-weight: bold;
     font-style: normal;
-    margin-left: 1em;
+    font-size: 75%;
 
     &::before {
-      content: "—— ";
+      content: "― ";
     }
   }
 }
@@ -426,7 +426,6 @@ a.footnote-ref {
 .post-day {
   display: inline-block;
   min-width: 4em;
-  font-style: italic;
 }
 
 @import "partials/comments", "partials/gallery";
