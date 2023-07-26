@@ -19,6 +19,8 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
   [markup.goldmark.parser.attribute]
     block = true
     title = true
+  [markup.goldmark.extensions.typographer]
+    disable = true
   [markup.highlight]
     codeFences = true
     guessSyntax = false
