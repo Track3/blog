@@ -94,7 +94,6 @@ h1 {
     margin-right: .5em;
     color: var(--c-txt-alt);
     font-style: italic;
-    font-size: 90%;
   }
 
   a {
@@ -115,7 +114,7 @@ h4,
 h5,
 h6 {
   font-weight: bold;
-  font-family: $serif-fonts;
+  font-family: $fonts-serif;
 }
 
 ul,
@@ -174,7 +173,7 @@ a {
 pre,
 code,
 pre tt {
-  font-family: $mono-fonts;
+  font-family: $fonts-mono;
   letter-spacing: normal;
 }
 
@@ -202,7 +201,8 @@ code {
 blockquote {
   margin: 1.5em 1em;
   font-style: italic;
-  font-family: $serif-fonts;
+  font-family: $fonts-serif;
+  font-size: 125%;
   letter-spacing: normal;
   color: var(--c-txt-alt);
 
@@ -411,7 +411,7 @@ a.footnote-ref {
   margin-bottom: .75em;
   line-height: 1;
   font-size: 150%;
-  font-family: $serif-fonts;
+  font-family: $fonts-serif;
   font-style: italic;
 }
 
