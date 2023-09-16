@@ -93,7 +93,6 @@ h1 {
   span {
     margin-right: .5em;
     color: var(--c-txt-alt);
-    font-style: italic;
   }
 
   a {
@@ -171,6 +170,9 @@ a {
     font-style: italic;
     text-decoration: none;
     color: var(--c-txt-alt);
+    &:hover {
+      color: $accent;
+    }
   }
 }
 
