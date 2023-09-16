@@ -35,6 +35,11 @@
 </head>
 
 <body>
+	{{ if not .IsHome -}}
+	<header>
+		<a title="主页" href="{{"" | relURL}}" class="home">← {{.Site.Title}}</a>
+	</header>
+	{{- end -}}
 	{{ block "main" . }}
 	{{ end }}
 	<nav class="wrapper">
