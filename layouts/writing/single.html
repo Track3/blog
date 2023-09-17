@@ -3,6 +3,14 @@
 		<h1>{{.Title}}</h1>
 		<div class="dim post-info">
 			{{ dateFormat ":date_long" .Date.Local }}
+			{{- if .Params.toc -}}
+			&nbsp;&#183;
+			<label for="toc-toggle">目录</label>
+			<input type="checkbox" id="toc-toggle">
+			<div id="toc">
+				{{ .TableOfContents }}
+			</div>
+			{{- end }}
 		</div>
 		{{ if .Content -}}
 		<div class="content">

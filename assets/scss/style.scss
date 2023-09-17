@@ -42,7 +42,7 @@ select,
 textarea {
   color: var(--c-txt);
   background-color: var(--c-bg);
-  font-family: $fonts;
+  font-family: $fonts-sans;
   transition: color .5s, background-color .5s, border-color .5s;
 }
 
@@ -87,12 +87,22 @@ h1 {
 
 .recent-posts-list {
   li {
-    margin-top: .25rem;
+    margin-top: .125rem;
   }
 
   span {
     margin-right: .5em;
     color: var(--c-txt-alt);
+  }
+
+  a {
+    display: block;
+  }
+}
+
+.site-nav {
+  li {
+    margin-top: .125rem;
   }
 
   a {
@@ -113,7 +123,7 @@ h4,
 h5,
 h6 {
   font-weight: bold;
-  font-family: $fonts-serif;
+  font-family: var(--fonts-serif);
 }
 
 ul,
@@ -152,7 +162,7 @@ a {
   text-decoration-color: var(--c-txt-alt2);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.25em;
-  transition: color .3s, text-decoration-color .3s;
+  transition: color .3s, text-decoration-color .3s, border-color .3s;
 
   &:hover {
     color: $accent;
@@ -170,6 +180,7 @@ a {
     font-style: italic;
     text-decoration: none;
     color: var(--c-txt-alt);
+
     &:hover {
       color: $accent;
     }
@@ -179,7 +190,7 @@ a {
 pre,
 code,
 pre tt {
-  font-family: $fonts-mono;
+  font-family: var(--fonts-mono);
   letter-spacing: normal;
 }
 
@@ -207,7 +218,7 @@ code {
 blockquote {
   margin: 1.5em 1em;
   font-style: italic;
-  font-family: $fonts-serif;
+  font-family: var(--fonts-serif);
   font-size: 125%;
   letter-spacing: normal;
   color: var(--c-txt-alt);
@@ -361,12 +372,39 @@ textarea {
   margin-bottom: 1.5rem;
   line-height: normal;
   font-size: 90%;
-  font-style: italic;
   color: var(--c-txt-alt);
+
+  label {
+    cursor: pointer;
+  }
+}
+
+#toc-toggle {
+  display: none;
+}
+
+#toc {
+  display: none;
+  margin-top: .75rem;
+  border: 1px dashed var(--c-bg-alt);
+
+  a {
+    display: block;
+    color: var(--c-txt-alt);
+    text-decoration: none;
+
+    &:hover {
+      color: $accent;
+    }
+  }
+}
+
+#toc-toggle:checked+#toc {
+  display: block;
 }
 
 .footnotes {
-  font-size: 75%;
+  font-size: 80%;
 
   p {
     margin: 0;
@@ -415,11 +453,9 @@ a.footnote-ref {
 }
 
 .post-year {
-  margin-bottom: .75em;
-  line-height: 1;
-  font-size: 150%;
-  font-family: $fonts-serif;
-  font-style: italic;
+  margin-bottom: .5rem;
+  font-weight: bold;
+  letter-spacing: .125em;
 }
 
 .post-list {

@@ -4,6 +4,9 @@ $accent: #54bab9;
 
 // Fonts
 //
-$fonts: Avenir, Montserrat, Calibri, "URW Gothic", source-sans-pro, -apple-system, BlinkMacSystemFont, PingFang SC, Hiragino Sans GB, Microsoft Yahei, sans-serif;
-$fonts-serif: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, Georgia, "Source Han Serif SC VF", "Source Han Serif CN VF", "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", source-han-serif-sc, serif;
-$fonts-mono: ui-monospace, "Cascadia Code", "Fira Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", "YaHei Consolas Hybrid", monospace, sans-serif;
+$fonts-sans: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, -apple-system, BlinkMacSystemFont, Calibri, PingFang SC, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+
+:root {
+  --fonts-serif: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, Georgia, "Source Han Serif SC VF", "Source Han Serif CN VF", "Source Han Serif SC", "Source Han Serif CN", "Noto Serif CJK SC", source-han-serif-sc, serif;
+  --fonts-mono: ui-monospace, "Cascadia Code", "Fira Code", "Source Code Pro", Menlo, Consolas, "DejaVu Sans Mono", "YaHei Consolas Hybrid", monospace, sans-serif;
+}
