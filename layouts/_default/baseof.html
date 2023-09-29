@@ -31,7 +31,6 @@
 	{{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "css/style.css" . | toCSS | minify |
 	fingerprint -}}
 	<link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr}}>
-	<script async src="https://analytics.zak.ee/script.js" data-website-id="7330213f-48d1-46e2-b669-758ccca4ba47" data-domains="zak.ee"></script>
 </head>
 
 <body>
