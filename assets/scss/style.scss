@@ -75,7 +75,7 @@ textarea {
 }
 
 h1 {
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-bottom: 2.5rem;
   line-height: 1.25;
   font-size: 1.75em;
@@ -386,7 +386,9 @@ textarea {
 #toc {
   display: none;
   margin-top: .75rem;
-  border: 1px dashed var(--c-bg-alt);
+  border-top: 1px dashed var(--c-bg-alt);
+  border-bottom: 1px dashed var(--c-bg-alt);
+  font-style: italic;
 
   a {
     display: block;
@@ -475,6 +477,10 @@ a.footnote-ref {
 @import "partials/comments", "partials/gallery";
 
 @media all and (min-width: 550px) {
+  h1 {
+    margin-top: 3rem;
+  }
+
   .post-group {
     display: flex;
     gap: 1.5rem;
