@@ -19,7 +19,7 @@
 		</div>
 		{{- end }}
 		<ul class="lsn dim post-footer">
-			<li>发布于{{ dateFormat "2006-01-02 15:04 MST" .Date.UTC }}，最后更新于{{ dateFormat "2006-01-02 15:04 MST" .Lastmod.UTC }}</li>
+			<li>发布于{{ dateFormat "2006-01-02 15:04 MST" .Date.UTC }}，更新于{{ dateFormat "2006-01-02 15:04 MST" .Lastmod.UTC }}</li>
 			{{- with .Params.tags }}
 			<li>标&emsp;签：{{- range . -}}<a href="{{ "tags/" | relURL }}{{ . | urlize }}" class="post-tag">{{.}}</a>{{ end }}</li>
 			{{- end }}

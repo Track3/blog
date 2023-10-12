@@ -49,9 +49,9 @@ textarea {
 // Auto light/dark mode
 @media (prefers-color-scheme: dark) {
   body {
-    --c-bg: #1e1f20;
+    --c-bg: #1b1f23;
     --c-bg-alt: #313a3f;
-    --c-txt: #adadad;
+    --c-txt: #ababab;
     --c-txt-alt: #898680;
     --c-txt-alt2: rgba(137, 134, 128, .5);
     --c-txt-em: #fff;
@@ -270,7 +270,6 @@ table {
 hr {
   width: auto;
   height: 2rem;
-  margin-top: 2rem;
   border: none;
   text-align: center;
   color: var(--c-bg-alt);
@@ -370,7 +369,6 @@ textarea {
 .post-info {
   margin-top: -2.25rem;
   margin-bottom: 1.5rem;
-  line-height: normal;
   font-size: 90%;
   color: var(--c-txt-alt);
 
@@ -407,6 +405,7 @@ textarea {
 
 .footnotes {
   font-size: 80%;
+  margin-top: 2rem;
 
   p {
     margin: 0;
@@ -423,13 +422,16 @@ a.footnote-backref {
 }
 
 a.footnote-ref {
-  padding: 1px 2px;
-  line-height: normal;
   font-size: 80%;
-  border-radius: 2px;
   text-decoration: none;
-  background-color: var(--c-bg-alt);
-  transition-property: background-color;
+
+  &::before {
+    content: "[";
+  }
+
+  &::after {
+    content: "]";
+  }
 
   &:hover {
     color: $accent;
