@@ -14,6 +14,13 @@
 		</div>
 		{{ if .Content -}}
 		<div class="content">
+			{{ with .Params.featuredImage -}}
+			{{ with $.Resources.GetMatch . -}}
+			<figure class="big">
+				<img src="{{.RelPermalink}}" alt="featured image" width="{{.Width}}" height="{{.Height}}">
+			</figure>
+			{{- end }}
+			{{- end }}
 			{{ .Content }}
 		</div>
 		{{- end }}

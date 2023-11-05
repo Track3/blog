@@ -4,7 +4,7 @@ date: {{ .Date }}
 lastmod: {{ .Date }}
 draft: true
 toc: false
-images:
+featuredImg: false
 tags:
   - untagged
 ---

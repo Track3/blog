@@ -12,9 +12,11 @@
 			{{ $abulmLink := .RelPermalink -}}
 			<h2><a href="{{ $abulmLink }}" class="tdln">{{.Title}}</a></h2>
 			<a href="{{ $abulmLink }}" class="album-row">
-				{{- range .Params.images -}}
-				<div class="img-tile"><img src="{{. | relURL}}" loading="lazy"></div>
-				{{- end -}}
+				{{ with .Resources.Match "*thumbnail*" -}}
+				{{ range . -}}
+				<img class="img-tile" loading="lazy" src="{{.RelPermalink}}" alt="thumbnail" width="{{.Width}}" height="{{.Height}}">
+				{{- end }}
+				{{- end }}
 			</a>
 		</div>
 		{{- end }}
