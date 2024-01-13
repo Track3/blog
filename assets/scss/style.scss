@@ -91,12 +91,13 @@ h1 {
   }
 
   span {
-    margin-right: .5em;
     color: var(--c-txt-alt);
-  }
-
-  a {
-    display: block;
+    font-size: 75%;
+    font-style: italic;
+    &::before {
+      content: "/ ";
+      color: var(--c-txt-alt2);
+    }
   }
 }
 
@@ -454,6 +455,7 @@ a.footnote-ref {
 
 .post-group {
   margin-top: 2rem;
+  padding-left: 2px;
 }
 
 .post-year {
@@ -486,10 +488,6 @@ a.footnote-ref {
   .post-group {
     display: flex;
     gap: 1.5rem;
-  }
-
-  .recent-posts-list a {
-    display: inline;
   }
 }
 
