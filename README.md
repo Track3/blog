@@ -1,3 +1,5 @@
+<img src="./static/apple-touch-icon.png" alt="logo" width="110" height="110" align="right">
+
 # Zakee's Planet
 
 ![GitHub deployments](https://img.shields.io/github/deployments/Track3/blog/production?label=vercel&logo=vercel&style=flat-square)
