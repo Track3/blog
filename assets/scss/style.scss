@@ -18,7 +18,7 @@ body {
   --c-txt: #545250;
   --c-txt-alt: #72706e;
   --c-txt-alt2: rgba(114, 112, 110, .3);
-  --c-txt-em: #000;
+  --c-txt-em: #333333;
   margin: 0;
   padding: 1.5rem;
   line-height: 1.6;
@@ -51,10 +51,10 @@ textarea {
   body {
     --c-bg: #1b1f23;
     --c-bg-alt: #313a3f;
-    --c-txt: #ababab;
+    --c-txt: #bababa;
     --c-txt-alt: #898680;
     --c-txt-alt2: rgba(137, 134, 128, .5);
-    --c-txt-em: #fff;
+    --c-txt-em: #dedede;
   }
 
   main img {
@@ -125,6 +125,7 @@ h5,
 h6 {
   font-weight: bold;
   font-family: var(--fonts-serif);
+  color: var(--c-txt-em);
 }
 
 ul,
