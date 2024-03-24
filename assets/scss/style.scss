@@ -20,7 +20,7 @@ body {
   --c-txt-alt2: rgba(114, 112, 110, .3);
   --c-txt-em: #333333;
   margin: 0;
-  padding: 1.5rem;
+  padding: 1rem;
   line-height: 1.6;
   letter-spacing: .04rem;
 
@@ -53,7 +53,7 @@ textarea {
     --c-bg-alt: #313a3f;
     --c-txt: #bababa;
     --c-txt-alt: #898680;
-    --c-txt-alt2: rgba(137, 134, 128, .5);
+    --c-txt-alt2: rgba(140, 140, 140, .5);
     --c-txt-em: #dedede;
   }
 
@@ -70,7 +70,7 @@ textarea {
 // Layouts
 //
 .wrapper {
-  max-width: 50rem;
+  max-width: 48rem;
   margin-inline: auto;
 }
 
@@ -482,17 +482,13 @@ a.footnote-ref {
 @import "partials/comments", "partials/gallery";
 
 @media all and (min-width: 550px) {
-  h1 {
-    margin-top: 3rem;
-  }
-
   .post-group {
     display: flex;
     gap: 1.5rem;
   }
 }
 
-@media all and (min-width: 992px) {
+@media all and (min-width: 880px) {
   h1 {
     margin-top: 5rem;
     font-size: 2em;
