@@ -25,13 +25,13 @@ body {
   letter-spacing: .04rem;
 
   >main {
-    margin-bottom: 4rem;
+    margin-bottom: 3.5rem;
   }
 
   >section,
   >nav,
   >footer {
-    margin-block: 4rem;
+    margin-block: 3.5rem;
   }
 }
 
@@ -75,8 +75,7 @@ textarea {
 }
 
 h1 {
-  margin-top: 2rem;
-  margin-bottom: 2.5rem;
+  margin-block: 1.5rem;
   line-height: 1.4;
   font-size: 1.75em;
 }
@@ -131,12 +130,13 @@ h6 {
 
 ul,
 ol {
-  padding-inline-start: 2em;
+  padding-inline-start: 1.25em;
 }
 
 li::marker {
   font-size: 90%;
   color: var(--c-txt-alt);
+  letter-spacing: normal;
 }
 
 // lsn -> list-style: none
@@ -280,7 +280,7 @@ hr {
   height: 2rem;
   border: none;
   text-align: center;
-  color: var(--c-bg-alt);
+  color: var(--c-txt-alt2);
 
   &::after {
     content: "* * *";
@@ -375,8 +375,7 @@ textarea {
 }
 
 .post-info {
-  margin-top: -2.25rem;
-  margin-bottom: 1.5rem;
+  margin-top: -1.25rem;
   font-size: 90%;
 
   label {
@@ -502,11 +501,6 @@ a.footnote-ref {
   a.anchor {
     float: left;
     margin-left: -1em;
-  }
-
-  .content > ul,
-  .content > ol {
-    padding-inline-start: 0;
   }
 }
 
