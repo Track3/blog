@@ -504,8 +504,8 @@ a.footnote-ref {
     margin-left: -1em;
   }
 
-  .content ul,
-  .content ol {
+  .content > ul,
+  .content > ol {
     padding-inline-start: 0;
   }
 }
