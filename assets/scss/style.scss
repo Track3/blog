@@ -136,7 +136,7 @@ ol {
 
 li::marker {
   font-size: 90%;
-  color: var(--c-txt-alt2);
+  color: var(--c-txt-alt);
 }
 
 // lsn -> list-style: none
@@ -504,8 +504,8 @@ a.footnote-ref {
     margin-left: -1em;
   }
 
-  ul,
-  ol {
+  .content ul,
+  .content ol {
     padding-inline-start: 0;
   }
 }
