@@ -21,7 +21,7 @@ body {
   --c-txt-em: #333333;
   margin: 0;
   padding: 1rem;
-  line-height: 1.6;
+  line-height: 1.7;
   letter-spacing: .04rem;
 
   >main {
@@ -52,7 +52,7 @@ textarea {
     --c-bg: #1b1f23;
     --c-bg-alt: #313a3f;
     --c-txt: #bababa;
-    --c-txt-alt: #898680;
+    --c-txt-alt: #8f8f8f;
     --c-txt-alt2: rgba(140, 140, 140, .5);
     --c-txt-em: #dedede;
   }
@@ -77,7 +77,7 @@ textarea {
 h1 {
   margin-top: 2rem;
   margin-bottom: 2.5rem;
-  line-height: 1.25;
+  line-height: 1.4;
   font-size: 1.75em;
 }
 
@@ -94,6 +94,7 @@ h1 {
     color: var(--c-txt-alt);
     font-size: 75%;
     font-style: italic;
+
     &::before {
       content: "/ ";
       color: var(--c-txt-alt2);
@@ -133,6 +134,10 @@ ol {
   padding-inline-start: 2em;
 }
 
+li::marker {
+  font-size: 90%;
+  color: var(--c-txt-alt2);
+}
 
 // lsn -> list-style: none
 ul.lsn {
@@ -260,12 +265,13 @@ table {
   th,
   td {
     padding: 1.5%;
-    border: 1px solid;
+    border: 1px solid var(--c-txt-alt2);
   }
 
   th {
     font-weight: bold;
     vertical-align: bottom;
+    background-color: var(--c-bg-alt);
   }
 }
 
@@ -372,7 +378,6 @@ textarea {
   margin-top: -2.25rem;
   margin-bottom: 1.5rem;
   font-size: 90%;
-  color: var(--c-txt-alt);
 
   label {
     cursor: pointer;
@@ -442,7 +447,7 @@ a.footnote-ref {
 
 .post-footer {
   margin-top: 3rem;
-  font-size: 75%;
+  font-size: 80%;
 }
 
 .post-tag {
@@ -490,8 +495,18 @@ a.footnote-ref {
 
 @media all and (min-width: 880px) {
   h1 {
-    margin-top: 5rem;
+    margin-top: 4rem;
     font-size: 2em;
+  }
+
+  a.anchor {
+    float: left;
+    margin-left: -1em;
+  }
+
+  ul,
+  ol {
+    padding-inline-start: 0;
   }
 }
 
