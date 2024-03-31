@@ -3,18 +3,16 @@
     "short_name": "Zakee's Planet",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/android-chrome-192x192.png?v=1",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-256x256.png",
-            "sizes": "256x256",
+            "src": "/android-chrome-512x512.png?v=1",
+            "sizes": "512x512",
             "type": "image/png"
         }
     ],
     "theme_color": "#54bab9",
-    "background_color": "#defdfa",
-    "start_url": "https://zak.ee",
-    "display": "standalone"
+    "start_url": "https://zak.ee"
 }

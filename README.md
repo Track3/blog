@@ -49,7 +49,6 @@ $ hugo server
 * [Feather](https://github.com/feathericons/feather) | MIT License
 * [modern-normalize](https://github.com/sindresorhus/modern-normalize) | MIT License
 * [instant.page](https://github.com/instantpage/instant.page) | MIT License
-* [Fluent Emoji](https://github.com/microsoft/fluentui-emoji) | MIT License
 
 ## License
 

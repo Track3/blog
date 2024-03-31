@@ -30,7 +30,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
   tag = "tags"
 
 [params]
-  images = ["apple-touch-icon.png"]
+  images = ["og-image.png"]
 
 [menu]
 

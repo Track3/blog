@@ -13,12 +13,11 @@
 	{{- template "_internal/schema.html" . }}
 	{{- template "_internal/opengraph.html" . }}
 	{{- template "_internal/twitter_cards.html" . }}
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-	<link rel="manifest" href="/site.webmanifest">
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#54bab9">
-	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=1">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=1">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=1">
+	<link rel="manifest" href="/site.webmanifest?v=1">
+	<link rel="shortcut icon" href="/favicon.ico?v=1">
 	<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 	<link rel="dns-prefetch" href="//pb.zak.ee">
 	<link rel="dns-prefetch" href="//seccdn.libravatar.org">
