@@ -2,9 +2,10 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 lastmod: {{ .Date }}
+description:
 draft: true
 toc: false
-featuredImg: false
+featuredImage: false
 tags:
   - untagged
 ---

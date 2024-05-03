@@ -224,9 +224,7 @@ code {
 
 blockquote {
   margin: 1.5em 1em;
-  font-style: italic;
-  font-family: var(--fonts-serif);
-  font-size: 125%;
+  font: italic 125% var(--fonts-serif);
   letter-spacing: normal;
   color: var(--c-txt-alt);
 
@@ -334,7 +332,7 @@ textarea {
 
   figure {
     height: auto;
-    margin: 0;
+    margin: 1rem 0;
     text-align: center;
   }
 
@@ -500,7 +498,7 @@ a.footnote-ref {
 
   a.anchor {
     float: left;
-    margin-left: -1em;
+    margin-left: -.75em;
   }
 }
 
