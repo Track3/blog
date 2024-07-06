@@ -5,7 +5,7 @@ lastmod: {{ .Date }}
 description:
 draft: true
 toc: false
-featuredImage: false
+featuredImage:
 tags:
   - untagged
 ---

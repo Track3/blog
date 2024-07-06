@@ -33,34 +33,46 @@
 </head>
 
 <body>
-	{{ if not .IsHome -}}
 	<header>
-		<a title="主页" href="{{"" | relURL}}" class="home">← {{.Site.Title}}</a>
-	</header>
-	{{- end -}}
-	{{ block "main" . }}
-	{{ end }}
-	{{- if not .IsHome }}
-	<hr>
-	{{- end }}
-	<nav class="wrapper site-nav">
-		<h2>Index / 索引</h2>
-		<ul class="lsc">
-			{{- range .Site.Menus.main -}}
-			<li>
+		<div class="header-inner">
+			{{ with site.Menus.main -}}
+			<nav class="site-nav">
+				{{- range . }}
+				{{- if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
+				<a class="active" aria-current="page" href="{{ .URL }}" title="{{ .Params.description }}">{{ .Name }}</a>
+				{{- else }}
 				<a href="{{ .URL }}" title="{{ .Params.description }}">{{ .Name }}</a>
-			</li>
+				{{- end -}}
+				{{ end }}
+			</nav>
+			{{ end -}}
+			{{ if .Params.toc -}}
+			<details open>
+				<summary>目录</summary>
+				{{ .TableOfContents }}
+			</details>
 			{{- end }}
-		</ul>
-	</nav>
-	<footer class="wrapper">
-		<h2>About / 关于</h2>
-		<ul class="lsn dim site-footer">
-			<li>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author.name }}</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC 4.0</a>.</li>
-			<li>Check "<a href="/about/" title="关于">About</a>" to learn more. Keep track via <a href="{{ "writing/index.xml" | absURL }}" target="_blank">RSS</a>.</li>
-			<li class="tdln"><a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/previous">←</a> An <a href="https://xn--sr8hvo.ws/">IndieWeb Webring</a> 🕸💍 <a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/next">→</a></li>
-		</ul>
-	</footer>
+		</div>
+	</header>
+
+	<div class="wrapper">
+		<main>
+			{{ if not .IsHome -}}
+			<a title="主页" href="{{"" | relURL}}" class="tdln dim back-btn">←</a>
+			{{ end -}}
+			<h1>{{.Title}}</h1>
+			{{ block "main" . }}
+			{{ end }}
+		</main>
+		<footer class="site-footer">
+			<ul class="lsn dim">
+				<li>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author.name }}</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC 4.0</a>.</li>
+				<li>Check "<a href="/about/" title="关于">About</a>" to learn more. Keep track via <a href="{{ "index.xml" | absURL }}" target="_blank">RSS</a>.</li>
+				<li class="tdln"><a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/previous">←</a> An <a href="https://xn--sr8hvo.ws/">IndieWeb Webring</a> 🕸💍 <a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/next">→</a></li>
+			</ul>
+		</footer>
+	</div>
+
 	<script src="/js/instantpage-5.2.0.js" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>
 

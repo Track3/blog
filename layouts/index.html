@@ -1,21 +1,45 @@
 {{ define "main" }}
-	<main class="wrapper">
-		<h1>{{.Title}}</h1>
 		{{ if .Content -}}
 		<div class="content">
 			{{ .Content }}
 		</div>
 		{{- end }}
-	</main>
-	<section class="wrapper">
-		<h2>Latest / 最新</h2>
-		<ul class="recent-posts-list lsc">
-			{{ range first 3 (where site.RegularPages "Type" "in" "writing") -}}
-			<li>
-				<a href="{{.RelPermalink}}">{{.Title}}</a>
-				<span>{{ .Date.Local.Format "2006-01-02" }}</span>
-			</li>
-			{{ end }}
-		</ul>
-	</section>
+		<section class="section content">
+			<a href="{{"writing/" | relURL}}" class="tdln section-title">
+				<h2>Writing</h2>
+				<object width="24" height="24" title="RSS">
+					<a href="{{"writing/index.xml" | relURL}}" target="_blank" aria-label="RSS"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+				</object>
+			</a>
+			<ul class="lsn">
+				{{ range first 3 (where site.RegularPages "Type" "in" "writing") -}}
+				<li class="post-item">
+					<a href="{{.RelPermalink}}" class="tdln post-title">{{.Title}}</a>
+					<span class="dim">{{ .Date.Format "2006/01/02" }}</span>
+				</li>
+				{{ end }}
+			</ul>
+		</section>
+		<section class="section content">
+			<a href="{{"photo/" | relURL}}" class="tdln section-title">
+				<h2>Photo</h2>
+				<object width="24" height="24" title="RSS">
+					<a href="{{"photo/index.xml" | relURL}}" target="_blank" aria-label="RSS"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+				</object>
+			</a>
+			<ul class="lsn">
+				{{ range first 3 ((where site.RegularPages "Type" "in" "photo").ByParam "shot_date").Reverse -}}
+				<li class="post-item" >
+					<a href="{{ .RelPermalink }}" class="home-photo-group">
+						{{ with .Resources.Match "*thumbnail*" -}}
+						{{ range first 3 . -}}
+						<img src="{{.RelPermalink}}" loading="lazy" class="home-photo-item" alt="thumbnail" width="{{.Width}}" height="{{.Height}}">
+						{{- end }}
+						{{- end }}
+					</a>
+					<span class="dim">{{ dateFormat "2006/01/02" .Params.shot_date }}</span>
+				</li>
+				{{ end }}
+			</ul>
+		</section>
 {{- end }}

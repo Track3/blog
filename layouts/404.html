@@ -1,12 +1,9 @@
 {{ define "main" }}
-	<main class="wrapper">
-		<h1>{{.Title}}</h1>
 		<p>服务器找不到请求的页面，可能原因有:</p>
-		<ul class="lsc">
+		<ul>
 			<li>您可能输入了错误的网址;</li>
 			<li>网址已被转移;</li>
 			<li>网址从未存在。</li>
 		</ul>
-		<!-- <img src="{{ "img/404.png" | relURL }}" alt="Nothing Found"> -->
-	</main>
+		<p>请再次检查网址，或返回<a title="主页" href="{{"" | relURL}}">主页</a>。</p>
 {{- end }}

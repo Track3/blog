@@ -1,24 +1,22 @@
 {{ define "main" }}
-	<main class="wrapper">
-		<h1>{{.Title}}</h1>
-		{{ if .Content -}}
+		{{ with .Content -}}
 		<div class="content">
-			{{ .Content }}
+			{{ . }}
 		</div>
 		{{- end }}
 
 		{{- range (.Pages.ByParam "shot_date").Reverse}}
-		<div class="album">
-			{{ $abulmLink := .RelPermalink -}}
-			<h2><a href="{{ $abulmLink }}" class="tdln">{{.Title}}</a></h2>
-			<a href="{{ $abulmLink }}" class="album-row">
+		<section class="section">
+			<a href="{{ .RelPermalink }}" class="tdln section-title">
+				<h2>{{.Title}}</h2>
+			</a>
+			<a href="{{ .RelPermalink }}" class="album-row">
 				{{ with .Resources.Match "*thumbnail*" -}}
 				{{ range . -}}
 				<img class="img-tile" loading="lazy" src="{{.RelPermalink}}" alt="thumbnail" width="{{.Width}}" height="{{.Height}}">
 				{{- end }}
 				{{- end }}
 			</a>
-		</div>
+		</section>
 		{{- end }}
-	</main>
 {{- end }}

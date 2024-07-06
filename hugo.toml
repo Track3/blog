@@ -35,35 +35,35 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 [menu]
 
   [[menu.main]]
-    name = "Home"
+    name = "主页 — Intro"
     pageref = "/"
     weight = 1
     [menu.main.params]
       description = "主页"
 
   [[menu.main]]
-    name = "Writing"
+    name = "文章 — Writing"
     pageref = "/writing"
     weight = 10
     [menu.main.params]
-      description = "文章归档"
+      description = "文章"
 
   [[menu.main]]
-    name = "Gallery"
-    pageref = "/gallery"
+    name = "照片 — Photo"
+    pageref = "/photo"
     weight = 20
     [menu.main.params]
-      description = "相册"
+      description = "照片"
 
   [[menu.main]]
-    name = "Link"
+    name = "联结 — Link"
     pageref = "/link"
     weight = 30
     [menu.main.params]
-      description = "链接与留言板"
+      description = "联结"
 
   [[menu.main]]
-    name = "About"
+    name = "关于 — About"
     pageref = "/about"
     weight = 40
     [menu.main.params]

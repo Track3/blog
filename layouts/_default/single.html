@@ -1,13 +1,9 @@
 {{ define "main" }}
-	<main class="wrapper">
-		<h1>{{.Title}}</h1>
-		{{ if .Content -}}
 		<div class="content">
-			{{ .Content }}
+			{{ with .Content -}}{{ . }}{{ end }}
+			<ul class="lsn dim post-footer">
+				<li>/* 最后更新于{{ dateFormat "2006-01-02 15:04 MST" .Lastmod.UTC }} */</li>
+			</ul>
+			{{ with .Params.comments -}}{{ partialCached "comments.html" . }}{{- end }}
 		</div>
-		{{- end }}
-		{{ with .Params.comments -}}
-		{{ partialCached "comments.html" . }}
-		{{- end }}
-	</main>
 {{- end }}

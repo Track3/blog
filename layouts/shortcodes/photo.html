@@ -9,13 +9,12 @@
 			 {{- with $image.Height }} height="{{ . }}"{{ end -}}
 	/><!-- Closing img tag -->
 	<figcaption>
-		{{ with (.Get "title") -}}
+		{{- with (.Get "title") -}}
 		<h4>{{ . }}</h4>
 		{{ end -}}
-		{{- if or (.Get "caption") $image.Exif -}}
+		{{ if or (.Get "caption") $image.Exif -}}
 		<p>
 			{{- .Get "caption" | markdownify -}}
-			{{ end -}}
 			{{ with $image.Exif -}}
 			<span class="image_meta">
 				{{ with .Tags.Model }}{{.}} {{ end -}}
@@ -26,5 +25,6 @@
 			</span>
 			{{ end -}}
 		</p>
+		{{ end -}}
 	</figcaption>
 </figure>
