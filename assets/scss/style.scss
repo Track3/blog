@@ -6,6 +6,42 @@
   box-sizing: border-box;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(30px);
+  }
+}
+
+@keyframes slide-out {
+  to {
+    transform: translateY(-30px);
+  }
+}
+
+::view-transition-old(root) {
+  animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out, 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-out;
+}
+
+::view-transition-new(root) {
+  animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in, 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-in;
+}
+
 html {
   -moz-tab-size: 4;
   tab-size: 4;
@@ -268,7 +304,7 @@ textarea {
   }
 }
 
-body>header {
+.site-header {
   display: none;
   border-right: 2px solid var(--c-bg-alt);
   color: var(--c-txt-alt);
@@ -276,6 +312,10 @@ body>header {
   a {
     text-decoration: none;
   }
+}
+
+.header-inner {
+  view-transition-name: site-header;
 }
 
 .site-nav {
@@ -370,7 +410,6 @@ a.section-title:hover {
   display: flex;
   gap: .5em;
   overflow-x: hidden;
-  height: 50px;
   flex-grow: 1;
 
   &::after {
@@ -526,8 +565,6 @@ a.footnote-ref {
 
 @import "partials/comments";
 
-@media all and (min-width: 34em) {}
-
 @media all and (min-width: 55em) {
   body {
     padding-top: 3rem;
@@ -539,7 +576,7 @@ a.footnote-ref {
     display: none;
   }
 
-  body>header {
+  .site-header {
     display: block;
     flex-basis: 14rem;
   }
