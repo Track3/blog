@@ -16,12 +16,11 @@
 		<p>
 			{{- .Get "caption" | markdownify -}}
 			{{ with $image.Exif -}}
-			<span class="image_meta">
-				{{ with .Tags.Model }}{{.}} {{ end -}}
-				{{ with .Tags.FocalLength }}@ {{.}}mm {{ end -}}
-				{{ with .Tags.FNumber }}&mdash; &fnof;/{{.}}{{ end -}}
-				{{ with .Tags.ExposureTime }}, {{ lang.FormatNumber 2 . }} sec{{ end -}}
-				{{ with .Tags.ISOSpeedRatings }}, ISO {{.}} {{ end }}
+			<span>【
+				{{- with .Tags.FocalLength }}{{.}}mm{{ end -}}
+				{{ with .Tags.ApertureValue }}, &fnof;/{{ lang.FormatNumber 1 . }}{{ end -}}
+				{{ with .Tags.ExposureTime }}, {{.}}s{{ end -}}
+				{{ with .Tags.ISO }}, ISO{{.}}{{ end }}】
 			</span>
 			{{ end -}}
 		</p>

@@ -378,6 +378,7 @@ h1 {
 
   >object {
     text-align: right;
+
     >a {
       display: block;
     }
@@ -468,7 +469,6 @@ a.section-title:hover {
   figcaption>p {
     margin: 0;
     font-size: 75%;
-    font-weight: bold;
     color: var(--c-txt-alt);
 
     &::before {
