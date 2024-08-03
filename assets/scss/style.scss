@@ -1,4 +1,4 @@
-@import "predefined.scss", "syntax.scss";
+@import "predefined.scss";
 
 *,
 ::before,
@@ -46,15 +46,15 @@ html {
   -moz-tab-size: 4;
   tab-size: 4;
   scroll-behavior: smooth;
-}
-
-body {
   --c-bg: #f3f6f6;
   --c-bg-alt: #dee8e5;
   --c-txt: #545250;
   --c-txt-alt: #72706e;
   --c-txt-alt2: rgba(114, 112, 110, .3);
   --c-txt-em: #333333;
+}
+
+body {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -78,7 +78,7 @@ textarea {
 
 // Auto light/dark mode
 @media (prefers-color-scheme: dark) {
-  body {
+  html {
     --c-bg: #1c1f21;
     --c-bg-alt: #313a3f;
     --c-txt: #bababa;
@@ -352,6 +352,8 @@ textarea {
 }
 
 .back-btn {
+  display: inline-block;
+  width: 100%;
   font-size: 125%;
 }
 
@@ -361,15 +363,18 @@ h1 {
   line-height: 1.4;
 }
 
+.site-title {
+  margin-top: .5rem;
+}
+
 .section {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .section-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: .25rem;
   border-bottom: 1px dashed var(--c-bg-alt);
 
   h2 {
@@ -394,7 +399,7 @@ a.section-title:hover {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: .5em 0;
+  padding: .375em 0;
   border-bottom: 1px dashed var(--c-bg-alt);
   transition: border-color .3s;
 
@@ -472,7 +477,7 @@ a.section-title:hover {
     color: var(--c-txt-alt);
 
     &::before {
-      content: "↑";
+      content: "▲";
       margin-right: .25em;
       color: var(--c-txt-alt2);
     }
@@ -563,7 +568,7 @@ a.footnote-ref {
   object-fit: cover;
 }
 
-@import "partials/comments";
+@import "syntax.scss", "partials/comments";
 
 @media all and (min-width: 55em) {
   body {
@@ -572,8 +577,16 @@ a.footnote-ref {
 }
 
 @media all and (min-width: 81em) {
+  body {
+    padding-top: 5rem;
+  }
+
   .back-btn {
     display: none;
+  }
+
+  .site-title {
+    margin-top: 0;
   }
 
   .site-header {

@@ -14,15 +14,14 @@
 		{{ end -}}
 		{{ if or (.Get "caption") $image.Exif -}}
 		<p>
-			{{- .Get "caption" | markdownify -}}
 			{{ with $image.Exif -}}
 			<span>【
 				{{- with .Tags.FocalLength }}{{.}}mm{{ end -}}
 				{{ with .Tags.ApertureValue }}, &fnof;/{{ lang.FormatNumber 1 . }}{{ end -}}
 				{{ with .Tags.ExposureTime }}, {{.}}s{{ end -}}
-				{{ with .Tags.ISO }}, ISO{{.}}{{ end }}】
-			</span>
-			{{ end -}}
+				{{ with .Tags.ISO }}, ISO{{.}}{{ end }}】</span>
+			{{- end -}}
+			{{- .Get "caption" | markdownify -}}
 		</p>
 		{{ end -}}
 	</figcaption>

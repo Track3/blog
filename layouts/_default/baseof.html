@@ -57,10 +57,12 @@
 
 	<div class="wrapper">
 		<main>
-			{{ if not .IsHome -}}
+			{{ if .IsHome -}}
+			<h1 class="site-title">{{.Title}}</h1>
+			{{ else -}}
 			<a title="主页" href="{{"" | relURL}}" class="tdln dim back-btn">←</a>
-			{{ end -}}
 			<h1>{{.Title}}</h1>
+			{{ end -}}
 			{{ block "main" . }}
 			{{ end }}
 		</main>
