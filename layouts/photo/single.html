@@ -37,7 +37,7 @@
 					<a href="{{.RelPermalink}}" class="post-item tdln">
 						<span>上一篇：{{.Title}}</span>
 						<span class="dotted-line"></span>
-						<time class="dim">{{ .Date.Format "2006-01-02" }}</time>
+						<time class="dim">{{ dateFormat "2006-01-02" .Params.shot_date }}</time>
 					</a>
 				</li>
 				{{- end }}
@@ -46,7 +46,7 @@
 					<a href="{{.RelPermalink}}" class="post-item tdln">
 						<span>下一篇：{{.Title}}</span>
 						<span class="dotted-line"></span>
-						<time class="dim">{{ .Date.Format "2006-01-02" }}</time>
+						<time class="dim">{{ dateFormat "2006-01-02" .Params.shot_date }}</time>
 					</a>
 				</li>
 				{{- end }}
