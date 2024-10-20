@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<meta name="color-scheme" content="dark light">
+	<meta name="color-scheme" content="light dark">
 	<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}">
 	{{ if .IsHome -}}
 	<meta name="keywords" content="{{ range .Keywords }}{{ . }}{{ end }}">
@@ -21,59 +21,42 @@
 	<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 	<link rel="dns-prefetch" href="//pb.zak.ee">
 	<link rel="dns-prefetch" href="//seccdn.libravatar.org">
-	<link rel="openid.delegate" href="https://zak.ee/">
-	<link rel="openid.server openid2.provider" href="https://indieauth.com/openid">
-	<link rel="authorization_endpoint" href="https://indieauth.com/auth">
 	{{ range .AlternativeOutputFormats -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{ end -}}
-	{{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "css/style.css" . | toCSS | minify |
-	fingerprint -}}
-	<link rel="stylesheet" href="{{ $style.RelPermalink }}" {{ printf "integrity=%q" $style.Data.Integrity | safeHTMLAttr}}>
+	{{ with resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
+	<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
+	{{ end }}
 </head>
 
-<body>
-	<header class="site-header">
-		<div class="header-inner">
-			{{ with site.Menus.main -}}
-			<nav class="site-nav">
-				{{- range . }}
-				{{- if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
-				<a class="active" aria-current="page" href="{{ .URL }}" title="{{ .Params.description }}">{{ .Name }}</a>
-				{{- else }}
-				<a href="{{ .URL }}" title="{{ .Params.description }}">{{ .Name }}</a>
-				{{- end -}}
-				{{ end }}
-			</nav>
-			{{ end -}}
-			{{ if .Params.toc -}}
-			<details open>
-				<summary>目录</summary>
-				{{ .TableOfContents }}
-			</details>
-			{{- end }}
+<body class="wrapper">
+	<a class="skip-to-content-link tdln" href="#main">Skip to content</a>
+	<header class="site-header tdln">
+		<a href="{{"" | relURL}}" class="site-title">{{ .Site.Title }}</a>
+		{{ with site.Menus.main -}}
+		<nav class="site-nav">
+		{{- range . }}
+			{{- if or ($.HasMenuCurrent .Menu .) ($.IsMenuCurrent .Menu .) }}
+			<a class="active" aria-current="page" href="{{ .URL }}" title="{{ .Params.description }}">{{ .Name }}</a>
+			{{- else }}
+			<a href="{{ .URL }}" title="{{ .Params.description }}">{{ .Name }}</a>
+			{{- end -}}
+		{{ end }}
+		</nav>
+		{{ end -}}
+		<div class="rss-icon">
+			<a href="{{ "index.xml" | absURL }}" target="_blank" title="RSS"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
 		</div>
 	</header>
 
-	<div class="wrapper">
-		<main>
-			{{ if .IsHome -}}
-			<h1 class="site-title">{{.Title}}</h1>
-			{{ else -}}
-			<a title="主页" href="{{"" | relURL}}" class="tdln dim back-btn">←</a>
-			<h1>{{.Title}}</h1>
-			{{ end -}}
-			{{ block "main" . }}
-			{{ end }}
-		</main>
-		<footer class="site-footer">
-			<ul class="lsn dim">
-				<li>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author.name }}</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC 4.0</a>.</li>
-				<li>Check "<a href="/about/" title="关于">About</a>" to learn more. Keep track via <a href="{{ "index.xml" | absURL }}" target="_blank">RSS</a>.</li>
-				<li class="tdln"><a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/previous">←</a> An <a href="https://xn--sr8hvo.ws/">IndieWeb Webring</a> 🕸💍 <a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/next">→</a></li>
-			</ul>
-		</footer>
-	</div>
+	<main class="site-main" id="main">
+		{{ block "main" . }}{{ end }}
+	</main>
+
+	<footer class="site-footer dim">
+		<div>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author.name }}</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC 4.0</a>.</div>
+		<div><a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/previous">←</a> An <a href="https://xn--sr8hvo.ws/">IndieWeb Webring</a> 🕸💍 <a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/next">→</a></div>
+	</footer>
 
 	<script src="/js/instantpage-5.2.0.js" type="module" integrity="sha384-jnZyxPjiipYXnSU0ygqeac2q7CVYMbh84q0uHVRRxEtvFPiQYbXWUorga2aqZJ0z"></script>
 </body>

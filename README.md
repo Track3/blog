@@ -32,7 +32,6 @@ blog
 ├── archetypes/
 ├── assets/
 ├── content/
-├── content-static/
 ├── layouts/
 ├── static/
 └── hugo.toml

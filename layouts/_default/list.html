@@ -1,25 +1,26 @@
 {{ define "main" }}
+		<div class="page-title">
+			<h1>{{.Title}}</h1>
+		</div>
 		<div class="content">
 			{{ with .Content -}}{{ . }}{{ end }}
-			{{ range .Pages.GroupByDate "2006" -}}
-			<section class="section">
-				<div class="section-title">
-					<h2 id="{{ .Key }}">{{ .Key }}</h2>
-				</div>
-				<ul class="lsn">
-					{{ range .Pages -}}
-					<li class="post-item">
-						<a href="{{.RelPermalink}}" class="tdln post-title">
-							{{.Title}}
-							{{- with .Params.description -}}
-							<div class="description dim">{{ . }}</div>
-							{{ end -}}
-						</a>
-						<span class="dim">{{ .Date.Format "01/02" }}</span>
-					</li>
-					{{- end }}
-				</ul>
-			</section>
-			{{ end -}}
 		</div>
+		{{ range .Pages.GroupByDate "2006" -}}
+		<section class="section">
+			<div class="section-title">
+				<h2 id="{{ .Key }}">{{ .Key }}</h2>
+			</div>
+			<ul class="lsn">
+				{{ range .Pages -}}
+				<li>
+					<a href="{{.RelPermalink}}" class="post-item tdln">
+						<span>{{.Title}}</span>
+						<span class="dotted-line"></span>
+						<time class="dim">{{ .Date.Format "01-02" }}</time>
+					</a>
+				</li>
+				{{- end }}
+			</ul>
+		</section>
+		{{ end -}}
 {{- end }}

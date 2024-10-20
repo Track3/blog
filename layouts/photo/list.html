@@ -1,13 +1,13 @@
 {{ define "main" }}
-		{{ with .Content -}}
-		<div class="content">
-			{{ . }}
+		<div class="page-title">
+			<h1>{{.Title}}</h1>
 		</div>
-		{{- end }}
-
+		<div class="content">
+			{{ with .Content -}}{{ . }}{{ end }}
+		</div>
 		{{- range (.Pages.ByParam "shot_date").Reverse}}
-		<section class="section">
-			<a href="{{ .RelPermalink }}" class="tdln section-title">
+		<section class="section tdln">
+			<a href="{{ .RelPermalink }}" class="section-title">
 				<h2>{{.Title}}</h2>
 			</a>
 			<a href="{{ .RelPermalink }}" class="album-row">
@@ -18,5 +18,5 @@
 				{{- end }}
 			</a>
 		</section>
-		{{- end }}
+		{{ end -}}
 {{- end }}

@@ -1,8 +1,7 @@
 {{ define "main" }}
-		{{ with .Params.description -}}
-		<p class="description dim">{{ . }}</p>
-		{{ end -}}
-		<div class="content">
+		<div class="page-title">
+			<h1>{{.Title}}</h1>
+
 			<ul class="lsn dim post-info">
 				{{ with .Params.shot_date -}}
 				<li>
@@ -19,15 +18,37 @@
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-camera"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg> {{ . }}
 				</li>
 				{{ end -}}
+				{{ with .GetTerms "tags" }}
+				<li>
+					{{ range . }}<a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+				</li>
+				{{ end -}}
 			</ul>
+			{{ with .Params.description -}}
+			<p class="dim">{{ . }}</p>
+			{{ end -}}
+		</div>
+		<div class="content">
 			{{ with .Content -}}{{ . }}{{ end }}
 			<ul class="lsn dim post-footer">
 				<li>/* 最后更新于{{ dateFormat "2006-01-02 15:04 MST" .Lastmod.UTC }} */</li>
 				{{- with .PrevInSection }}
-				<li>上一篇：<a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+				<li>
+					<a href="{{.RelPermalink}}" class="post-item tdln">
+						<span>上一篇：{{.Title}}</span>
+						<span class="dotted-line"></span>
+						<time class="dim">{{ .Date.Format "2006-01-02" }}</time>
+					</a>
+				</li>
 				{{- end }}
 				{{- with .NextInSection }}
-				<li>下一篇：<a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+				<li>
+					<a href="{{.RelPermalink}}" class="post-item tdln">
+						<span>下一篇：{{.Title}}</span>
+						<span class="dotted-line"></span>
+						<time class="dim">{{ .Date.Format "2006-01-02" }}</time>
+					</a>
+				</li>
 				{{- end }}
 			</ul>
 			{{ partialCached "comments.html" . }}
