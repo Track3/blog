@@ -6,9 +6,9 @@
   box-sizing: border-box;
 }
 
-@view-transition {
-  navigation: auto;
-}
+// @view-transition {
+//   navigation: auto;
+// }
 
 .skip-to-content-link {
   position: absolute;
@@ -280,7 +280,7 @@ textarea {
   margin-bottom: .5rem;
   line-height: 1.2;
   border-bottom: 1px solid var(--c-bg-alt);
-  view-transition-name: site-header;
+  // view-transition-name: site-header;
 }
 
 .site-title {
@@ -320,7 +320,7 @@ textarea {
   margin-top: 2rem;
   font-size: 80%;
   border-top: 1px solid var(--c-bg-alt);
-  view-transition-name: site-footer;
+  // view-transition-name: site-footer;
 }
 
 .page-title {
