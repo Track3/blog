@@ -121,6 +121,10 @@ li::marker {
   color: var(--c-txt-alt2)
 }
 
+.underline {
+  border-bottom: 1px solid var(--c-bg-alt);
+}
+
 a {
   color: var(--c-txt);
   text-decoration-color: var(--c-txt-alt2);
