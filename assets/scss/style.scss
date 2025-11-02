@@ -555,6 +555,18 @@ a.footnote-ref {
     --bg-height: 18rem;
   }
 
+  .site-header,
+  .site-footer {
+    width: 76rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .site-header {
+    padding: 1rem 0;
+    border: none;
+  }
+
   .site-main {
     margin-top: 5rem;
   }
