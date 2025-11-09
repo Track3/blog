@@ -46,6 +46,7 @@ $ hugo server
 ## Credits
 
 * [Feather](https://github.com/feathericons/feather) | MIT License
+* [Tabler Icons](https://tabler.io/icons) | MIT License
 * [instant.page](https://github.com/instantpage/instant.page) | MIT License
 * [Hero Patterns](https://heropatterns.com/) | CC BY 4.0 License
 

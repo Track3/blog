@@ -50,11 +50,13 @@
 	</header>
 
 	<main class="site-main" id="main">
-		{{ block "main" . }}{{ end }}
+		<div class="main-wrapper">
+			{{ block "main" . }}{{ end }}
+		</div>
 	</main>
 
 	<footer class="site-footer dim">
-		<div>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author.name }}</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC 4.0</a>.</div>
+		<div>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author.name }}</a>. | <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh" target="_blank" rel="noopener">CC BY-NC 4.0</a></div>
 		<div><a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/previous">←</a> An <a href="https://xn--sr8hvo.ws/">IndieWeb Webring</a> 🕸💍 <a href="https://xn--sr8hvo.ws/%F0%9F%90%A3%F0%9F%8E%91%F0%9F%8D%A5/next">→</a></div>
 	</footer>
 

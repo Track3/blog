@@ -30,6 +30,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 
 [params]
   images = ["og-image.png"]
+  avatar = "avatar.webp"
 
 [menu]
 

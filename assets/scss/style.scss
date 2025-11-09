@@ -121,10 +121,6 @@ li::marker {
   color: var(--c-txt-alt2)
 }
 
-.underline {
-  border-bottom: 1px solid var(--c-bg-alt);
-}
-
 a {
   color: var(--c-txt);
   text-decoration-color: var(--c-txt-alt2);
@@ -318,6 +314,9 @@ textarea {
 
 .site-main {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .site-footer {
@@ -345,6 +344,7 @@ h1 {
 
   a {
     margin-right: .25em;
+
     &::before {
       content: "#";
     }
@@ -402,6 +402,59 @@ h1 {
   }
 }
 
+// homepage
+//
+.avatar {
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
+#home-social {
+  font-size: 150%;
+}
+
+.social-icon {
+  position: relative;
+  margin-right: .25em;
+}
+
+.tooltip:hover {
+  color: $accent;
+  transition: color .3s
+}
+
+.tooltip::before {
+  content: attr(data-tooltip);
+  display: none;
+  width: max-content;
+  position: absolute;
+  top: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-family: var(--fonts-mono);
+  text-align: center;
+  color: var(--c-txt);
+  border: 1px solid var(--c-bg-alt);
+  padding: .25rem;
+}
+
+.tooltip:hover::before {
+  display: block;
+}
+
+#home-nav {
+  button {
+    margin-right: .25rem;
+  }
+
+  a {
+    font-size: 120%;
+    text-decoration: none;
+  }
+}
+
+
 // single.html
 //
 .toc-wrapper {
@@ -409,7 +462,12 @@ h1 {
   margin: 1em 0;
   border: 1px dashed var(--c-bg-alt);
   font-size: 90%;
+
+  summary {
+    font-weight: bold;
+  }
 }
+
 .footnotes {
   padding: .5rem .75rem;
   margin-top: 1.5rem;
@@ -514,16 +572,6 @@ a.footnote-ref {
   object-fit: cover;
 }
 
-.home-photo-group {
-  display: flex;
-  gap: .5em;
-  overflow-x: hidden;
-}
-
-.home-photo-item {
-  max-height: 50px;
-  width: auto;
-}
 
 @import "syntax.scss", "partials/comments";
 
@@ -542,11 +590,16 @@ a.footnote-ref {
 
   .site-main {
     margin-top: 2rem;
+    margin-bottom: 2rem;
   }
 
   .site-footer {
     display: flex;
     justify-content: space-between;
+  }
+
+  #home-nav {
+    display: none;
   }
 }
 
@@ -569,6 +622,7 @@ a.footnote-ref {
 
   .site-main {
     margin-top: 5rem;
+    margin-bottom: 5rem;
   }
 
   .page-title {
