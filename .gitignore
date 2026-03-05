@@ -4,6 +4,6 @@ public/
 resources/
 content/
 content
-content-static/
-content-static
+content-draft/
+content-draft
 hugo.exe
