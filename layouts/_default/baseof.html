@@ -27,6 +27,7 @@
 	{{ with resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
 	<link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}">
 	{{ end }}
+	<script type="module" data-entity="blog" src="https://liwan.zak.ee/script.js"></script>
 </head>
 
 <body class="wrapper">
