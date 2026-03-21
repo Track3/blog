@@ -454,6 +454,12 @@ h1 {
   }
 }
 
+// 404 page
+//
+.error-404 {
+  padding: 0 1rem;
+  border: 1px solid var(--c-txt-alt2);
+}
 
 // single.html
 //
@@ -558,7 +564,7 @@ a.footnote-ref {
   border-top: 2px dotted var(--c-bg-alt);
 }
 
-// Gallery page
+// gallery page
 //
 .gallery {
   display: grid;
