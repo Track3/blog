@@ -12,11 +12,6 @@
       "permanent": true
     },
     {
-      "source": "/gallery/(.*)",
-      "destination": "/photo/$1",
-      "permanent": true
-    },
-    {
       "source": "/friends/",
       "destination": "/link/",
       "permanent": true
