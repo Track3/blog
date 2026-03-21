@@ -1,0 +1,29 @@
+{{ define "main" }}
+		<div class="page-title">
+			<h1>{{.Title}}</h1>
+		</div>
+		<div class="content">
+			{{ with .Content -}}{{ . }}{{ end }}
+
+			{{- $data := dict }}
+			{{- $baseUrl := .Site.Params.chronoframeUrl }}
+			{{- $fetchUrl := urls.JoinPath $baseUrl "/api/photos" }}
+			{{- with try (resources.GetRemote $fetchUrl) }}
+			{{- with .Err }}
+			{{- errorf "Unable to get remote resource %s: %s" $fetchUrl . }}
+			{{- else with .Value }}
+			{{- $data = .Content | transform.Unmarshal }}
+			{{- else }}
+			{{- errorf "Unable to get remote resource %s" $fetchUrl }}
+			{{- end }}
+			{{- end }}
+			<div class="gallery">
+			{{- range $data }}
+				<a href="{{ urls.JoinPath $baseUrl .id }}" title="{{ .title }}" target="_blank">
+					<img src="{{ urls.JoinPath $baseUrl .thumbnailUrl }}" alt="{{ .title }}" width="{{ .width }}" height="{{ .height }}" loading="lazy">
+				</a>
+			{{- end }}
+			</div>
+			{{ with .Params.comments -}}{{ partialCached "comments.html" . }}{{- end }}
+		</div>
+{{- end }}
