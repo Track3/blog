@@ -31,7 +31,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 [params]
   images = ["og-image.png"]
   avatar = "avatar.webp"
-  chronoframeUrl = "https://gallery.zak.ee/"
+  chronoframeUrl = "https://gallery.zak.ee"
 
 [menu]
 
@@ -54,14 +54,14 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
     pageref = "/gallery"
     weight = 20
     [menu.main.params]
-      description = "照片"
+      description = "画廊"
 
   [[menu.main]]
     name = "Link"
     pageref = "/link"
     weight = 30
     [menu.main.params]
-      description = "联结"
+      description = "连接"
 
   [[menu.main]]
     name = "About"
