@@ -5,12 +5,8 @@
   text-align: initial;
 }
 
-.comment-counter {
-  margin-left: .5em;
-}
-
 .comment-form {
-  margin-top: 1em;
+  margin: 1em auto;
   border: 1px solid var(--c-txt-alt);
   padding: .5em;
 
@@ -40,15 +36,24 @@
   border: 1px dashed var(--c-txt-alt);
 }
 
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .comment-group {
-  margin-top: 2em;
+  margin-bottom: 1em;
 
   article {
     display: flex;
-    margin: 1em 0;
     padding-top: 1em;
     border-top: 1px solid var(--c-bg-alt);
   }
+}
+
+.comment-new {
+  background-image: repeating-linear-gradient(45deg, var(--c-bg) 0px, var(--c-bg) 5px, var(--c-bg-alt) 5px, var(--c-bg-alt) 10px);
+  background-size: auto;
 }
 
 .comment-avatar {
@@ -88,7 +93,6 @@
   top: 0;
   right: 0;
 }
-
 
 .replies {
   margin-left: calc(5% + 1rem);
