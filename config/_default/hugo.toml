@@ -1,6 +1,6 @@
 baseURL = "https://zak.ee"
 title = "Zakee's Planet"
-languageCode = "zh-CN"
+locale = "zh-CN"
 defaultContentLanguage = 'zh'
 hasCJKLanguage = true
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
