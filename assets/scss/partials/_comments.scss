@@ -6,33 +6,57 @@
 }
 
 .comment-form {
-  margin: 1em auto;
-  border: 1px solid var(--c-txt-alt);
-  padding: .5em;
+  margin-bottom: 1rem;
+
+  fieldset {
+    border: 1px solid var(--c-txt-alt);
+  }
+
+  legend {
+    font-weight: bold;
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+    padding: .25rem;
+    margin-bottom: .5rem;
+    border: 1px solid var(--c-txt-alt);
+    font-size: 100%;
+    outline: none;
+    resize: vertical;
+  }
 
   label {
-    display: inline-block;
+    display: flex;
+    flex-basis: 33%;
+    padding: 0 .25rem;
+    margin-bottom: .5rem;
+    border: 1px solid var(--c-txt-alt);
+  }
+
+  input[type=text],
+  input[type=email],
+  input[type=url] {
+    flex: 1;
     width: 100%;
-    margin-top: .5em;
-    font-size: 90%;
+    margin-left: .5rem;
+    border: none;
+    outline: none;
   }
 
   button {
-    width: 100%;
-    margin-top: 1em;
-    line-height: 2;
-  }
-
-  .form-wrapper {
-    display: flex;
-    gap: .5em;
+    padding: .25rem .5rem;
+    margin-right: .5rem;
+    font-size: 100%;
   }
 }
 
 .comment-preview {
   width: 100%;
-  min-height: 1em;
-  padding: 2px 6px;
+  min-height: 1rem;
+  padding: .25rem;
+  margin-bottom: .5rem;
   border: 1px dashed var(--c-txt-alt);
 }
 
@@ -100,4 +124,11 @@
 
 .replies {
   margin-left: calc(5% + 1rem);
+}
+
+@media all and (min-width: 42em) {
+  .comment-info {
+    display: flex;
+    gap: .5rem;
+  }
 }
