@@ -7,3 +7,5 @@ content
 content-draft/
 content-draft
 hugo.exe
+.vercel
+.env*
