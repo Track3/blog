@@ -545,20 +545,6 @@ a.footnote-ref {
   border-top: 2px dotted var(--c-bg-alt);
 }
 
-// gallery page
-//
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  grid-auto-rows: 10rem;
-  gap: .5rem;
-}
-
-.gallery img {
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
-}
 
 @import "syntax.scss", "partials/comments";
 
