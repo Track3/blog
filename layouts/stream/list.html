@@ -1,0 +1,12 @@
+{{ define "main" }}
+		<div class="page-title">
+			<h1>{{.Title}}</h1>
+		</div>
+		<div class="content">
+			{{ with .Content -}}{{ . }}{{ end }}
+			{{ range .Paginator.Pages -}}
+			{{ partial "stream.html" . }}
+			{{- end }}
+			{{ partial "pagination.html" (dict "page" . "format" "terse") }}
+		</div>
+{{- end }}

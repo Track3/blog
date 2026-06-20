@@ -1,0 +1,23 @@
+			{{ $slug := .File.ContentBaseName -}}
+			<article class="box" id="{{ $slug }}">
+				{{ with .Content -}}{{ . }}{{ end }}
+				{{ with $images := .Page.Resources.ByType "image" -}}
+				<p class="stream-img">
+					{{ range $images -}}
+					{{ $orientedImg := .Filter images.AutoOrient -}}
+					{{ $small := $orientedImg.Fill "250x250 Center webp" -}}
+					{{ $large := $orientedImg.Resize "2000x webp" -}}
+					<a href="#{{.Name | safeURL}}"><img src="{{ $small.RelPermalink }}" alt="{{ .Name }}" loading="lazy" width="{{ $small.Width }}" height="{{ $small.Height }}"></a>
+					<a href="#{{ $slug }}" id="{{.Name | safeURL}}" class="lightbox">
+						<img src="{{ $large.RelPermalink }}" alt="{{ .Name }}" loading="lazy" width="{{ $large.Width }}" height="{{ $large.Height }}">
+					</a>
+					{{- end }}
+				</p>
+				{{- end }}
+				<footer>
+					<small>
+						<time class="dim">{{ .Date.Format "2006-01-02 15:04" }}</time>{{with .Params.Location }}<span> · {{ . }}</span>{{ end }}
+					</small>
+					<a href="{{.RelPermalink}}" class="tdln"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></a>
+				</footer>
+			</article>

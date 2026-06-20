@@ -229,6 +229,7 @@ hr {
 }
 
 button,
+[role="button"],
 [type=button],
 [type=reset],
 [type=submit] {
@@ -435,13 +436,6 @@ h1 {
   }
 }
 
-// 404 page
-//
-.error-404 {
-  padding: 0 1rem;
-  border: 1px solid var(--c-txt-alt2);
-}
-
 // single.html
 //
 .toc-wrapper {
@@ -543,6 +537,74 @@ a.footnote-ref {
 .dotted-line {
   flex: 1;
   border-top: 2px dotted var(--c-bg-alt);
+}
+
+.pagination {
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+.page-item {
+  &.active {
+    background: var(--c-bg-alt);
+  }
+
+  a {
+    padding: .25em .5em;
+    text-decoration: none;
+  }
+}
+
+// Stream
+//
+.box {
+  padding: 0 1rem;
+  margin: 1.5rem auto;
+  border: 1px solid var(--c-txt-alt);
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .65rem;
+    line-height: normal;
+    font-style: italic;
+    font-weight: lighter;
+  }
+}
+
+.stream-img {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: .5rem;
+  line-height: 1;
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+
+  img {
+    max-height: 100%;
+    width: fit-content;
+  }
+}
+
+.lightbox:target {
+  display: flex;
+}
+
+.stream-nav {
+  display: flex;
+  justify-content: space-between;
 }
 
 

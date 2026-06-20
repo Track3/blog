@@ -49,6 +49,13 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
       description = "文章"
 
   [[menu.main]]
+    name = "Stream"
+    pageref = "/stream"
+    weight = 20
+    [menu.main.params]
+      description = "随记"
+
+  [[menu.main]]
     name = "Link"
     pageref = "/link"
     weight = 30

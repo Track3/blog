@@ -1,0 +1,11 @@
+{{ define "main" }}
+		<div class="content">
+			{{ partial "stream.html" . }}
+			<ul class="post-footer stream-nav lsn">
+				<li>{{ with .NextInSection }}← <a href="{{.RelPermalink}}">{{ .Date.Format "2006-01-02" }}</a>{{else}}<span class="dimmer">← 无</span>{{ end }}</li>
+				<li>{{ with .PrevInSection }}<a href="{{.RelPermalink}}">{{ .Date.Format "2006-01-02" }}</a> →{{else}}<span class="dimmer">无 →</span>{{ end }}</li>
+			</ul>
+			<hr>
+			{{ partialCached "comments.html" . }}
+		</div>
+{{- end }}
