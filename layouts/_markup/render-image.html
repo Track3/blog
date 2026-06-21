@@ -46,7 +46,7 @@
 
 	{{- /* Render image element. */ -}}
 	{{if .IsBlock -}}
-	<figure {{ with .Attributes.class }} class="{{ . }}" {{ end }}>
+	<figure{{ with .Attributes.class }} class="{{ . }}"{{ end }}>
 		<img {{- range $k, $v :=$attributes }} {{- printf " %s=%q" $k $v | safeHTMLAttr }} {{- end -}}>
 		{{ with .Title -}}
 		<figcaption>

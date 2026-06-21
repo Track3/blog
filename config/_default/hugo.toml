@@ -8,6 +8,19 @@ copyright = "This work is licensed under a Creative Commons Attribution-NonComme
 [params.author]
   name = "Zakee"
 
+[mediaTypes]
+  [mediaTypes."application/atom+xml"]
+    suffixes = ["xml"]
+
+[outputFormats]
+  [outputFormats.Atom]
+    mediaType = "application/atom+xml"
+    baseName = "atom"
+    isPlainText = false
+
+[outputs]
+  home = ["HTML", "RSS", "Atom"]
+
 [markup]
   defaultMarkdownHandler = "goldmark"
 

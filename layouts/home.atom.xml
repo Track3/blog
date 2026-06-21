@@ -1,0 +1,32 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\"?>" | safeHTML }}
+<feed xmlns="http://www.w3.org/2005/Atom">
+	{{ printf `<title type="html"><![CDATA[%s]]></title>` .Site.Title | safeHTML }}
+	<link href="{{ .Site.BaseURL }}atom.xml" rel="self" />
+	<link href="{{ .Site.BaseURL }}" />
+	<id>{{ .Site.BaseURL }}atom.xml</id>
+	{{- $pages := first 5 (where .Site.RegularPages "Section" "writing") -}}
+	{{- $lastUpdated := now -}}
+	{{- if gt (len $pages) 0 -}}
+		{{- $lastUpdated = (index $pages 0).Lastmod -}}
+	{{- end }}
+	<updated>{{ $lastUpdated.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+	<generator uri="https://gohugo.io/" version="{{ hugo.Version }}">Hugo</generator>
+	{{ with .Site.Copyright -}}
+	<rights>{{ . | plainify }}</rights>
+	{{- end }}
+	{{ with .Site.Params.author.name -}}
+	<author>
+		<name>{{ . }}</name>
+	</author>
+	{{- end -}}
+	{{ range $pages }}
+	<entry>
+		{{ printf `<title type="html"><![CDATA[%s]]></title>` .Title | safeHTML }}
+		<link href="{{ .Permalink }}" rel="alternate" type="text/html" />
+		<id>{{ .Permalink }}</id>
+		<published>{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</published>
+		<updated>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</updated>
+		{{ printf `<content type="html"><![CDATA[%s]]></content>` .Content | safeHTML }}
+	</entry>
+	{{- end }}
+</feed>
