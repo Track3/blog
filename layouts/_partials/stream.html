@@ -6,7 +6,12 @@
 					{{ range $images -}}
 					{{ $orientedImg := .Filter images.AutoOrient -}}
 					{{ $small := $orientedImg.Fill "250x250 Center webp" -}}
-					{{ $large := $orientedImg.Resize "2000x webp" -}}
+					{{ $large := $orientedImg -}}
+					{{ if or (gt $orientedImg.Width 2000) (gt $orientedImg.Height 2000) -}}
+						{{ $large = $orientedImg.Fit "2000x2000 webp" -}}
+					{{ else -}}
+						{{ $large = $orientedImg.Resize (printf "%dx webp" $orientedImg.Width) -}}
+					{{ end -}}
 					<a href="#{{.Name | safeURL}}"><img src="{{ $small.RelPermalink }}" alt="{{ .Name }}" loading="lazy" width="{{ $small.Width }}" height="{{ $small.Height }}"></a>
 					<a href="#{{ $slug }}" id="{{.Name | safeURL}}" class="lightbox">
 						<img src="{{ $large.RelPermalink }}" alt="{{ .Name }}" loading="lazy" width="{{ $large.Width }}" height="{{ $large.Height }}">
