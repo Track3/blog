@@ -22,7 +22,8 @@
 			{{- end }}
 			{{ with .Content -}}{{ . }}{{ end }}
 			<ul class="lsn dim post-footer">
-				<li>/* 最后更新于{{ dateFormat "2006-01-02 15:04 MST" .Lastmod.UTC }} */</li>
+				<li>/* 最后更新于{{ dateFormat "2006-01-02 15:04 -0700" .Lastmod }} */</li>
+				<br>
 				{{- with .PrevInSection }}
 				<li>
 					<a href="{{.RelPermalink}}" class="post-item tdln">
