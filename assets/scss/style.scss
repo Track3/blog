@@ -1,4 +1,6 @@
-@import "predefined.scss";
+@use "predefined" as *;
+@use "syntax";
+@use "partials/comments";
 
 *,
 ::before,
@@ -608,7 +610,6 @@ a.footnote-ref {
 }
 
 
-@import "syntax.scss", "partials/comments";
 
 @media all and (min-width: 55em) {
   :root {
