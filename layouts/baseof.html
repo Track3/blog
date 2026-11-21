@@ -20,6 +20,7 @@
 	<link rel="shortcut icon" href="/favicon.ico?v=1">
 	<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
 	<link rel="dns-prefetch" href="//pb.zak.ee">
+	<link rel="dns-prefetch" href="//fcaptcha.zak.ee">
 	<link rel="dns-prefetch" href="//seccdn.libravatar.org">
 	{{ range .AlternativeOutputFormats -}}
 	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
